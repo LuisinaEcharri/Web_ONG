@@ -1,0 +1,85 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.help_us_flex_container {
+    display: flex;
+    max-height: 550px;
+}
+
+.help_us_img_container {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+figure > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20% 0% 0% 0%;
+}
+
+.help_us_right_container {
+    width: 40%;
+    background-color: var(--red-primary-solid);
+    color: var(--white-primary-solid);
+    padding-left: 10%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.help_us_title{
+    font-weight: 300;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.help_us_underline {
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--white-primary-solid);
+}
+
+.help_us_text1, .help_us_text2 {
+    width: 60%;
+    margin-bottom: 30px;
+    line-height: 28px;
+}
+
+.help_us_text1 {
+    font-weight: 400;
+}
+
+.help_us_text2 {
+    font-weight: 700;
+}
+
+#donate_btn {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .help_us_flex_container{
+        flex-direction: column;
+        max-height: 800px;
+    }
+    .help_us_img_container{
+        width: 100%;
+    }
+    .help_us_img{
+        display: block;
+    }
+    .help_us_right_container{
+        width: 100%;
+        padding: 0px;
+    }
+    .help_us_title, .help_us_text1, .help_us_text2{
+        padding: 0px 25px;
+        width:85%;
+    }
+    .help_us_donate_button{
+        padding: 0px 25px;
+    }
+
+}

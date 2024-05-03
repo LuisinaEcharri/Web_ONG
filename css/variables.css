@@ -1,0 +1,16 @@
+:root {
+    --red-primary-solid: rgba(238, 0, 47, 1);
+    --red-primary-transparent: rgba(238, 0, 47, 0.8);
+    --lightblue-primary-solid: rgba(89, 155, 237, 1);
+    --lightblue-secondary-solid: rgba(71, 139, 223, 1);
+    --black-primary-solid: rgba(0, 0, 0, 1);
+    --black-secondary-solid: rgba(45, 45, 45, 1);
+    --black-tertiary-solid: rgba(37, 37, 37, 1);
+    --white-primary-solid: rgba(255, 255, 255, 1);
+    --white-primary-transparent: rgba(255, 255, 255, 0.5);
+    --grey-primary-solid: rgb(243, 243, 243);
+    --grey-secondary-solid: rgb(60, 60, 60);
+    --grey-tertiary-solid: rgba(161, 161, 161, 1);
+    --height: 70px;
+    --font-size-navbar: 12px;
+}

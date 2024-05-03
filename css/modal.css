@@ -1,0 +1,36 @@
+.modal-content {
+    background: var(--lightblue-primary-solid);
+}
+
+.modal-header .close {
+    margin-top: -40px;
+}
+
+.modal {
+    overflow-x: hidden;
+    max-width: 95%;
+}
+
+.modal-title {
+    color: white;
+}
+
+.modal-dialog {
+    overflow-x: hidden;
+}
+
+.giftModalText {
+    color: white;
+    text-align: center;
+}
+
+.close {
+    color: white;
+    opacity: 1;
+}
+
+@media all and (max-width: 767px) {
+    .modal-header .close {
+        margin-top: -30px;
+    }
+}

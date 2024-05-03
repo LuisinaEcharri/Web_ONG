@@ -1,0 +1,59 @@
+.banner {
+    background: var(--grey-secondary-solid);
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner_image{
+    position: absolute;
+    display: flex;
+    margin-left: 200px;
+}
+
+.banner_title{
+    line-height: 40px;
+    text-align: center;
+    color: var(--white-primary-solid);
+    align-self: center;
+}
+
+.banner_title_light{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.banner_title_strong{
+    font-weight: 700;
+    font-size: 33px;
+    margin-top: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .banner{
+        height: 400px;
+    }
+
+    .banner_image{
+        left: 5%;
+        width: 90%;
+        margin-left: 0px;
+    }
+
+    .banner_title{
+        line-height: 30px;
+        padding: 0px 25px;
+    }
+
+    .banner_title_light{
+        font-size: 15px;
+    }
+    
+    .banner_title_strong{
+        font-size: 25px;
+    }
+}

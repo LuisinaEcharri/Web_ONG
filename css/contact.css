@@ -1,0 +1,221 @@
+.contact{
+    background-color: var(--black-secondary-solid);
+    padding: 80px 150px;
+    color: var(--white-primary-solid);
+}
+
+.contact_title{
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    padding-bottom: 40px;
+    margin-top: 0px;
+}
+
+.contact_title_underline{
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--white-primary-solid);
+}
+
+.contact_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_section_left{
+    display: flex;
+    width: 45%;
+}
+
+.contact_inputs_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_inputs_left{
+    width: 200px;
+    height: 118px;
+}
+
+.contact_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_input{
+    height: 50px;
+    width: 200px;
+    border-radius: 3.35px;
+    padding-right: 20px;
+}
+
+.contact_input:first-of-type{
+    margin-bottom: 10px;
+}
+
+.contact_textarea{
+    width: 200px;
+    border-radius: 3.35px;
+    height: 106px;
+    margin-left: 50px;
+}
+
+input{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    padding-left: 10px;
+    text-align: left;
+    color: var(--grey-tertiary-solid);
+    background-color: var(--black-secondary-solid);
+    border: 1px solid var(--grey-tertiary-solid);
+}
+
+input:focus{
+    outline: none !important;
+    color: var(--grey-primary-solid);
+    border: 1px solid var(--lightblue-primary-solid);
+}
+
+input:focus::placeholder{
+    color: var(--grey-primary-solid);
+}
+
+textarea{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    padding: 10px 0px 0px 10px;
+    resize: none;
+    text-align: left;
+    color: var(--grey-tertiary-solid);
+    background-color: var(--black-secondary-solid);
+    border: 1px solid var(--grey-tertiary-solid);
+}
+
+textarea:focus{
+    outline: none !important;
+    color: var(--grey-primary-solid);
+    border: 1px solid var(--lightblue-primary-solid);
+}
+
+textarea:focus::placeholder{
+    color: var(--grey-primary-solid);
+}
+
+.contact_button{
+    height: 50px;
+    width: 160px;
+    border-radius: 0px;
+    background: var(--red-primary-solid);
+    color: var(--white-primary-solid);
+    padding: 7px 41px 7px 41px;
+    border: 0px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    align-self: flex-end;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#dummyframe{
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.contact_section_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45%;
+}
+
+.contact_location_title{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0em;
+}
+
+.contact_location_text{
+    text-align: justify;
+    padding-right: 100px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+}
+
+.contact_whatsapp_container{
+    display: flex;
+}
+
+.contact_whatsapp_logo{
+    width: 22px;
+    height: 22px;
+    padding-right: 10px;
+}
+
+.contact_whatsapp_anchor{
+    text-decoration: none;
+    color: var(--white-primary-solid);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    align-self: center;
+}
+
+.contact_whatsapp_anchor:active{
+    text-decoration: none;
+    color: var(--white-primary-solid);
+}
+
+@media only screen and (max-width: 600px) {
+    .contact{
+        padding: 30px 10%;
+    }
+    .contact_title{
+        margin-bottom: 0px;
+    }
+    .contact_container{
+        flex-direction: column;
+    }
+    .contact_section_left{
+        flex-direction: column;
+    }
+    .contact_inputs_container{
+        flex-direction: column;
+    }
+    .contact_textarea{
+        margin: 0px;
+        margin-top: 10px;
+        padding-right: 20px;
+    }
+    .contact_button{
+        align-self: auto;
+    }
+    .contact_section_right{
+        width: 100%;
+    }
+    .contact_location_title{
+        margin-bottom: 0px;
+        margin-top: 25px;
+    }
+    .contact_location_text{
+        padding: 0px;
+    }
+}
