@@ -1,4 +1,4 @@
-# Usa una imagen base de Nginx ligera
+# Usa una imagen base de Nginx ligeraa
 FROM nginx:alpine
 
 # Copia tu código de la página web al directorio de trabajo de Nginx
