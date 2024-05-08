@@ -1,0 +1,94 @@
+.ver_inscriptos {
+    background-image: url(../img/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 90px);
+    width: 100%;
+}
+
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.container_flex {
+    display: flex;
+    justify-content: center;
+}
+
+.table_container {
+    display: inline-block;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.table_container::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+.table_container::-webkit-scrollbar-track-piece {
+    background: #ef403d;
+}
+.table_container::-webkit-scrollbar-track {
+    background:  rgb(169, 169, 169); /* Color de fondo de la barra de desplazamiento */
+}
+.table_container::-webkit-scrollbar-thumb {
+    background: #888; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 5px; /* Borde redondeado del pulgar */
+}
+.table_container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cambio de color al pasar el mouse sobre el pulgar */
+}
+
+.table {
+    border-spacing: 0;
+    color: #EE002F;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.table_header {
+    width: 100px;
+    padding: 10px 30px;
+    background-color: rgb(169, 169, 169);
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+.table_header:last-child {
+    border-right: none;
+    border-top-right-radius: 25px;
+}
+.table_header:first-child {
+    border-left: none;
+    border-top-left-radius: 25px;
+}
+
+.table_content {
+    width: 100px;
+    padding: 10px 30px;
+    background-color: rgb(190, 190, 190);
+    border: 2px solid white;
+}
+
+.table_content:last-child {
+    border-right: none;
+}
+.table_content:first-child {
+    border-left: none;
+}
+
+tr:last-child > td:last-child {
+    border-bottom-right-radius: 25px;
+}
+
+tr:last-child > td:first-child {
+    border-bottom-left-radius: 25px;
+}

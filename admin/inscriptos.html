@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    <title>Ver inscriptos</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- general meta data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=robots content="index,follow">
+    <meta name="description" content="Reinventar Tandil es una Asociación Civil sin fines de lucro, no gubernamental.">
+    <meta name="keywords" content="Reinventar Tandil, Reinventar, Tandil, ONG, Asociación Civil, Hockey">
+    <meta name="author" content="Reinventar Tandil">
+    <link rel="canonical" href="http://www.reinventartandil.com/">
+    <meta name="subject" content="Reinventar Tandil">
+    <meta name='Classification' content='ONG'>
+    <meta name='url' content='http://www.reinventartandil.com/ '>
+    <meta http-equiv='Expires' content='0'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Cache-Control' content='no-cache'>
+    <meta http-equiv='imagetoolbar' content='no'>
+    <meta http-equiv='x-dns-prefetch-control' content='off'>
+    <!-- Open Graph data http://ogp.me/ -->
+    <meta property="og:title" content="Reinventar Tandil" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.reinventartandil.com/" />
+    <meta property="og:image" content="http://reinventartandil.com/Welcome2.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:description"
+        content="Reinventar Tandil es una Asociación Civil sin fines de lucro, no gubernamental.">
+    <meta property="og:site_name" content="Reinventar Tandil" />
+
+    <!-- JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- FONTS FAMILY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@700&family=Red+Hat+Display&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@700&family=Red+Hat+Display&display=swap');
+    </style>
+
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/inscriptos.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/c5d8d8beeb.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" itemprop="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <ul class="navbar_menu">
+            <li class="navbar_logo" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a
+                    href="#" itemprop="item"><img src="../img/Logo.png" alt="logo" id="navbar_logo" /></a></li>
+            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a href="#" itemprop="item" class="navbar_user">
+                    <img alt="user" src="../img/user.svg" class="navbar_icon"></img>
+                    <p class="navbar_username">Username</p>
+                </a>
+            </li> <!-- hay que agregar la logica para ponerle el nombre correspondiente al login-->
+        </ul>
+    </nav>
+
+    <section class="ver_inscriptos">
+        <h1 class="titulo"> Inscriptos </h1>
+        <div class="container_flex">
+            <div class="table_container">
+                <table class="table">
+                    <tr>
+                        <th class="table_header">Nombre</th>
+                        <th class="table_header">Apellido</th>
+                        <th class="table_header">Teléfono</th>
+                        <th class="table_header">Correo electrónico</th>
+                        <th class="table_header">Fecha de inscripción</th>
+                        <th class="table_header">Caminante/Corredor</th>
+                    </tr>
+                    <tr>
+                        <td class="table_content">Sol Agostina</td>
+                        <td class="table_content">Spinelli</td>
+                        <td class="table_content">2262652554</td>
+                        <td class="table_content">solagostinaspinelli@gmail.com</td>
+                        <td class="table_content">07/05/2024</td>
+                        <td class="table_content">Caminante</td>
+                    </tr>
+                    <tr>
+                        <td class="table_content">Maria Pia</td>
+                        <td class="table_content">Bedini Crocci</td>
+                        <td class="table_content">2262652554</td>
+                        <td class="table_content">piabedinicrocci@gmail.com</td>
+                        <td class="table_content">07/05/2024</td>
+                        <td class="table_content">Corredor</td>
+                    </tr>
+                    <!-- hay que poner la logica para que se generen de acuerdo a las tuplas traidas-->
+
+                </table>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

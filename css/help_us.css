@@ -13,7 +13,7 @@
     padding: 0;
 }
 
-figure > img {
+figure.help_us_img_container > img {
     width: 100%;
     height: 100%;
     border-radius: 20% 0% 0% 0%;
