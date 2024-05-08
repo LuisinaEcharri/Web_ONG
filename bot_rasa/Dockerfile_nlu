@@ -1,0 +1,26 @@
+FROM python:3.7-slim
+
+RUN python -m pip install rasa
+#instalo el framework de rasa en mi imagen de docker
+
+WORKDIR /app 
+#creo un directorio de trabajo en mi imagen de docker
+
+COPY . .
+#copio todos los archivos de mi directorio actual a mi directorio de trabajo en la imagen de docker
+
+RUN rasa train nlu
+#entreno el modelo de lenguaje natural
+
+USER 1001
+#establezco un usuario por defecto "razones de seguridad"
+
+ENTRYPOINT ["rasa"]
+#establezco el punto de entrada de mi imagen de docker
+
+CMD ["run", "-m", "models", "--enable-api", "--cors", "*", "--debug"]
+#establezco el comando por defecto que se ejecutará al correr la imagen de docker
+#En el video dice otros pero yo para correrlo en local uso este comando capaz que en la nube se use otro
+#en el video especifica un puerto aca no se si nos conviene especificar un puerto o dejarlo abierto por las dudas lo especificamos agregando --port 5005 ejemplo
+# y el lo corre con el comando docker run -it -p 5005:5005 koaning/rasa-demo:0.0.1
+#docker run -it koaning/rasa-demo:0.0.1
