@@ -24,6 +24,24 @@ a {
     padding: 11px 5px;
 }
 
+.navbar_username {
+    font-family: 'Montserrat', sans-serif;
+    color: #EE002F;
+    padding-left: 15px;
+    padding-right: 30px;
+    font-size: 14px;
+}
+
+.navbar_item > .navbar_user {
+    display: flex;
+}
+
+.navbar_icon {
+    height: 24px;
+    width: 23px;
+    padding-top: 10px;
+}
+
 .navbar_item:not(.navbar_button) a:hover,
 .navbar_item a:hover::after{
     color: var(--black-primary-solid);

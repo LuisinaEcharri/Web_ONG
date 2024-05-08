@@ -1,0 +1,33 @@
+.ver_inscriptos {
+    background-image: url(../img/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 90px);
+    width: 100%;
+}
+
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.table_container {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    border-spacing: 0;
+}
+.table_header {
+    padding: 3px;
+    background-color: rgb(169, 169, 169);
+    color: #EE002F;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid white;
+}

@@ -1,0 +1,70 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.container{
+    margin-top: 10%;
+    width: 30%;
+    height: 400px;
+    padding: 0;
+    align-content: center;
+}
+
+input{
+    /* text-align: center; */
+    background-color: rgba(238, 0, 48, 0.43);
+    border: 0;
+    border-radius: 60px;
+    width: 80%;
+    height: 40px;
+    margin: 10px;
+    padding-left: 35px;
+}
+
+#user {
+    background-image: url('../img/user.svg');
+}
+
+#pass {
+    background-image: url('../img/pass.svg');
+}
+
+#user, #pass {
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
+}
+
+.label{
+    display: block;
+    margin: 3%;
+}
+
+a {
+    color: rgba(198,192,192,1);
+    font-weight: 600;
+}
+
+a:hover {
+    color: rgb(131, 128, 128);
+    text-decoration: none;
+}
+
+.btn{
+    background: linear-gradient(90deg, rgba(238,0,47,1) 0%, rgba(89,155,237,1) 100%);
+    color: white;
+    text-transform: uppercase;
+    border-radius: 60px;
+    font-weight: bold;
+    width: 30%;
+    height: 30px;
+    box-shadow: 4px 10px 22px -1px rgba(0,0,0,0.75);
+}
+
+img {
+    width: 40%;
+    height: auto;
+    margin: 3px;
+}
