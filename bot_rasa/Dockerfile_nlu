@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 #copio todos los archivos de mi directorio actual a mi directorio de trabajo en la imagen de docker
 
-RUN rasa train nlu
+RUN rasa train 
 #entreno el modelo de lenguaje natural
 
 USER 1001
@@ -18,7 +18,10 @@ USER 1001
 ENTRYPOINT ["rasa"]
 #establezco el punto de entrada de mi imagen de docker
 
-CMD ["run", "-m", "models", "--enable-api", "--cors", "*", "--debug"]
+#CMD ["run","--enable-api", "--cors", "*", "--port", "5005"]
+
+CMD ["run", "-m", "models", "--enable-api", "--cors", "*", "--port" , "5005"]
+
 #establezco el comando por defecto que se ejecutará al correr la imagen de docker
 #En el video dice otros pero yo para correrlo en local uso este comando capaz que en la nube se use otro
 #en el video especifica un puerto aca no se si nos conviene especificar un puerto o dejarlo abierto por las dudas lo especificamos agregando --port 5005 ejemplo

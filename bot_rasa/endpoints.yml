@@ -3,8 +3,8 @@
 # Server where the models are pulled from.
 # https://rasa.com/docs/rasa/model-storage#fetching-models-from-a-server
 
-#models:
-#  url: http://my-server.com/models/default_core@latest
+# models:
+#  url: http://localhost:5005/models/20240428-121443-orange-report.tar.gz"
 #  wait_time_between_pulls:  10   # [optional](default: 100)
 
 # Server which runs your custom actions.
@@ -12,6 +12,20 @@
 
 #action_endpoint:
 #  url: "http://localhost:5055/webhook"
+
+
+rest:
+  # Otras opciones de configuración...
+  # Configuración de CORS
+  cors_allowed_origins:
+    - "http://localhost:5005/api"
+# models:
+#   url: http://localhost:5005/models/default_core
+#   wait_time_between_pulls: 10   # [optional](default: 100)
+
+
+rasa:
+  url: "http://localhost:5005/api"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
