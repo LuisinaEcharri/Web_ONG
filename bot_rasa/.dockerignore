@@ -1,5 +1,7 @@
 test/*
 models/*
+#data/*
+actions/*
 */.mod
 venv 
 # Ignore all .pyc files, aca hay que tener cuidado con depedencias con otros contenedores, asi mismo en el action depedende de como se corre las acciones en la nube
