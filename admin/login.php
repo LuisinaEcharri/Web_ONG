@@ -2,7 +2,7 @@
 
 $dbhost= "localhost";
 $dbuser= "root";
-$dbpass= "contramysql";
+$dbpass= "";
 $dbname= "reinventar";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);

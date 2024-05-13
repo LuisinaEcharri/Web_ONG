@@ -32,6 +32,7 @@ a {
     font-size: 14px;
 }
 
+
 .navbar_item > .navbar_user {
     display: flex;
 }
@@ -41,6 +42,7 @@ a {
     width: 23px;
     padding-top: 10px;
 }
+
 
 .navbar_item:not(.navbar_button) a:hover,
 .navbar_item a:hover::after{

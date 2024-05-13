@@ -36,3 +36,7 @@ button:hover {
     background-color: white;
     color: rgba(238,0,47,1);
 }
+
+.navbar_logout {
+    color: #EE002F;
+}

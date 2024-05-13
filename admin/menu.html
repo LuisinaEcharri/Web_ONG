@@ -3,7 +3,7 @@
 
 <head>
     <title>Menu</title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="../favicon.ico">
     <!-- general meta data -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,14 +58,23 @@
     <!-- NAVIGATION -->
     <nav class="navbar" itemprop="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
         <ul class="navbar_menu">
-            <li class="navbar_logo" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a
-                    href="#" itemprop="item"><img src="../img/Logo.png" alt="logo" id="navbar_logo" /></a></li>
+            <li class="navbar_logo" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a href="#" itemprop="item">
+                    <img src="../img/Logo.png" alt="logo" id="navbar_logo"/>
+                </a>
+            </li>
             <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                 <a href="#" itemprop="item" class="navbar_user">
                     <img alt="user" src="../img/user.svg" class="navbar_icon"></img>
                     <p class="navbar_username">Admin</p>
                 </a>
             </li> <!-- hay que agregar la logica para ponerle el nombre correspondiente al login-->
+            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a href="login.html" itemprop="item" class="navbar_logout">
+                    <img alt="logout" src="../img/logout.svg" class="navbar_icon"></img>
+                    <!-- <p class="navbar_username">Logout</p> -->
+                </a> 
+            </li>
         </ul>
     </nav>
 
