@@ -1,91 +1,193 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+
+- intent: inicio_hockey
   examples: |
-    - hey
-    - hello
+    - boton que se activo hockey
+    - se activo hockey
+    - botonnnnnnnn hockey
+    - activacion de hockey
+    - boton hockey
+
+- intent: inicio_generico
+  examples: |
+    - boton que se activo generico
+    - se activo generico
+    - botonnnnnnnn generico
+    - activacion de generico
+    - boton generico   
+
+- intent: inicio_actividades
+  examples: |
+    - boton que se activo actividades
+    - se activo actividades
+    - botonnnnnnnn actividades
+    - activacion de actividades
+    - boton actividades 
+
+- intent: inicio_apoyo
+  examples: |
+    - boton que se activo apoyo
+    - se activo apoyo
+    - botonnnnnnnn apoyo
+    - activacion de apoyo
+    - boton apoyo
+
+- intent: edad
+  examples: |
+    - [16](anios)
+    - tiene [10](anios) años
+    - son de [15] (anios) 
+    - tiene [7]
+    - [8](anios) años
+
+- intent: saludo
+  examples: |
+    - hola
+    - holis
+    - holaaaaaaaaaaaa
+    - buenas
+    - buenos dias
+    - buenas tardes
+    - alo
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - buenasnoches
 
-- intent: goodbye
+- intent: despedida
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - chau
+    - nos vemos
+    - adios
+    - chauchis
+    - hasta pronto
+    - que tengas un lindo dia
+    - nos vemos mas tarde
+    - adiossssssssssss
 
-- intent: affirm
+
+- intent: afirmacion
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - si
+    - si
+    - claro
+    - por supesto
+    - correcto
+    - eso suena bien
+    
+- intent: informacion
+  examples: |
+    - quiero de [arte](actividad)
+    - me gustaria saber de [musica] (actividad)
+    - de taller de [musica](actividad)
+    - de  taller de [valores](actividad)
+    - quiero saber sobre [apoyo escolar](actividad)
+    - sobre [valores](actividad)
+    - [arte](actividad)
 
-- intent: deny
+- intent: llevar_algo
+  examples: |
+    - que hay que llevar?
+    - que necesito?
+    - materiales?
+    - que se necesita?
+    - que debe llevar?
+    - tengo que asistir con algo?
+
+- intent: duracion
+  examples: |
+    - cuanto tiempo?
+    - duracion?
+    - cuanto dura?
+    - cuantas horas son?
+    - cuanto tardan?
+    - tiempo?
+
+- intent: dia_hora
+  examples: |
+    - que dias hay?
+    - ¿ a que hora hay?
+    - dia y horario?
+    - horario?
+    - dia?
+    - hora?
+
+- intent: negacion
   examples: |
     - no
     - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - nunca
+    - no creo
+    - no me gusta eso
+    - no va
+    - no realmente
+    - no me alcanza
+    - no puedo pagarlo
+    - es demasiado costoso
 
-- intent: mood_great
+- intent: costo
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
+    - cuanto vale?
+    - cuanto hay que pagar?
+    - y el pago?
+    - ¿ costo?
+    - son pagas?
+    - ¿cuanto debo pagar?
+    - cuanto sale?
+
+- intent: mixto
+  examples: |
+    - pueden ir varones?
+    - son mixtas?
+    - pueden ir chicos?
+    - es solo para nenas?
+    - van nenes?
+    - son solo chicas?
+
+- intent: animo_bien
+  examples: |
+    - perfecto
+    - genial
+    - asombroso
+    - buenisimo
     - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - bien
+    - estoy bien
+    - todo bien
+    - me siento bien
+    - ok
+    - extremadamente bien
+    - super bien
+    - super
+    - feliz
 
-- intent: mood_unhappy
+- intent: animo_mal
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - my dia fue horrible
+    - mal
+    - horrible
+    - no me siento bien
+    - estoy triste
+    - no la estoy pasando bien
+    - triste
+    - no estoy feliz
+    - demasiado mal
+    - no muy bien
+    - infeliz
 
-- intent: bot_challenge
+- intent: obligatorio
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - es obligatorio asistir al taller de valores?
+    - debo asistir al taller de valores?
+    - es obligatorio ir?
+    - debo ir si o si?
+    - no puedo faltar al taller de valores?
+
+
+- lookup: actividad
+  examples: |
+    - musica
+    - arte
+    - apoyo escolar
+    - valores
+    - generico

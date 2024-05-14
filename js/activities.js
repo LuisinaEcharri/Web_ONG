@@ -1,0 +1,26 @@
+const activities = document.querySelectorAll(".activity_image");
+
+activities.forEach((activity) => {
+    activity.addEventListener("click", () => {
+        openChatBot(activity, activity.getAttribute("id"));
+    });
+});
+
+let actividad = " "
+
+function openChatBot(elem, context) {
+    let card = elem.parentNode.parentNode;
+
+    if (card.classList.contains("activity_left_up")) {
+        actividad = "/inicio_hockey";
+    } else if (card.classList.contains("activity_right_up")) {
+        actividad = "/inicio_apoyo";
+    } else if (card.classList.contains("activity_left_down")) {
+        actividad = "/inicio_valores";
+    } else if (card.classList.contains("activity_right_down")) {
+        actividad = "/inicio_viajes";
+    }
+    let content = card.children;
+    console.log("content", content);
+    document.getElementsByClassName("rw-launcher").item(0).click();
+}
