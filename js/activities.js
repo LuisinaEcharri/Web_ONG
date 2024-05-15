@@ -21,6 +21,6 @@ function openChatBot(elem, context) {
         actividad = "/inicio_generico";
     }
     let content = card.children;
-    console.log("content", content);
     document.getElementsByClassName("rw-launcher").item(0).click();
+    document.dispatchEvent(new CustomEvent('actividadUpdated', { detail: actividad }));
 }

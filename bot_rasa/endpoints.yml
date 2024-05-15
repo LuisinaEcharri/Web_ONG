@@ -13,18 +13,18 @@
 action_endpoint:
   url: "http://localhost:5055/webhook"
 
-rest:
+#rest:
   # Otras opciones de configuración...
   # Configuración de CORS
-  cors_allowed_origins:
-    - "http://localhost:5005/api"
+  #cors_allowed_origins:
+  #  - "http://localhost:5005/api"
 # models:
 #   url: http://localhost:5005/models/default_core
 #   wait_time_between_pulls: 10   # [optional](default: 100)
 
 
-rasa:
-  url: "http://localhost:5005/api"
+#rasa:
+  #url: "http://localhost:5005/api"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.

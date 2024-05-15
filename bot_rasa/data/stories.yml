@@ -87,6 +87,13 @@ stories:
     - hockey: true
   - action: utter_duracion_hockey
 
+- story: llevar cosas apoyo
+  steps:
+  - intent: llevar_algo
+  - slot_was_set: 
+    - apoyo: true
+  - action: utter_materiales_apoyo
+
 - story: valores duracion
   steps:
   - intent: duracion
