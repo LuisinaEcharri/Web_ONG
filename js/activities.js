@@ -18,7 +18,7 @@ function openChatBot(elem, context) {
     } else if (card.classList.contains("activity_left_down")) {
         actividad = "/inicio_valores";
     } else if (card.classList.contains("activity_right_down")) {
-        actividad = "/inicio_viajes";
+        actividad = "/inicio_generico";
     }
     let content = card.children;
     console.log("content", content);

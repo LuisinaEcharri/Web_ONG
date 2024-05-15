@@ -6,23 +6,60 @@ stories:
   steps:
   - intent: inicio_hockey
   - action: inicio_actividad_hockey
+  - slot_was_set: 
+    - hockey: true
+  - action: utter_inicio_hockey 
+
 
 - story: inicio_generico
   steps:
   - intent: inicio_generico
   - action: inicio_actividad_generico
+  - action: utter_inicio_generico
+  - checkpoint: seguir_consulta2
+
+- story: inicio_musica
+  steps:
+  - checkpoint: seguir_consulta2
   - intent: informacion
   - action: action_informacion
+  - slot_was_set: 
+    - musica: true
+  - action: utter_inicio_musica
+
+- story: inicio_arte
+  steps:
+  - checkpoint: seguir_consulta2
+  - intent: informacion
+  - action: action_informacion
+  - slot_was_set: 
+    - arte: true
+  - action: utter_inicio_arte
+
+- story: inicio_valores
+  steps:
+  - checkpoint: seguir_consulta2
+  - intent: informacion
+  - action: action_informacion
+  - slot_was_set: 
+    - valores: true
+  - action: utter_inicio_valores
 
 - story: inicio_actividades
   steps:
   - intent: inicio_actividades
   - action: inicio_actividad_actividades  
+  - slot_was_set: 
+    - actividad: true
+  - action: utter_inicio_actividades
   
 - story: inicio_apoyo
   steps:
   - intent: inicio_apoyo
   - action: inicio_actividad_apoyo
+  - slot_was_set: 
+    - apoyo: true
+  - action: utter_inicio_apoyo
 
 - story: mixtas
   steps:

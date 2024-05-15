@@ -452,12 +452,13 @@
             (e.src = "./js/index.js"),
             (e.async = !0),
             (e.onload = () => {
-                window.WebChat.default({
-                        initPayLoad: actividad.replace(/"/g, "'"),
-                        socketUrl: "http://localhost:5005"
-                    },
-                    null
-                );
+                window.localStorage.clear(),
+                    window.WebChat.default({
+                            initPayLoad: '/costo',
+                            socketUrl: "http://localhost:5005"
+                        },
+                        null
+                    );
             }),
             t.insertBefore(e, t.firstChild);
         })();

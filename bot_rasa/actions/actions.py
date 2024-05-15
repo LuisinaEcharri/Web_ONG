@@ -45,6 +45,8 @@ class ActionHorario(Action):
             
             elif int(edad) > 18:
                 dispatcher.utter_message("es hasta los 18 años")
+            else:
+                dispatcher.utter_message("sabados 11:00")
 
             return []
    
@@ -55,7 +57,8 @@ class ActionInicioHockey(Action):
 
    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
+            print("entro hockey")
+            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
             SlotSet("apoyo",'false')
             SlotSet("musica",'false')
             SlotSet("arte",'false')
@@ -71,7 +74,8 @@ class ActionInicioApoyo(Action):
 
    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
+            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
+            print("entro apoyo")
             SlotSet("hockey",'false')
             SlotSet("musica",'false')
             SlotSet("arte",'false')
@@ -87,7 +91,7 @@ class ActionInicioMusica(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
+            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
             SlotSet("hockey",'false')
             SlotSet("apoyo",'false')
             SlotSet("arte",'false')
@@ -103,7 +107,7 @@ class ActionInicioGenerico(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
+            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
             SlotSet("hockey",'false')
             SlotSet("apoyo",'false')
             SlotSet("arte",'false')
