@@ -439,34 +439,7 @@
     <script src="./js/contact.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-        function returnValor(){
-        document.addEventListener('actividadUpdated', (event) => {
-            let myActividad = event.detail;
-            console.log("Actividad from index.htm:", myActividad);
-            return myActividad;
-            });
-        }
-        console.log(returnValor());
-        !(function () {
-            let actividadAux = returnValor();
-            let e = document.createElement("script"),
-                t = document.head || document.getElementsByTagName("head")[0];
-            (e.src = "./js/index.js"),
-            (e.async = !0),
-            (e.onload = () => {
-                window.localStorage.clear(),
-                window.sessionStorage.clear(),
-                window.WebChat.default({
-                        initPayload: "/costo",
-                        socketUrl: "http://localhost:5005"
-                    },
-                    null
-                );
-            }),
-            t.insertBefore(e, t.firstChild);
-        })();
-    </script>
+
 </body>
 
 </html>
