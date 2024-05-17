@@ -6,7 +6,7 @@
     <link rel="icon" href="favicon.ico">
     <!-- general meta data -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name=robots content="index,follow">
     <meta name="description" content="Reinventar Tandil es una Asociación Civil sin fines de lucro, no gubernamental.">
     <meta name="keywords" content="Reinventar Tandil, Reinventar, Tandil, ONG, Asociación Civil, Hockey">
@@ -41,6 +41,7 @@
     </style>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
@@ -55,57 +56,63 @@
     <link rel="stylesheet" href="css/activities.css">
     <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="css/pumitas.css">
-
-
+    <link rel="stylesheet" href="css/chat.css">
     <!-- FONT AWESOME -->
-    <script src="https://kit.fontawesome.com/c5d8d8beeb.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c5d8d8beeb.js " crossorigin="anonymous "></script>
+    <!-- este style es deberiamos cambiar para nuestro gusto -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <!--crear identificadores únicos universales -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <!--manipulación de fechas y horas, mas que anda para el date.now y cosas asi -->
+    <script src="./JS/backRasa.js"></script>
+    <!-- donde mas vamos a sufrir -->
 
 </head>
 
 <body>
     <!-- NAVIGATION -->
-    <nav class="navbar" itemprop="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <ul class="navbar_menu">
-            <li class="navbar_logo" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <a href="#" itemprop="item"><img src="img/Logo.png" alt="logo" id="navbar_logo" /></a>
+    <nav class="navbar " itemprop="breadcrumb " itemscope itemtype="https://schema.org/BreadcrumbList ">
+        <ul class="navbar_menu ">
+            <li class="navbar_logo " itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem ">
+                <a href="# " itemprop="item "><img src="img/Logo.png " alt="logo " id="navbar_logo " /></a>
             </li>
-            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#us" itemprop="item">QUIÉNES SOMOS</a></li>
-            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#activities" itemprop="item">ACTIVIDADES</a></li>
-            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#news" itemprop="item">NOTICIAS</a></li>
-            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">HACÉ UN DONATIVO AHORA</a></li>
-            <li class="navbar_item navbar_button" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_contact_button" href="#contactUS" itemprop="item">CONTACTANOS</a></li>
-            <li class="navbar_toggle" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><i class="fas fa-bars"></i></a></li>
+            <li class="navbar_item " itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem "><a href="#us " itemprop="item ">QUIÉNES SOMOS</a></li>
+            <li class="navbar_item " itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem "><a href="#activities " itemprop="item ">ACTIVIDADES</a></li>
+            <li class="navbar_item " itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem "><a href="#news " itemprop="item ">NOTICIAS</a></li>
+            <li class="navbar_item " itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem "><a class="navbar_donate_button " data-toggle="modal " data-target="#exampleModal " itemprop="item ">HACÉ UN DONATIVO AHORA</a></li>
+            <li class="navbar_item navbar_button " itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem "><a class="navbar_contact_button " href="#contactUS " itemprop="item ">CONTACTANOS</a></li>
+            <li class="navbar_toggle " itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem "><a href="# " itemprop="item "><i class="fas fa-bars "></i></a></li>
         </ul>
     </nav>
 
     <!-- WELCOME -->
-    <article itemscope itemtype="http://schema.org/Article" class="welcome">
-        <section rel="author" itemprop="author" itemscope itemtype="https://schema.org/Person" class="welcome_rectangle">
-            <h1 itemprop="headline">EDUCAMOS A TRAVÉS DEL DEPORTE CON VALORES</h1>
+    <article itemscope itemtype="http://schema.org/Article " class="welcome ">
+        <section rel="author " itemprop="author " itemscope itemtype="https://schema.org/Person " class="welcome_rectangle ">
+            <h1 itemprop="headline ">EDUCAMOS A TRAVÉS DEL DEPORTE CON VALORES</h1>
             <p>FORMANDO LIDERES POSITIVOS</p>
         </section>
-        <a data-toggle="modal" data-target="#exampleModal" itemprop="item">
-            <button class="welcome_button">QUIERO DONAR</button>
+        <a data-toggle="modal " data-target="#exampleModal " itemprop="item ">
+            <button class="welcome_button ">QUIERO DONAR</button>
         </a>
     </article>
 
     <!-- US -->
-    <section class="us" id="us">
-        <h2><span class="us_underline">Quié</span>nes somos</h2>
-        <article class="us_flex_article">
-            <div class="us_text">Somos una Asociación Civil sin fines de lucro no gubernamental que nació en el año 2005, de la mano de Catalina Granel, en la ciudad de Tandil en el barrio Las Tunitas. <br> Tenemos como propósito promover el desarrollo y superación intelectual,
+    <section class="us " id="us ">
+        <h2><span class="us_underline ">Quié</span>nes somos</h2>
+        <article class="us_flex_article ">
+            <div class="us_text ">Somos una Asociación Civil sin fines de lucro no gubernamental que nació en el año 2005, de la mano de Catalina Granel, en la ciudad de Tandil en el barrio Las Tunitas. <br> Tenemos como propósito promover el desarrollo y superación intelectual,
                 cultural, deportivo y educativo, orientados hacia la inclusión social.<br> Para ello ofrecemos un espacio para niños y jóvenes, a través de la práctica del Hockey y del deporte con valores. Potenciamos sus capacidades positivas, fomentamos
                 hábitos de vida saludable y trabajamos sobre la apropiación del compromiso, la responsabilidad y el respeto como valores para la vida.
             </div>
-            <div class="us_img_container">
-                <img class="us_img" src="img/niña_sonriendo.png" alt="foto de una niña sonriendo">
+            <div class="us_img_container ">
+                <img class="us_img " src="img/niña_sonriendo.png " alt="foto de una niña sonriendo ">
             </div>
         </article>
-        <article class="us_flex_article">
-            <div class="us_img_container">
-                <img class="us_img" src="img/niñas_jugando_hockey.jpg" alt="foto de niñas jugando al hockey">
+        <article class="us_flex_article ">
+            <div class="us_img_container ">
+                <img class="us_img " src="img/niñas_jugando_hockey.jpg " alt="foto de niñas jugando al hockey ">
             </div>
-            <div class="us_text">Acompañamos a cada niño y joven en su trayectoria escolar enseñando caminos y alternativas posibles para el logro de sus sueños desde la importancia del esfuerzo y el estudio. Construyendo así un lugar de referencia significativo creado por
+            <div class="us_text ">Acompañamos a cada niño y joven en su trayectoria escolar enseñando caminos y alternativas posibles para el logro de sus sueños desde la importancia del esfuerzo y el estudio. Construyendo así un lugar de referencia significativo creado por
                 sus protagonistas.<br> Estamos decididos a crecer continuando nuestra tarea integrados a la comunidad y atentos a las necesidades del barrio.<br> Llevamos adelante este proyecto: voluntarios organizados en distintas áreas de responsabilidad
                 y jóvenes líderes que se formaron en REINVENTAR.<br>
             </div>
@@ -113,51 +120,126 @@
     </section>
 
     <!-- BANNER -->
-    <section class="banner" itemscope itemtype=http://schema.org/Article>
-        <span class="banner_image" itemscope itemtype=https://schema.org/ImageObject><img src="img/banner.svg" alt="Quote Image"></img></span>
-        <h2 class="banner_title banner_title_light" itemprop=headline>EL DEPORTE COMO RECURSO PARA APROPIARSE DE UN ESTILO DE VIDA</h2>
-        <h2 class="banner_title banner_title_strong" itemprop=headline>PROMOVIENDO LA SUPERACIÓN PERSONAL Y COMUNITARIA</h2>
+    <section class="banner " itemscope itemtype=http://schema.org/Article>
+        <span class="banner_image " itemscope itemtype=https://schema.org/ImageObject><img src="img/banner.svg " alt="Quote Image "></img></span>
+        <h2 class="banner_title banner_title_light " itemprop=headline>EL DEPORTE COMO RECURSO PARA APROPIARSE DE UN ESTILO DE VIDA</h2>
+        <h2 class="banner_title banner_title_strong " itemprop=headline>PROMOVIENDO LA SUPERACIÓN PERSONAL Y COMUNITARIA</h2>
     </section>
     <!-- ACTIVITIES -->
-    <section id="activities" class="activities" itemscope itemtype=http://schema.org/Article>
-        <h2 class="activities_title"><span class="activities_underline">Act</span>ividades</h2>
-        <div class="activities_cards">
-            <div id="rasaWebchatPro"></div>
-            <div class="activities_card_section_up">
-                <div class="activity_left_up">
-                    <h2 class="activity_card_title">HOCKEY</h2>
-                    <div class="activity_card_image"><img class="activity_image" src="img/hockey.png" itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey"></div>
-                    <div class="activity_card_text_container">
-                        <p class="activity_card_text">Práctica deportiva mixta por grupos de edad, respetando los horarios escolares.</p>
+    <section id="activities " class="activities " itemscope itemtype=http://schema.org/Article>
+        <h2 class="activities_title "><span class="activities_underline ">Act</span>ividades</h2>
+        <div class="activities_cards ">
+            <div id="rasaWebchatPro "></div>
+            <div class="activities_card_section_up ">
+                <div class="activity_left_up ">
+                    <h2 class="activity_card_title ">HOCKEY</h2>
+                    <div class="activity_card_image "><img class="activity_image " src="img/hockey.png " itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey "></div>
+                    <div class="activity_card_text_container ">
+                        <p class="activity_card_text ">Práctica deportiva mixta por grupos de edad, respetando los horarios escolares.</p>
                     </div>
                 </div>
-                <div class="activity_right_up">
-                    <h2 class="activity_card_title">ACOMPAÑAMIENTO EDUCATIVO</h2>
-                    <div class="activity_card_image"><img class="activity_image" src="img\open-book.png" itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey"></div>
-                    <div class="activity_card_text_container">
-                        <p class="activity_card_text">Espacios para estimular la lectura, acompañar la trayectoria escolar y el compromiso con el estudio.</p>
+                <div class="activity_right_up ">
+                    <h2 class="activity_card_title ">ACOMPAÑAMIENTO EDUCATIVO</h2>
+                    <div class="activity_card_image "><img class="activity_image " src="img\open-book.png " itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey "></div>
+                    <div class="activity_card_text_container ">
+                        <p class="activity_card_text ">Espacios para estimular la lectura, acompañar la trayectoria escolar y el compromiso con el estudio.</p>
                     </div>
                 </div>
             </div>
-            <div class="activities_card_section_down">
-                <div class="activity_left_down">
-                    <h2 class="activity_card_title">TALLER DE DESARROLLO <br>HUMANO</h2>
-                    <div class="activity_card_image"><img class="activity_image" src="img\valores.png" itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey"></div>
-                    <div class="activity_card_text_container">
-                        <p class="activity_card_text">Desarrollo de valores como el respeto, el compromiso y la responsabilidad, a través del abordaje de problemáticas sociales, acompañando este proceso con ternura y firmeza.</p>
+            <div class="activities_card_section_down ">
+                <div class="activity_left_down ">
+                    <h2 class="activity_card_title ">TALLER DE DESARROLLO <br>HUMANO</h2>
+                    <div class="activity_card_image "><img class="activity_image " src="img\valores.png " itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey "></div>
+                    <div class="activity_card_text_container ">
+                        <p class="activity_card_text ">Desarrollo de valores como el respeto, el compromiso y la responsabilidad, a través del abordaje de problemáticas sociales, acompañando este proceso con ternura y firmeza.</p>
                     </div>
                 </div>
-                <div class="activity_right_down">
-                    <h2 class="activity_card_title">ACTIVIDADES RECREATIVAS Y <br>VIAJES</h2>
-                    <div class="activity_card_image"><img class="activity_image" src="img\tent.png" itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey"></div>
-                    <div class="activity_card_text_container">
-                        <p class="activity_card_text">Propuestas para favorecer el intercambio, enriquecer la experiencia personal, y para reconocer y celebrar a quiénes adhieren al espíritu de Reinventar.</p>
+                <div class="activity_right_down ">
+                    <h2 class="activity_card_title ">ACTIVIDADES RECREATIVAS Y <br>VIAJES</h2>
+                    <div class="activity_card_image "><img class="activity_image " src="img\tent.png " itemscope itemtype=https://schema.org/ImageObject alt="palo de hockey "></div>
+                    <div class="activity_card_text_container ">
+                        <p class="activity_card_text ">Propuestas para favorecer el intercambio, enriquecer la experiencia personal, y para reconocer y celebrar a quiénes adhieren al espíritu de Reinventar.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="Interfaz.chat-widget">
+            <!-- Contenedor principal del widget del chat -->
 
-        <style>
+            <div id="contenedor" class="chat-conteiner">
+                <!-- Contenedor de la ventana de chat -->
+
+                <div class="barra-navegacion">
+                    <!-- Barra de navegación del agente -->
+
+                    <p id="titulo-contenedor" class="chat-window-header" style="color: #dddddd; font-family: Acme, sans-serif;">
+                        <!-- Título del contenedor del chat -->
+                        Chat con Agente n
+                    </p>
+                    <button class="btn btn-primary modal-button-chat-off-mini" id="modal-button-chat-off-1" type="button">
+                        <!-- Botón para cerrar el chat en formato mini -->
+                    </button>
+                </div>
+
+                <div class="col-md-3 chat-window-column" id="chat-window-column">
+                    <!-- Columna de la ventana de chat -->
+
+                    <div id="contenedor-mensajes" class="chat-column chat-window-log">
+                        <!-- Contenedor de los mensajes -->
+
+                        <div class="from-me">
+                            <!-- Mensaje enviado por el usuario -->
+                            <div class="container-button">
+                            </div>
+                            <p><br><br>xddddddddddddddddddddddddddddddddddddddd<br><br></p>
+                            <!-- Contenido del mensaje enviado por el usuario -->
+                        </div>
+
+                        <div class="from-them">
+                            <!-- Mensaje enviado por el agente -->
+                            <div class="container-button">
+                            </div>
+                            <p>xddddd<br>xdddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                            <!-- Contenido del mensaje enviado por el agente -->
+                        </div>
+
+                        <div class="from-me">
+                            <!-- Otro mensaje enviado por el usuario -->
+                            <div class="container-button">
+                            </div>
+                            <p id="human-message-1"><br>xddddddddddddddddddddddddddddddddddddddd<br><br></p>
+                            <!-- Contenido del mensaje enviado por el usuario con un ID específico -->
+                        </div>
+
+                        <div class="from-them">
+                            <!-- Otro mensaje enviado por el agente -->
+                            <div class="container-button">
+                            </div>
+                            <p id="agent-message-x-1"><br>xc<br><br></p>
+                            <!-- Contenido del mensaje enviado por el agente con un ID específico -->
+                        </div>
+                    </div>
+
+                    <div id="input-and-button" class="input-message">
+                        <!-- Contenedor del área de entrada de mensajes y botones -->
+                        <form id="form-send-text" style="display: inline-flex; width: 100%;" autocomplete="off">
+                            <!-- Formulario para enviar texto, con display inline-flex para organizar los elementos en línea -->
+                            <input class="form-control text-input" type="text" id="input-message">
+                            <!-- Campo de entrada de texto para escribir mensajes -->
+                            <button class="btn btn-primary buttom-text-input" id="button-message" type="submit"></button>
+                            <!-- Botón para enviar el mensaje de texto -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary modal-button-chat" id="modal-button-chat" type="button"></button>
+            <!-- Botón para abrir el chat en formato modal -->
+
+            <button class="btn btn-primary modal-button-chat-off" id="modal-button-chat-off" type="button"></button>
+            <!-- Botón para cerrar el chat en formato modal -->
+        </div>
+        <!-- <style>
             .rw-widget-container {
                 display: flex;
                 position: absolute;
@@ -213,85 +295,85 @@
                     width: 100%;
                 }
             }
-        </style>
+        </style> -->
 
 
     </section>
 
     <!-- NEWS -->
-    <section id="news" class="news">
-        <h2><span class="news_underline">Not</span>icias</h2>
-        <article class="main_news">
-            <img class="left_main_news_img" src="img/main_news.jpg" alt="foto de un grupo de niñas jugadoras de hockey">
-            <div class="right_main_news_content_container">
-                <div class="main_news_title">
+    <section id="news " class="news ">
+        <h2><span class="news_underline ">Not</span>icias</h2>
+        <article class="main_news ">
+            <img class="left_main_news_img " src="img/main_news.jpg " alt="foto de un grupo de niñas jugadoras de hockey ">
+            <div class="right_main_news_content_container ">
+                <div class="main_news_title ">
                     REINVENTAR concreta una gran obra
                 </div>
-                <div class="news_text main_news_text">
+                <div class="news_text main_news_text ">
                     Con la colaboración de la comunidad tandilense, la cancha de Las Pumas luce transformada.
                 </div>
-                <div class="news_main_leer_nota_container">
-                    <a class="center_content" href="./news/news.html" rel="noopener noreferrer">
-                        <img src="img/arrow_news.svg" class="news_arrow_leer_nota" alt="Click para poder leer la nota en una página nueva">
-                        <div class="news_leer_nota">
+                <div class="news_main_leer_nota_container ">
+                    <a class="center_content " href="./news/news.html " rel="noopener noreferrer ">
+                        <img src="img/arrow_news.svg " class="news_arrow_leer_nota " alt="Click para poder leer la nota en una página nueva ">
+                        <div class="news_leer_nota ">
                             LEER NOTA
                         </div>
                     </a>
                 </div>
             </div>
         </article>
-        <section class="sub_news_section_flex">
-            <article class="sub_main_news">
-                <img class="up_sub_main_news_img" src="img/first_sub_news.jpg" alt="foto de un palo de hockey  el campo de juego">
-                <div class="bottom_sub_main_news_text_container">
-                    <div class="sub_main_news_title">
+        <section class="sub_news_section_flex ">
+            <article class="sub_main_news ">
+                <img class="up_sub_main_news_img " src="img/first_sub_news.jpg " alt="foto de un palo de hockey el campo de juego ">
+                <div class="bottom_sub_main_news_text_container ">
+                    <div class="sub_main_news_title ">
                         Una ONG que Ilumina
                     </div>
-                    <div class="news_text sub_main_news_text">
+                    <div class="news_text sub_main_news_text ">
                         Reinventar ejerce un rol social preponderante en la ciudad.
                     </div>
-                    <div class="news_leer_nota_container">
-                        <a class="center_content" href="./news/news.html" rel="noopener noreferrer">
-                            <img src="img/arrow_news.svg" class="news_arrow_leer_nota" alt="Click para poder leer la nota en una página nueva">
-                            <div class="news_leer_nota">
+                    <div class="news_leer_nota_container ">
+                        <a class="center_content " href="./news/news.html " rel="noopener noreferrer ">
+                            <img src="img/arrow_news.svg " class="news_arrow_leer_nota " alt="Click para poder leer la nota en una página nueva ">
+                            <div class="news_leer_nota ">
                                 LEER NOTA
                             </div>
                         </a>
                     </div>
                 </div>
             </article>
-            <article class="sub_main_news">
-                <img class="up_sub_main_news_img" src="img/second_sub_news.jpg" alt="foto de un palo de hockey  el campo de juego">
-                <div class="bottom_sub_main_news_text_container">
-                    <div class="sub_main_news_title">
+            <article class="sub_main_news ">
+                <img class="up_sub_main_news_img " src="img/second_sub_news.jpg " alt="foto de un palo de hockey el campo de juego ">
+                <div class="bottom_sub_main_news_text_container ">
+                    <div class="sub_main_news_title ">
                         Reconocimiento al Compromiso y Responsabilidad
                     </div>
-                    <div class="news_text sub_main_news_text">
+                    <div class="news_text sub_main_news_text ">
                         Los niños y adolescentes ya tienen su viaje de cierre de año.
                     </div>
-                    <div class="news_leer_nota_container">
-                        <a class="center_content" href="./news/news.html" rel="noopener noreferrer">
-                            <img src="img/arrow_news.svg" class="news_arrow_leer_nota" alt="Click para poder leer la nota en una página nueva">
-                            <div class="news_leer_nota">
+                    <div class="news_leer_nota_container ">
+                        <a class="center_content " href="./news/news.html " rel="noopener noreferrer ">
+                            <img src="img/arrow_news.svg " class="news_arrow_leer_nota " alt="Click para poder leer la nota en una página nueva ">
+                            <div class="news_leer_nota ">
                                 LEER NOTA
                             </div>
                         </a>
                     </div>
                 </div>
             </article>
-            <article class="sub_main_news">
-                <img class="up_sub_main_news_img" src="img/third_sub_news.jpg" alt="foto de un palo de hockey  el campo de juego">
-                <div class="bottom_sub_main_news_text_container">
-                    <div class="sub_main_news_title">
+            <article class="sub_main_news ">
+                <img class="up_sub_main_news_img " src="img/third_sub_news.jpg " alt="foto de un palo de hockey el campo de juego ">
+                <div class="bottom_sub_main_news_text_container ">
+                    <div class="sub_main_news_title ">
                         Correcaminata 'Camino Solidario' 2022
                     </div>
-                    <div class=" news_text sub_main_news_text">
+                    <div class=" news_text sub_main_news_text ">
                         Caminemos juntos a paso firme, por la salud y la educación.
                     </div>
-                    <div class="news_leer_nota_container">
-                        <a class="center_content" href="./news/news.html" rel="noopener noreferrer">
-                            <img src="img/arrow_news.svg" class="news_arrow_leer_nota" alt="Click para poder leer la nota en una página nueva">
-                            <div class="news_leer_nota">
+                    <div class="news_leer_nota_container ">
+                        <a class="center_content " href="./news/news.html " rel="noopener noreferrer ">
+                            <img src="img/arrow_news.svg " class="news_arrow_leer_nota " alt="Click para poder leer la nota en una página nueva ">
+                            <div class="news_leer_nota ">
                                 LEER NOTA
                             </div>
                         </a>
@@ -302,113 +384,117 @@
     </section>
 
     <!-- HELP US -->
-    <section id="help_us" class="help_us_flex_container">
-        <figure class="help_us_img_container">
-            <img class="help_us_img" src="img/Corazon.jpg" alt="foto de unas manos sosteniendo un corazon">
+    <section id="help_us " class="help_us_flex_container ">
+        <figure class="help_us_img_container ">
+            <img class="help_us_img " src="img/Corazon.jpg " alt="foto de unas manos sosteniendo un corazon ">
         </figure>
-        <article class="help_us_right_container">
-            <h2 class="help_us_title"><span class="help_us_underline">SUMA</span>TE</h2>
-            <div class="help_us_text1">
+        <article class="help_us_right_container ">
+            <h2 class="help_us_title "><span class="help_us_underline ">SUMA</span>TE</h2>
+            <div class="help_us_text1 ">
                 Con tu donación podemos sostener a los niños y adolescentes que participan en Reinventar, y ofrecerles oportunidades de superación.
             </div>
-            <div class="help_us_text2">
+            <div class="help_us_text2 ">
                 ¡GRACIAS A APORTES COMO EL TUYO PODEMOS MEJORAR LA REALIDAD DE MUCHOS NIÑOS!
             </div>
-            <a class="help_us_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">
-                <button class="welcome_button" id="donate_btn">QUIERO DONAR</button>
+            <a class="help_us_donate_button " data-toggle="modal " data-target="#exampleModal " itemprop="item ">
+                <button class="welcome_button " id="donate_btn ">QUIERO DONAR</button>
             </a>
         </article>
     </section>
 
     <!-- APADRINA UNA PUMITA -->
-    <section id="pumitas" class="pumitas_flex_container">
-        <figure class="pumitas_img_container">
-            <img class="pumitas_img" src="img/pumitas.png" alt="equipo de hockey">
+    <section id="pumitas " class="pumitas_flex_container ">
+        <figure class="pumitas_img_container ">
+            <img class="pumitas_img " src="img/pumitas.png " alt="equipo de hockey ">
         </figure>
-        <article class="pumitas_descripcion">
-            <p class="pumitas_title"><span class="pumitas_underline">APADRI</span>NA UNA PUMITA</p>
-            <p class="pumitas_text1"> ¡Apadriná una Pumita y haz realidad el sueño de una estudiante! Te ofrecemos la oportunidad de marcar la diferencia en la vida de una joven brindándole apoyo financiero para realizar sus estudios universitarios o terciarios.</p>
-            <p class="pumitas_text2"> SÉ EL MOTOR QUE IMPULSE EL EXITO EDUCATIVO DE NUESTRAS PUMITAS. ¡TU APOYO PUEDE CAMBIAR VIDAS!</p>
-            <a class="pumitas_colaborar_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">
-                <button class="welcome_button" id="colaborar_btn">QUIERO COLABORAR</button>
+        <article class="pumitas_descripcion ">
+            <p class="pumitas_title "><span class="pumitas_underline ">APADRI</span>NA UNA PUMITA</p>
+            <p class="pumitas_text1 "> ¡Apadriná una Pumita y haz realidad el sueño de una estudiante! Te ofrecemos la oportunidad de marcar la diferencia en la vida de una joven brindándole apoyo financiero para realizar sus estudios universitarios o terciarios.</p>
+            <p class="pumitas_text2 "> SÉ EL MOTOR QUE IMPULSE EL EXITO EDUCATIVO DE NUESTRAS PUMITAS. ¡TU APOYO PUEDE CAMBIAR VIDAS!</p>
+            <a class="pumitas_colaborar_button " data-toggle="modal " data-target="#exampleModal " itemprop="item ">
+                <button class="welcome_button " id="colaborar_btn ">QUIERO COLABORAR</button>
             </a>
         </article>
     </section>
 
 
     <!-- CONTACT  -->
-    <section id="contactUS" class="contact" itemscope itemtype=http://schema.org/Article>
-        <h2 class="contact_title" itemprop=headline><span class="contact_title_underline">Con</span>tactanos</h2>
-        <div class="contact_container">
-            <div class="contact_section_left">
-                <form class="contact_form" id="contact" action="" method="post">
-                    <div class="contact_inputs_container">
-                        <div class="contact_inputs_left">
-                            <input name="name" type="text" placeholder="Nombre *" autocomplete="off" required class="contact_input">
-                            <input name="email" type="email" placeholder="Email *" autocomplete="off" required class="contact_input">
+    <section id="contactUS " class="contact " itemscope itemtype=http://schema.org/Article>
+        <h2 class="contact_title " itemprop=headline><span class="contact_title_underline ">Con</span>tactanos</h2>
+        <div class="contact_container ">
+            <div class="contact_section_left ">
+                <form class="contact_form " id="contact " action=" " method="post ">
+                    <div class="contact_inputs_container ">
+                        <div class="contact_inputs_left ">
+                            <input name="name " type="text " placeholder="Nombre * " autocomplete="off " required class="contact_input ">
+                            <input name="email " type="email " placeholder="Email * " autocomplete="off " required class="contact_input ">
                         </div>
-                        <textarea name="message" rows="6" placeholder="Mensaje *" autocomplete="off" required class="contact_textarea"></textarea>
+                        <textarea name="message " rows="6 " placeholder="Mensaje * " autocomplete="off " required class="contact_textarea "></textarea>
                     </div>
-                    <button class="contact_button">ENVIAR</button>
+                    <button class="contact_button ">ENVIAR</button>
                 </form>
-                <iframe name="dummyframe" id="dummyframe"></iframe>
+                <iframe name="dummyframe " id="dummyframe "></iframe>
             </div>
-            <div class="contact_section_right">
-                <h3 class="contact_location_title">Donde estamos</h3>
-                <p class="contact_location_text"> Nuestra sede se ubica en Velez Sarfield 491 de la ciudad de Tandil.</p>
-                <div class="contact_whatsapp_container">
-                    <a class="contact_whatsapp_anchor" href="https://wa.me/5492494489835?text=Hola! me comunicaba para" target="_blank"><img class="contact_whatsapp_logo" src="img/whatsapp_logo.png" itemscope itemtype=https://schema.org/ImageObject alt="Whatsapp Logo"></img>
+            <div class="contact_section_right ">
+                <h3 class="contact_location_title ">Donde estamos</h3>
+                <p class="contact_location_text "> Nuestra sede se ubica en Velez Sarfield 491 de la ciudad de Tandil.</p>
+                <div class="contact_whatsapp_container ">
+                    <a class="contact_whatsapp_anchor " href="https://wa.me/5492494489835?text=Hola! me comunicaba para " target="_blank "><img class="contact_whatsapp_logo " src="img/whatsapp_logo.png
+        " itemscope itemtype=https://schema.org/ImageObject alt="Whatsapp Logo "></img>
                     </a>
-                    <a class="contact_whatsapp_anchor" href="https://wa.me/5492494489835?text=Hola! me comunicaba para" target="_blank">+54 9 2494 489835</a>
+                    <a class="contact_whatsapp_anchor " href="https://wa.me/5492494489835?text=Hola! me comunicaba para " target="_blank ">+54 9 2494 489835</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer_first_section">
-            <div class="footer_first_section_right">
-                <img class="footer_reinventar_logo" src="img/logo_footer.png" itemscope itemtype=https://schema.org/ImageObject alt="Intelifaz Logo"></img>
-                <ul class="footer_list">
-                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="footer_list_item">
-                        <a href="#us" itemprop="item" class="footer_list_anchor">
-                            <span itemprop="name" class="footer_list_text">QUIÉNES SOMOS</span>
+    <footer class="footer ">
+        <div class="footer_first_section ">
+            <div class="footer_first_section_right ">
+                <img class="footer_reinventar_logo " src="img/logo_footer.png " itemscope itemtype=https://schema.org/ImageObject alt="Intelifaz Logo "></img>
+                <ul class="footer_list ">
+                    <li itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem " class="footer_list_item ">
+                        <a href="#us " itemprop="item " class="footer_list_anchor ">
+                            <span itemprop="name " class="footer_list_text ">QUIÉNES SOMOS</span>
                         </a>
                     </li>
-                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="footer_list_item">
-                        <a href="#activities" itemprop="item" class="footer_list_anchor">
-                            <span itemprop="name" class="footer_list_text">ACTIVIDADES</span>
+                    <li itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem " class="footer_list_item ">
+                        <a href="#activities " itemprop="item " class="footer_list_anchor ">
+                            <span itemprop="name " class="footer_list_text ">ACTIVIDADES</span>
                         </a>
                     </li>
-                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="footer_list_item">
-                        <a href="#news" itemprop="item" class="footer_list_anchor">
-                            <span itemprop="name" class="footer_list_text">NOTICIAS</span>
+                    <li itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem " class="footer_list_item ">
+                        <a href="#news " itemprop="item " class="footer_list_anchor ">
+                            <span itemprop="name " class="footer_list_text ">NOTICIAS</span>
                         </a>
                     </li>
-                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="footer_list_item">
-                        <a data-toggle="modal" data-target="#exampleModal" itemprop="item" class="footer_list_anchor">
-                            <span itemprop="name" class="footer_list_text">HACÉ UN DONATIVO AHORA</span>
+                    <li itemprop="itemListElement " itemscope itemtype="http://schema.org/ListItem " class="footer_list_item ">
+                        <a data-toggle="modal " data-target="#exampleModal " itemprop="item " class="footer_list_anchor ">
+                            <span itemprop="name " class="footer_list_text ">HACÉ UN DONATIVO AHORA</span>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="footer_social_media">
+            <div class="footer_social_media ">
                 <p>Seguinos</p>
-                <a class="footer_social_media_anchor" href="https://www.facebook.com/reinventar.tandil" target="_blank"><img class="footer_social_media_logo" src="img/facebook_logo.png" itemscope itemtype=https://schema.org/ImageObject alt="Reinventar Facebook"></img>
+                <a class="footer_social_media_anchor " href="https://www.facebook.com/reinventar.tandil " target="_blank "><img class="footer_social_media_logo " src="img/facebook_logo.png " itemscope itemtype=https://schema.org/ImageObject alt="Reinventar
+        Facebook "></img>
                 </a>
-                <a class="footer_social_media_anchor" href="https://www.instagram.com/reinventartandil/" target="_blank"><img class="footer_social_media_logo" src="img/instagram_logo.png" itemscope itemtype=https://schema.org/ImageObject alt="Reinventar Instagram"></img>
+                <a class="footer_social_media_anchor " href="https://www.instagram.com/reinventartandil/ " target="_blank "><img class="footer_social_media_logo " src="img/instagram_logo.png " itemscope itemtype=https://schema.org/ImageObject alt="Reinventar
+        Instagram "></img>
                 </a>
-                <a class="footer_social_media_anchor" href="https://wa.me/5492494489835?text=Hola! me comunicaba para" target="_blank"><img class="footer_social_media_logo_wa" src="img/whatsapp_logo2.png" itemscope itemtype=https://schema.org/ImageObject alt="Reinventar Whatsapp"></img>
+                <a class="footer_social_media_anchor " href="https://wa.me/5492494489835?text=Hola! me comunicaba para " target="_blank "><img class="footer_social_media_logo_wa " src="img/whatsapp_logo2.png
+        " itemscope itemtype=https://schema.org/ImageObject alt="Reinventar Whatsapp "></img>
                 </a>
             </div>
         </div>
-        <p class="footer_separator"></p>
-        <div class="footer_second_section">
-            <p class="footer_copyright">©2005-23 Reinventar. Todos los derechos reservados.</p>
-            <div class="footer_intelifaz">
-                <p class="footer_credits">El diseño de este sitio fue posible gracias a</p>
-                <a class="footer_intelifaz_anchor" href="http://www.intelifaz.com" target="_blank"><img class="footer_intelifaz_logo" src="img/intelifaz.png" itemscope itemtype=https://schema.org/ImageObject alt="Intelifaz Logo"></img>
+        <p class="footer_separator "></p>
+        <div class="footer_second_section ">
+            <p class="footer_copyright ">©2005-23 Reinventar. Todos los derechos reservados.</p>
+            <div class="footer_intelifaz ">
+                <p class="footer_credits ">El diseño de este sitio fue posible gracias a</p>
+                <a class="footer_intelifaz_anchor " href="http://www.intelifaz.com " target="_blank "><img class="footer_intelifaz_logo " src="img/intelifaz.png " itemscope itemtype=https://schema.org/ImageObject alt="Intelifaz Logo "></img>
                 </a>
             </div>
         </div>
@@ -416,29 +502,31 @@
 
     <!-- MODAL -->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">HACÉ UN DONATIVO AHORA</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					    <span aria-hidden="true">&times;</span>
+    <div class="modal fade " id="exampleModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
+        <div class="modal-dialog " role="document ">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <h5 class="modal-title " id="exampleModalLabel ">HACÉ UN DONATIVO AHORA</h5>
+                    <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+					    <span aria-hidden="true ">&times;</span>
 					</button>
                 </div>
-                <div class="modal-body">
-                    <p class="giftModalText">SI DESEAS HACER UN DONATIVO PODES CONTACTARTE CON CATALINA GRANEL AL +542494489835 (LLAMADA O WHATSAPP) O ENVIAR UN EMAIL A INFO@REINVENTARTANDIL.COM</p>
-                    <p class="giftModalText">¡GRACIAS!</p>
-                    <p class="giftModalText">EQUIPO REINVENTAR TANDIL</p>
+                <div class="modal-body ">
+                    <p class="giftModalText ">SI DESEAS HACER UN DONATIVO PODES CONTACTARTE CON CATALINA GRANEL AL +542494489835 (LLAMADA O WHATSAPP) O ENVIAR UN EMAIL A INFO@REINVENTARTANDIL.COM</p>
+                    <p class="giftModalText ">¡GRACIAS!</p>
+                    <p class="giftModalText ">EQUIPO REINVENTAR TANDIL</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="./js/activities.js"></script>
-    <script src="./js/navbar.js"></script>
-    <script src="./js/contact.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="./js/activities.js "></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/Chat.js "></script>
+    <script src="./js/navbar.js "></script>
+    <script src="./js/contact.js "></script>
+    <script src="js/jquery.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
 
 </body>
 
