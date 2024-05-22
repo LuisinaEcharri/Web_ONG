@@ -72,6 +72,7 @@
 
     async function sendMessageSilence(message) {
         console.log("Enviando mensaje de silencio", message)
+        console.log("actividad que envio", actividad)
         const response = await backend.sendMessageToAgent(message, userId) //envia el mensaje al agente
         console.log(response)
         let messageResponse = {

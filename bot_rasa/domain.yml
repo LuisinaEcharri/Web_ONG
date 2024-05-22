@@ -20,7 +20,10 @@ intents:
 actions:
   - action_inicio
   - horarios_hockey
+  - horarios_todos
   - action_informacion
+  - llevar_cosas
+  - duracion_todos
 
 slots: 
   hockey: 
@@ -74,41 +77,20 @@ responses:
   utter_mixto:
   - text: "Si, son mixtas"
 
-  utter_horario_musica:
-  - text: "Viernes 14:30"
-
-  utter_horario_arte:
-  - text: "Martes 18:30"
-
-  utter_horario_apoyo:
-  - text: "Martes 17:15"
-
-  utter_preguntar_edad:
-  - text: "cuantos años tenes?"
-
   utter_obligatorio:
   - text: "Si, ya que nos interesa el desarrollo humano de cada alumno"
 
   utter_becas:
   - text: "Tenemos becas, llamanos al 2494-489835"
 
-  utter_duracion_hockey:
-  - text: "Una hora y media, ya que es conjunto con el taller de valores"
-
-  utter_duracion_valores:
-  - text: "Una hora y media, ya que es conjunto con hockey"
-
-  utter_duracion_hora:
-  - text: "Una hora "
-
-  utter_materiales_nada:
-  - text: "No hay que llevar nada"
-
-  utter_materiales_apoyo:
-  - text: "La mochila del colegio"
-
   utter_desconocido:
   - text: "no entiendo lo que me decis, ¿podrias repetirlo?"
+
+  utter_despedida:
+  - text: "adios!"
+  
+  utter_saludo:
+  - text: "Hola"
 
 session_config:
   session_expiration_time: 60
