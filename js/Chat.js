@@ -90,7 +90,7 @@
     btnClose.addEventListener('click', ((e) => {
         e.preventDefault()
         chat.style.display = "none";
-        btnOpen.style.display = "inline-block";
+        btnOpen.style.display = "none";
         btnClose.style.display = "none";
         loadConversation();
     }));
@@ -99,7 +99,7 @@
         e.preventDefault()
         clearChatMessages();
         chat.style.display = "none";
-        btnOpen.style.display = "inline-block";
+        btnOpen.style.display = "none";
         btnClose.style.display = "none";
         loadConversation();
     }));
