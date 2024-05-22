@@ -24,8 +24,8 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, .12);
     /* align-self: flex-end; */
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 3px;
 }
 
 .container-button {
@@ -41,10 +41,11 @@
     flex-direction: column;
     max-height: 1150px;
     height: 1150px;
-    background: aqua;
+    background-color: #e6e3e3;
     width: 1050px;
-    border: solid orange;
+    border: 1px solid #0179D3;
     position: absolute;
+    border-radius: 15px;
 }
 
 .chat-window-header {
@@ -54,10 +55,10 @@
     align-self: flex-start;
     flex-grow: 1;
     margin: 0;
-    color: #ff00bb;
-    font-family: Acme, sans-serif;
-    margin-left: 3px;
-    margin-top: 2px;
+    color: #0179D3;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 6px;
+    margin-top: 14px;
 }
 
 .chat-window-log p {
@@ -70,7 +71,6 @@
     white-space: normal;
     margin: 1px;
     overflow-x: auto;
-    background-color: green;
 }
 
 #input-message {
@@ -78,7 +78,6 @@
 }
 
 #input-and-button {
-    background-color: coral;
     padding: 0;
     margin: 0;
     position: absolute;
@@ -96,7 +95,7 @@
 .barra-navegacion {
     display: flex;
     height: 5%;
-    background-color: rgb(0, 255, 55);
+    border-bottom: 2px solid #0179D3;
 }
 
 .chat-window-column {
@@ -104,9 +103,8 @@
     flex-direction: column;
     width: inherit;
     height: 95%;
-    background-color: red;
+    background-color: #e6e3e3;
     padding: 0;
-    border: 3px solid violet;
 }
 
 #Interfaz.chat-widget {
@@ -132,7 +130,7 @@
     flex-grow: 1;
     max-height: 90%;
     overflow-y: scroll;
-    background-color: #f6ff00;
+    background-color: #e6e3e3;
     border-radius: .25rem;
     display: flex;
     flex-direction: column;
@@ -149,7 +147,7 @@
     width: 80%;
     position: relative;
     align-self: flex-end;
-    background-color: #248bf5;
+    background-color: #0179D3;
     color: #fff;
     margin: 2.5px;
 }
@@ -157,7 +155,7 @@
 #form-send-text {
     width: 98%;
     height: 100%;
-    background-color: burlywood;
+    background-color: #0179D3;
 }
 
 .from-them>p {
@@ -169,12 +167,12 @@
     width: 80%;
     position: relative;
     align-items: flex-start;
-    background-color: #e5e5ea;
+    background-color: #ffffff;
     color: #000;
     margin: 2.5px;
 }
 
-.modal-button-chat {
+#modal-button-chat {
     background-image: url(../img/chatbot-icon.svg);
     height: 45px;
     width: 45px;
