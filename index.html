@@ -126,9 +126,85 @@
         <h2 class="banner_title banner_title_strong " itemprop=headline>PROMOVIENDO LA SUPERACIÓN PERSONAL Y COMUNITARIA</h2>
     </section>
     <!-- ACTIVITIES -->
-    <section id="activities " class="activities " itemscope itemtype=http://schema.org/Article>
-        <h2 class="activities_title "><span class="activities_underline ">Act</span>ividades</h2>
-        <div class="activities_cards ">
+    <section id="activities" class="activities " itemscope itemtype=http://schema.org/Article>
+        <h2 class="activities_title"><span class="activities_underline">Act</span>ividades</h2>
+        <div class="activities_cards">
+            <div id="Interfaz.chat-widget">
+                <!-- Contenedor principal del widget del chat -->
+    
+                <div id="contenedor" class="chat-conteiner">
+                    <!-- Contenedor de la ventana de chat -->
+    
+                    <div class="barra-navegacion">
+                        <!-- Barra de navegación del agente -->
+    
+                        <p id="titulo-contenedor" class="chat-window-header">
+                            <!-- Título del contenedor del chat -->
+                            Chat con Agente n
+                        </p>
+                        <button class="btn btn-primary modal-button-chat-off-mini" id="modal-button-chat-off-1" type="button">❌</button>
+                            <!-- Botón para cerrar el chat en formato mini -->
+                        
+                    </div>
+    
+                    <div class="col-md-3 chat-window-column" id="chat-window-column">
+                        <!-- Columna de la ventana de chat -->
+    
+                        <div id="contenedor-mensajes" class="chat-column chat-window-log">
+                            <!-- Contenedor de los mensajes -->
+    
+                            <div class="from-me">
+                                <!-- Mensaje enviado por el usuario -->
+                                <div class="container-button">
+                                </div>
+                                <p><br><br>xddddddddddddddddddddddddddddddddddddddd<br><br></p>
+                                <!-- Contenido del mensaje enviado por el usuario -->
+                            </div>
+    
+                            <div class="from-them">
+                                <!-- Mensaje enviado por el agente -->
+                                <div class="container-button">
+                                </div>
+                                <p>xddddd<br>xdddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                                <!-- Contenido del mensaje enviado por el agente -->
+                            </div>
+    
+                            <div class="from-me">
+                                <!-- Otro mensaje enviado por el usuario -->
+                                <div class="container-button">
+                                </div>
+                                <p id="human-message-1"><br>xddddddddddddddddddddddddddddddddddddddd<br><br></p>
+                                <!-- Contenido del mensaje enviado por el usuario con un ID específico -->
+                            </div>
+    
+                            <div class="from-them">
+                                <!-- Otro mensaje enviado por el agente -->
+                                <div class="container-button">
+                                </div>
+                                <p id="agent-message-x-1"><br>xc<br><br></p>
+                                <!-- Contenido del mensaje enviado por el agente con un ID específico -->
+                            </div>
+                        </div>
+    
+                        <div id="input-and-button" class="input-message">
+                            <!-- Contenedor del área de entrada de mensajes y botones -->
+                            <form id="form-send-text" style="display: inline-flex; width: 100%; height: 100%; padding: 0;" autocomplete="off">
+                                <!-- Formulario para enviar texto, con display inline-flex para organizar los elementos en línea -->
+                                <input class="form-control text-input" type="text" id="input-message">
+                                <!-- Campo de entrada de texto para escribir mensajes -->
+                                <button class="btn btn-primary buttom-text-input" id="button-message" type="submit">➜</button>
+                                <!-- Botón para enviar el mensaje de texto -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="btn btn-primary modal-button-chat" id="modal-button-chat" type="button"></button>
+                <!-- Botón para abrir el chat en formato modal -->
+    
+                <button class="btn btn-primary modal-button-chat-off" id="modal-button-chat-off" type="button"></button>
+                <!-- Botón para cerrar el chat en formato modal -->
+            </div>
             <div id="rasaWebchatPro "></div>
             <div class="activities_card_section_up ">
                 <div class="activity_left_up ">
@@ -163,82 +239,7 @@
                 </div>
             </div>
         </div>
-        <div id="Interfaz.chat-widget">
-            <!-- Contenedor principal del widget del chat -->
-
-            <div id="contenedor" class="chat-conteiner">
-                <!-- Contenedor de la ventana de chat -->
-
-                <div class="barra-navegacion">
-                    <!-- Barra de navegación del agente -->
-
-                    <p id="titulo-contenedor" class="chat-window-header" style="color: #dddddd; font-family: Acme, sans-serif;">
-                        <!-- Título del contenedor del chat -->
-                        Chat con Agente n
-                    </p>
-                    <button class="btn btn-primary modal-button-chat-off-mini" id="modal-button-chat-off-1" type="button">
-                        <!-- Botón para cerrar el chat en formato mini -->
-                    </button>
-                </div>
-
-                <div class="col-md-3 chat-window-column" id="chat-window-column">
-                    <!-- Columna de la ventana de chat -->
-
-                    <div id="contenedor-mensajes" class="chat-column chat-window-log">
-                        <!-- Contenedor de los mensajes -->
-
-                        <div class="from-me">
-                            <!-- Mensaje enviado por el usuario -->
-                            <div class="container-button">
-                            </div>
-                            <p><br><br>xddddddddddddddddddddddddddddddddddddddd<br><br></p>
-                            <!-- Contenido del mensaje enviado por el usuario -->
-                        </div>
-
-                        <div class="from-them">
-                            <!-- Mensaje enviado por el agente -->
-                            <div class="container-button">
-                            </div>
-                            <p>xddddd<br>xdddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                            <!-- Contenido del mensaje enviado por el agente -->
-                        </div>
-
-                        <div class="from-me">
-                            <!-- Otro mensaje enviado por el usuario -->
-                            <div class="container-button">
-                            </div>
-                            <p id="human-message-1"><br>xddddddddddddddddddddddddddddddddddddddd<br><br></p>
-                            <!-- Contenido del mensaje enviado por el usuario con un ID específico -->
-                        </div>
-
-                        <div class="from-them">
-                            <!-- Otro mensaje enviado por el agente -->
-                            <div class="container-button">
-                            </div>
-                            <p id="agent-message-x-1"><br>xc<br><br></p>
-                            <!-- Contenido del mensaje enviado por el agente con un ID específico -->
-                        </div>
-                    </div>
-
-                    <div id="input-and-button" class="input-message">
-                        <!-- Contenedor del área de entrada de mensajes y botones -->
-                        <form id="form-send-text" style="display: inline-flex; width: 100%;" autocomplete="off">
-                            <!-- Formulario para enviar texto, con display inline-flex para organizar los elementos en línea -->
-                            <input class="form-control text-input" type="text" id="input-message">
-                            <!-- Campo de entrada de texto para escribir mensajes -->
-                            <button class="btn btn-primary buttom-text-input" id="button-message" type="submit"></button>
-                            <!-- Botón para enviar el mensaje de texto -->
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn btn-primary modal-button-chat" id="modal-button-chat" type="button"></button>
-            <!-- Botón para abrir el chat en formato modal -->
-
-            <button class="btn btn-primary modal-button-chat-off" id="modal-button-chat-off" type="button"></button>
-            <!-- Botón para cerrar el chat en formato modal -->
-        </div>
+        
         <!-- <style>
             .rw-widget-container {
                 display: flex;

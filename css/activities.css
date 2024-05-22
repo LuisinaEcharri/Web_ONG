@@ -33,6 +33,7 @@
     height: 68%;
     flex-direction: column;
     max-width: 1050px;
+    position: relative;
 }
 
 .activities_card_section_up, .activities_card_section_down{

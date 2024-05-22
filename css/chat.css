@@ -1,6 +1,8 @@
-.buttom-text-input {
-    width: 15%;
+#button-message {
+    width: 10%;
+    height: auto;
     background-image: url(../img/sendbutton.svg) no-repeat;
+    margin: 0;
 }
 
 .modal-button-chat-off {
@@ -20,7 +22,10 @@
     height: 20px;
     border-radius: 2pc;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .12);
-    align-self: flex-end;
+    /* align-self: flex-end; */
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .container-button {
@@ -34,20 +39,25 @@
 .chat-conteiner {
     display: none;
     flex-direction: column;
-    max-height: 70vh;
-    height: 70vh;
-    background: #1e90ff;
-    width: 250px;
-    border: solid;
+    max-height: 1150px;
+    height: 1150px;
+    background: aqua;
+    width: 1050px;
+    border: solid orange;
+    position: absolute;
 }
 
 .chat-window-header {
-    font-size: 15px;
+    font-size: 20px;
     text-align: initial;
-    font-weight: 700;
+    font-weight: 600;
     align-self: flex-start;
     flex-grow: 1;
     margin: 0;
+    color: #ff00bb;
+    font-family: Acme, sans-serif;
+    margin-left: 3px;
+    margin-top: 2px;
 }
 
 .chat-window-log p {
@@ -58,12 +68,22 @@
     word-wrap: break-word;
     font-size: small;
     white-space: normal;
-    margin: 0;
+    margin: 1px;
     overflow-x: auto;
+    background-color: green;
 }
 
-.text-input {
-    width: 87%;
+#input-message {
+    width: 90%;
+}
+
+#input-and-button {
+    background-color: coral;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .buttom-text-input {
@@ -75,13 +95,18 @@
 
 .barra-navegacion {
     display: flex;
+    height: 5%;
+    background-color: rgb(0, 255, 55);
 }
 
 .chat-window-column {
     display: flex;
     flex-direction: column;
     width: inherit;
-    height: inherit;
+    height: 95%;
+    background-color: red;
+    padding: 0;
+    border: 3px solid violet;
 }
 
 #Interfaz.chat-widget {
@@ -89,7 +114,7 @@
     right: 0;
     margin-right: 2.5%;
     bottom: 0;
-    margin-bottom: 2%;
+    margin-bottom: 780px;
 }
 
 .btn_close {
@@ -105,18 +130,18 @@
 .chat-window-log {
     justify-content: initial;
     flex-grow: 1;
-    max-height: calc(100% - 65px);
+    max-height: 90%;
     overflow-y: scroll;
-    background-color: #cddff9;
-    border: 1px solid #e5e5ea;
+    background-color: #f6ff00;
     border-radius: .25rem;
     display: flex;
     flex-direction: column;
     font-family: SanFrancisco;
     font-size: 1rem;
-    max-width: 600px;
+    max-width: 100%;
     padding: .5rem 1.5rem;
-    width: 98%;
+    width: 97%;
+    position: relative;
 }
 
 .from-me {
@@ -126,10 +151,13 @@
     align-self: flex-end;
     background-color: #248bf5;
     color: #fff;
+    margin: 2.5px;
 }
 
-.form-send-text {
+#form-send-text {
     width: 98%;
+    height: 100%;
+    background-color: burlywood;
 }
 
 .from-them>p {
@@ -143,6 +171,7 @@
     align-items: flex-start;
     background-color: #e5e5ea;
     color: #000;
+    margin: 2.5px;
 }
 
 .modal-button-chat {
