@@ -1,13 +1,7 @@
 version: "3.1"
 
 intents:
-  - inicio_hockey
-  - inicio_generico
-  - inicio_actividades
-  - inicio_apoyo
-  - inicio_musica
-  - inicio_arte
-  - inicio_valores
+  - inicio
   - edad
   - saludo
   - despedida
@@ -24,10 +18,7 @@ intents:
   - animo_mal
 
 actions:
-  - inicio_actividad_actividades
-  - inicio_actividad_apoyo
-  - inicio_actividad_generico
-  - inicio_actividad_hockey
+  - action_inicio
   - horarios_hockey
   - action_informacion
 
@@ -115,27 +106,6 @@ responses:
 
   utter_materiales_apoyo:
   - text: "La mochila del colegio"
- 
-  utter_inicio_hockey:
-  - text: "Hola, ¿que te gustaria saber sobre hockey?"
-
-  utter_inicio_apoyo:
-  - text: "Hola, ¿que te gustaria saber sobre apoyo escolar?"
-
-  utter_inicio_generico:
-  - text: "Hola, brindamos talleres de valores, arte y musica ¿sobre cual te gustaria saber?"
-
-  utter_inicio_musica:
-  - text: "¿Que te gustaria saber sobre el taller de musica?"
-
-  utter_inicio_arte:
-  - text: "¿Que te gustaria saber sobre el taller de arte?"
-
-  utter_inicio_valores:
-  - text: "¿Que te gustaria saber sobre el taller de valores?"
-
-  utter_inicio_actividades:
-  - text: "Por el momento no hay actividades"
 
   utter_desconocido:
   - text: "no entiendo lo que me decis, ¿podrias repetirlo?"

@@ -25,41 +25,65 @@
     let messageListActivi = [];
     let messageList = [];
     let actividad = "";
+    let silenceMessage = "";
 
     activities.forEach((activity) => {
         activity.addEventListener("click", () => {
             //paso por parametro el card y el messageList correspondiente dependiendo de la actividad
             let card = activity.parentNode.parentNode;
+            let NombreTitulo
             if (card.classList.contains("activity_left_up")) {
                 messageList = messageListHockey.slice();
                 actividad = "hockey";
-                btnOpen.click();
-            } else if (card.classList.contains("activity_right_up")) {
+                NombreTitulo = "Hockey"
+                silenceMessage = "Se activo boton hockey"
+            } else if (card.classList.contains("activity_left_down")) {
                 messageList = messageListTaller.slice();
                 actividad = "generico";
-                btnOpen.click();
-            } else if (card.classList.contains("activity_left_down")) {
+                NombreTitulo = "Taller educativo"
+                silenceMessage = "Se activo boton generico"
+            } else if (card.classList.contains("activity_right_up")) {
                 messageList = messageEducativo.slice();
                 actividad = "apoyo";
-                btnOpen.click();
+                NombreTitulo = "Apoyo escolar"
+                silenceMessage = "Se activo boton apoyo"
             } else if (card.classList.contains("activity_right_down")) {
                 messageList = messageListActivi.slice();
                 actividad = "actividades";
-                btnOpen.click();
+                NombreTitulo = "Actividades recreativas"
+                silenceMessage = "Se activo boton de actividades"
             }
+            title.innerHTML = `ReInventar ${NombreTitulo}`
+            btnOpen.click();
         });
     });
 
     //un listener del boton, cuando se clickea se abre el chat
     btnOpen.addEventListener('click', (async(e) => {
         e.preventDefault() //  Esto es una práctica común para asegurarse de que el comportamiento deseado se ejecute sin interferencias.
+        sendMessageSilence(silenceMessage)
         refreshMessageList() //realmente lo carga en el chat (vista final para el usuario)
         chat.style.display = "flex";
         btnOpen.style.display = "none"
         btnClose.style.display = "flex";
         const sb = document.querySelector(".chat-window-log");
         sb.scrollTop = sb.scrollHeight;
-    })); //los estilos para css
+    }));
+
+    async function sendMessageSilence(message) {
+        console.log("Enviando mensaje de silencio", message)
+        const response = await backend.sendMessageToAgent(message, userId) //envia el mensaje al agente
+        console.log(response)
+        let messageResponse = {
+            sender: "ReInventar",
+            receiver: response[0].receiver,
+            text: response[0].text,
+            image: response[0].image,
+            timestamp: Date.now() / 1000
+        };
+        messageList.push(messageResponse)
+        refreshMessageList() //actualiza la vista del chat
+    }
 
     const btnClose = document.getElementById("modal-button-chat-off");
     btnClose.addEventListener('click', ((e) => {
@@ -141,7 +165,8 @@
             if (message.text) {
                 chatMessage.querySelector("p").innerText = message.text //asigna el texto del mensaje
             } else if (message.image) {
-                chatMessage.querySelector("p").innerHTML = `<img src="${message.image}" style="width: 100%"/>` //a futuro
+                chatMessage.querySelector("p").innerHTML = ` < img src = "${message.image}"
+                                style = "width: 100%" / > ` //a futuro
             } else {
                 chatMessage.querySelector("p").innerHTML = "<i>Unsupported message</i>"
             }

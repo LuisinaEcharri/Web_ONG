@@ -49,90 +49,82 @@ class ActionHorario(Action):
                 dispatcher.utter_message("sabados 11:00")
 
             return []
-   
-class ActionInicioHockey(Action):
-
-   def name(self) -> Text:
-       return "inicio_actividad_hockey"
-
-   def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            print("entro hockey")
-            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
-            SlotSet("apoyo",'false')
-            SlotSet("musica",'false')
-            SlotSet("arte",'false')
-            SlotSet("valores",'false')
-            SlotSet("generico",'false')
-            SlotSet("actividades",'false')
-            return [SlotSet("hockey",'true')]
  
-class ActionInicioApoyo(Action):
-
-   def name(self) -> Text:
-       return "inicio_actividad_apoyo"
-
-   def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
-            print("entro apoyo")
-            SlotSet("hockey",'false')
-            SlotSet("musica",'false')
-            SlotSet("arte",'false')
-            SlotSet("valores",'false')
-            SlotSet("generico",'false')
-            SlotSet("actividades",'false')
-            return [SlotSet("apoyo",'true')]
-         
-class ActionInicioMusica(Action):
-
-    def name(self) -> Text:
-        return "inicio_actividad_musica"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
-            SlotSet("hockey",'false')
-            SlotSet("apoyo",'false')
-            SlotSet("arte",'false')
-            SlotSet("valores",'false')
-            SlotSet("generico",'false')
-            SlotSet("actividades",'false')
-            return [SlotSet("musica",'true')]
-
-class ActionInicioGenerico(Action):
-
-    def name(self) -> Text:
-        return "inicio_actividad_generico"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            #dispatcher.utter_message("Hola, ¿que te gustaria saber sobre hockey?")
-            SlotSet("hockey",'false')
-            SlotSet("apoyo",'false')
-            SlotSet("arte",'false')
-            SlotSet("valores",'false')
-            SlotSet("musica",'false')
-            SlotSet("actividades",'false')
-            return [SlotSet("generico",'true')]
-
-class ActionInicioActividades(Action):
-
-    def name(self) -> Text:
-        return "inicio_actividad_actividades"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            dispatcher.utter_message("Hola, por el momento no hay actividades")
-            SlotSet("hockey",'false')
-            SlotSet("apoyo",'false')
-            SlotSet("arte",'false')
-            SlotSet("valores",'false')
-            SlotSet("generico",'false')
-            SlotSet("musica",'false')
-            return [SlotSet("actividades",'true')]
-         
 class ActionInicio(Action):
+
+    hock = False 
+    apoy= False
+    gen = False
+    act = False
+    
+    def name(self) -> Text:        
+       return "action_inicio"   
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            actividad = tracker.get_slot("actividad")
+
+            if str(actividad) == "hockey":
+                ## revise si el slot hockey esta activo
+                ## cuando va de hockey a apoyo y vuelve a hockey el slot hockey se active de nuevo
+                if (self.hock):
+                    dispatcher.utter_message("Hola, volviste, que necesitas saber")
+                else:
+                    dispatcher.utter_message("Hola,¿Que te gustaria saber sobre hockey?")
+                SlotSet("apoyo",'false')
+                SlotSet("musica",'false')
+                SlotSet("arte",'false')
+                SlotSet("valores",'false')
+                SlotSet("generico",'false')
+                SlotSet("actividades",'false')
+                self.hock = True
+                return [SlotSet("hockey",'true')]
+
+            elif str(actividad) == "apoyo":
+                if (self.apoy):
+                    dispatcher.utter_message("Hola, volviste, que necesitas saber")
+                else:
+                    dispatcher.utter_message("Hola,¿Que te gustaria saber sobre el taller de apoyo escolar?")
+                SlotSet("hockey",'false')
+                SlotSet("musica",'false')
+                SlotSet("arte",'false')
+                SlotSet("valores",'false')
+                SlotSet("generico",'false')
+                SlotSet("actividades",'false')
+                self.apoy= True
+                return [SlotSet("apoyo",'true')]
+
+            elif str(actividad) == "generico":
+                if(self.gen):
+                    dispatcher.utter_message("Hola, volviste, que necesitas saber")
+                else:
+                    dispatcher.utter_message("Hola, brindamos talleres de valores, arte y musica ¿sobre cual te gustaria saber?")
+                SlotSet("hockey",'false')
+                SlotSet("musica",'false')
+                SlotSet("arte",'false')
+                SlotSet("valores",'false')
+                SlotSet("apoyo",'false')
+                SlotSet("actividades",'false')
+                self.gen = True
+                return [SlotSet("generico",'true')]
+            
+            elif str(actividad) == "actividades":
+                if (self.act):
+                    dispatcher.utter_message("Hola, volviste, que necesitas saber")
+                else:
+                    dispatcher.utter_message("Hola, por el momento no hay actividades")
+                SlotSet("hockey",'false')
+                SlotSet("musica",'false')
+                SlotSet("arte",'false')
+                SlotSet("valores",'false')
+                SlotSet("apoyo",'false')
+                SlotSet("generico",'false')
+                self.act = True
+                return [SlotSet("actividades",'true')]
+            return []
+        
+         
+class ActionInicioGenerico(Action):
 
    def name(self) -> Text:
        return "action_informacion"

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "actividad",
+    "pattern": "(\\bmusica\\b|\\barte\\b|\\bapoyo\\b|\\bhockey\\b|\\bactividades\\b|\\bvalores\\b|\\bgenerico\\b)"
+  }
+]

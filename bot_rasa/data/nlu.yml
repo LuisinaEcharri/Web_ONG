@@ -2,37 +2,14 @@ version: "3.1"
 
 nlu:
 
-- intent: inicio_hockey
+- intent: inicio
   examples: |
-    - boton que se activo hockey
-    - se activo hockey
-    - botonnnnnnnn hockey
-    - activacion de hockey
-    - boton hockey
-
-- intent: inicio_generico
-  examples: |
-    - boton que se activo generico
-    - se activo generico
-    - botonnnnnnnn generico
-    - activacion de generico
-    - boton generico   
-
-- intent: inicio_actividades
-  examples: |
-    - boton que se activo actividades
-    - se activo actividades
-    - botonnnnnnnn actividades
-    - activacion de actividades
-    - boton actividades 
-
-- intent: inicio_apoyo
-  examples: |
-    - boton que se activo apoyo
-    - se activo apoyo
-    - botonnnnnnnn apoyo
-    - activacion de apoyo
-    - boton apoyo
+    - boton que se activo [hockey](actividad)
+    - se activo [apoyo](actividad)
+    - se activo boton de  [generico](actividad)
+    - botonnnnnnnn [actividades](actividad)
+    - activacion de [hockey](actividad)
+    - boton [apoyo](actividad)
 
 - intent: edad
   examples: |
@@ -188,6 +165,8 @@ nlu:
   examples: |
     - musica
     - arte
-    - apoyo escolar
+    - apoyo 
+    - hockey
+    - actividades
     - valores
     - generico
