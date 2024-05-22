@@ -1,8 +1,8 @@
-version: "3.1"
+# version: "3.1"
 
 rules:
 
-# - rule: decir algo fijo, siempre que no entienda lo que el usuario le quiere decir
-#   steps:
-#   - intent: nlu_fallback
-#   - action: utter_desconocido
+- rule: decir algo fijo, siempre que no entienda lo que el usuario le quiere decir
+  steps:
+  - intent: nlu_fallback
+  - action: utter_desconocido

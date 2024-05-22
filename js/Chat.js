@@ -10,42 +10,116 @@
     const title = document.getElementById("titulo-contenedor")
     const chat = document.querySelector(".chat-conteiner");
     const btnOpen = document.getElementById("modal-button-chat");
-    const messageList = [] //guarda los mensajes de la conversacion
+    //const messageList = [] //guarda los mensajes de la conversacion
     const chatMessages = document.body.querySelector(".chat-column.chat-window-log");
     const userMessageTemplate = chatMessages.querySelector(".from-me").cloneNode(true) //clona el mensaje del usuario
     const agentMessageTemplate = chatMessages.querySelector(".from-them").cloneNode(true) //clona el mensaje del agente
     const btnForm = document.getElementById("form-send-text");
     const messageInput = document.getElementById("input-message")
+    let activities = document.querySelectorAll(".activity_image");
+    //let btnOpen = document.getElementById("modal-button-chat");
+    //const close = document.querySelectorAll("button.rw-launcher.rw-hide-sm");
+    let messageListHockey = [];
+    let messageListTaller = [];
+    let messageEducativo = [];
+    let messageListActivi = [];
+    let messageList = [];
+    let actividad = "";
+    let silenceMessage = "";
 
-
+    activities.forEach((activity) => {
+        activity.addEventListener("click", () => {
+            //paso por parametro el card y el messageList correspondiente dependiendo de la actividad
+            let card = activity.parentNode.parentNode;
+            let NombreTitulo
+            if (card.classList.contains("activity_left_up")) {
+                messageList = messageListHockey.slice();
+                actividad = "hockey";
+                NombreTitulo = "Hockey"
+                silenceMessage = "Se activo boton hockey"
+            } else if (card.classList.contains("activity_left_down")) {
+                messageList = messageListTaller.slice();
+                actividad = "generico";
+                NombreTitulo = "Taller educativo"
+                silenceMessage = "Se activo boton generico"
+            } else if (card.classList.contains("activity_right_up")) {
+                messageList = messageEducativo.slice();
+                actividad = "apoyo";
+                NombreTitulo = "Apoyo escolar"
+                silenceMessage = "Se activo boton apoyo"
+            } else if (card.classList.contains("activity_right_down")) {
+                messageList = messageListActivi.slice();
+                actividad = "actividades";
+                NombreTitulo = "Actividades recreativas"
+                silenceMessage = "Se activo boton de actividades"
+            }
+            title.innerHTML = `ReInventar ${NombreTitulo}`
+            btnOpen.click();
+        });
+    });
 
     //un listener del boton, cuando se clickea se abre el chat
     btnOpen.addEventListener('click', (async(e) => {
         e.preventDefault() //  Esto es una práctica común para asegurarse de que el comportamiento deseado se ejecute sin interferencias.
+        sendMessageSilence(silenceMessage)
         refreshMessageList() //realmente lo carga en el chat (vista final para el usuario)
         chat.style.display = "flex";
         btnOpen.style.display = "none"
         btnClose.style.display = "flex";
         const sb = document.querySelector(".chat-window-log");
         sb.scrollTop = sb.scrollHeight;
-    })); //los estilos para css
+    }));
+
+    async function sendMessageSilence(message) {
+        console.log("Enviando mensaje de silencio", message)
+        console.log("actividad que envio", actividad)
+        const response = await backend.sendMessageToAgent(message, userId) //envia el mensaje al agente
+        console.log(response)
+        let messageResponse = {
+            sender: "ReInventar",
+            receiver: response[0].receiver,
+            text: response[0].text,
+            image: response[0].image,
+            timestamp: Date.now() / 1000
+        };
+        messageList.push(messageResponse)
+        refreshMessageList() //actualiza la vista del chat
+    }
 
     const btnClose = document.getElementById("modal-button-chat-off");
     btnClose.addEventListener('click', ((e) => {
         e.preventDefault()
         chat.style.display = "none";
-        btnOpen.style.display = "inline-block";
+        btnOpen.style.display = "none";
         btnClose.style.display = "none";
+        loadConversation();
     }));
     const btnCloseMini = document.getElementById("modal-button-chat-off-1");
     btnCloseMini.addEventListener('click', ((e) => {
         e.preventDefault()
+        clearChatMessages();
         chat.style.display = "none";
-        btnOpen.style.display = "inline-block";
+        btnOpen.style.display = "none";
         btnClose.style.display = "none";
+        loadConversation();
     }));
 
+    async function loadConversation() {
+        if (actividad === "hockey") {
+            messageListHockey = messageList;
+            messageList = [];
+        } else if (actividad === "generico") {
+            messageListTaller = messageList;
+            messageList = [];
+        } else if (actividad === "apoyo") {
+            messageEducativo = messageList;
+            messageList = [];
+        } else if (actividad === "actividades") {
+            messageListActivi = messageList;
+            messageList = [];
+        }
 
+    }
     btnForm.addEventListener('submit', ((e) => {
         e.preventDefault();
         sendMessage(messageInput.value)
@@ -92,7 +166,8 @@
             if (message.text) {
                 chatMessage.querySelector("p").innerText = message.text //asigna el texto del mensaje
             } else if (message.image) {
-                chatMessage.querySelector("p").innerHTML = `<img src="${message.image}" style="width: 100%"/>` //a futuro
+                chatMessage.querySelector("p").innerHTML = ` < img src = "${message.image}"
+                                style = "width: 100%" / > ` //a futuro
             } else {
                 chatMessage.querySelector("p").innerHTML = "<i>Unsupported message</i>"
             }

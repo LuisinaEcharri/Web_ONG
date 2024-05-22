@@ -173,6 +173,7 @@
 }
 
 #modal-button-chat {
+    display: none;
     background-image: url(../img/chatbot-icon.svg);
     height: 45px;
     width: 45px;

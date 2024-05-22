@@ -2,64 +2,25 @@ version: "3.1"
 
 stories:
 
-- story: inicio_hockey
+- story: inicio_todos
   steps:
-  - intent: inicio_hockey
-  - action: inicio_actividad_hockey
-  - slot_was_set: 
-    - hockey: true
-  - action: utter_inicio_hockey 
+  - intent: inicio
+  - action: action_inicio
 
-
-- story: inicio_generico
+- story: inicio_todos
   steps:
-  - intent: inicio_generico
-  - action: inicio_actividad_generico
-  - action: utter_inicio_generico
-  - checkpoint: seguir_consulta2
+  - intent: despedida
+  - action: utter_despedida
 
-- story: inicio_musica
+- story: inicio_todos
   steps:
-  - checkpoint: seguir_consulta2
+  - intent: saludo
+  - action: utter_saludo
+
+- story: informacion_generico
+  steps:
   - intent: informacion
   - action: action_informacion
-  - slot_was_set: 
-    - musica: true
-  - action: utter_inicio_musica
-
-- story: inicio_arte
-  steps:
-  - checkpoint: seguir_consulta2
-  - intent: informacion
-  - action: action_informacion
-  - slot_was_set: 
-    - arte: true
-  - action: utter_inicio_arte
-
-- story: inicio_valores
-  steps:
-  - checkpoint: seguir_consulta2
-  - intent: informacion
-  - action: action_informacion
-  - slot_was_set: 
-    - valores: true
-  - action: utter_inicio_valores
-
-- story: inicio_actividades
-  steps:
-  - intent: inicio_actividades
-  - action: inicio_actividad_actividades  
-  - slot_was_set: 
-    - actividad: true
-  - action: utter_inicio_actividades
-  
-- story: inicio_apoyo
-  steps:
-  - intent: inicio_apoyo
-  - action: inicio_actividad_apoyo
-  - slot_was_set: 
-    - apoyo: true
-  - action: utter_inicio_apoyo
 
 - story: mixtas
   steps:
@@ -78,119 +39,23 @@ stories:
   - intent: obligatorio
   - action: utter_obligatorio
 
-
-
-- story: hockey duracion
+- story: duracion todos
   steps:
   - intent: duracion
-  - slot_was_set: 
-    - hockey: true
-  - action: utter_duracion_hockey
+  - action: duracion_todos
 
-- story: llevar cosas apoyo
+- story: edad
   steps:
-  - intent: llevar_algo
-  - slot_was_set: 
-    - apoyo: true
-  - action: utter_materiales_apoyo
-
-- story: valores duracion
-  steps:
-  - intent: duracion
-  - slot_was_set: 
-    - valores: true
-  - action: utter_duracion_valores
-
-
-- story: duracion una hora musica
-  steps:
-  - intent: duracion
-  - slot_was_set: 
-    - musica: true
-  - action: utter_duracion_hora
-
-
-- story: duracion una hora apoyo
-  steps:
-  - intent: duracion
-  - slot_was_set: 
-    - apoyo: true
-  - action: utter_duracion_hora
-
-- story: duracion una hora arte
-  steps:
-  - intent: duracion
-  - slot_was_set: 
-    - arte: true
-  - action: utter_duracion_hora
-
-- story: hockey_horario
-  steps:
-  - intent: dia_hora
-  - slot_was_set: 
-    - hockey: true
-  - action: utter_preguntar_edad
   - intent: edad
   - action: horarios_hockey
 
-- story: valores_horario
+- story: horario todos
   steps:
   - intent: dia_hora
-  - slot_was_set: 
-    - valores: true
-  - action: utter_preguntar_edad
-  - intent: edad
-  - action: horarios_hockey
+  - action: horarios_todos
 
-  
-- story: arte_horario
-  steps:
-  - intent: dia_hora
-  - slot_was_set: 
-    - arte: true
-  - action: utter_horario_musica
-
-- story: apoyo_horario
-  steps:
-  - intent: dia_hora
-  - slot_was_set: 
-    - apoyo: true
-  - action: utter_horario_apoyo
-
-- story: musica_horario
-  steps:
-  - intent: dia_hora
-  - slot_was_set: 
-    - musica: true
-  - action: utter_horario_musica
-
-
-- story: llevar cosas musica
+- story: llevar cosas todos
   steps:
   - intent: llevar_algo
-  - slot_was_set: 
-    - musica: true
-  - action: utter_materiales_nada
-
-- story: llevar cosas arte
-  steps:
-  - intent: llevar_algo
-  - slot_was_set: 
-    - arte: true
-  - action: utter_materiales_nada
-  
-- story: llevar cosas hockey
-  steps:
-  - intent: llevar_algo
-  - slot_was_set: 
-    - hockey: true
-  - action: utter_materiales_nada
-
-
-- story: llevar cosas valores
-  steps:
-  - intent: llevar_algo
-  - slot_was_set: 
-    - valores: true
-  - action: utter_materiales_nada
+  - action: llevar_cosas
 

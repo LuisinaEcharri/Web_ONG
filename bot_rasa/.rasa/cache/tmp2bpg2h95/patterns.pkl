@@ -1,6 +1,0 @@
-[
-  {
-    "name": "actividad",
-    "pattern": "(\\bmusica\\b|\\barte\\b|\\bapoyo\\ escolar\\b|\\bvalores\\b|\\bgenerico\\b)"
-  }
-]
