@@ -26,34 +26,6 @@ actions:
   - duracion_todos
 
 slots: 
-  hockey: 
-    mappings: []
-    type: bool
-
-  valores: 
-    mappings: []
-    type: bool
-
-  musica: 
-    mappings: []
-    type: bool
-
-  arte: 
-    mappings: []
-    type: bool
-  
-  apoyo: 
-    mappings: []
-    type: bool
-
-  generico:
-    mappings: []
-    type: bool
-
-  actividades:
-    mappings: []
-    type: bool
-
   actividad:
     type: text
     mappings: 

@@ -1,17 +1,8 @@
 # version: "3.1"
 
-# rules:
-# # - rule: despedirnos siempre que el usuario se despida
-# #   steps:
-# #   - intent: despedida
-# #   - action: utter_despedida
+rules:
 
-# # - rule: decir hola
-# #   steps:
-# #   - intent: saludo
-# #   - action: utter_saludo
-
-# - rule: decir algo fijo, siempre que no entienda lo que el usuario le quiere decir
-#   steps:
-#   - intent: nlu_fallback
-#   - action: utter_desconocido
+- rule: decir algo fijo, siempre que no entienda lo que el usuario le quiere decir
+  steps:
+  - intent: nlu_fallback
+  - action: utter_desconocido

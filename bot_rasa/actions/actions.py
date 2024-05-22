@@ -117,7 +117,7 @@ class ActionDuracionTodos(Action):
                 dispatcher.utter_message("Una hora")
             elif str(actividad) == "musica":
                 dispatcher.utter_message("Una hora")
-            elif tracker.get_slot("actividades"):
+            elif str(actividad) == "actividades":
                 dispatcher.utter_message("no hay actividades por el momento")
             elif str(actividad) == "valores":
                 dispatcher.utter_message("Una hora y media, ya que es conjunto con hockey")
