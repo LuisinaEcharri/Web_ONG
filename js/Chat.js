@@ -10,14 +10,45 @@
     const title = document.getElementById("titulo-contenedor")
     const chat = document.querySelector(".chat-conteiner");
     const btnOpen = document.getElementById("modal-button-chat");
-    const messageList = [] //guarda los mensajes de la conversacion
+    //const messageList = [] //guarda los mensajes de la conversacion
     const chatMessages = document.body.querySelector(".chat-column.chat-window-log");
     const userMessageTemplate = chatMessages.querySelector(".from-me").cloneNode(true) //clona el mensaje del usuario
     const agentMessageTemplate = chatMessages.querySelector(".from-them").cloneNode(true) //clona el mensaje del agente
     const btnForm = document.getElementById("form-send-text");
     const messageInput = document.getElementById("input-message")
+    let activities = document.querySelectorAll(".activity_image");
+    //let btnOpen = document.getElementById("modal-button-chat");
+    //const close = document.querySelectorAll("button.rw-launcher.rw-hide-sm");
+    let messageListHockey = [];
+    let messageListTaller = [];
+    let messageEducativo = [];
+    let messageListActivi = [];
+    let messageList = [];
+    let actividad = "";
 
-
+    activities.forEach((activity) => {
+        activity.addEventListener("click", () => {
+            //paso por parametro el card y el messageList correspondiente dependiendo de la actividad
+            let card = activity.parentNode.parentNode;
+            if (card.classList.contains("activity_left_up")) {
+                messageList = messageListHockey.slice();
+                actividad = "hockey";
+                btnOpen.click();
+            } else if (card.classList.contains("activity_right_up")) {
+                messageList = messageListTaller.slice();
+                actividad = "generico";
+                btnOpen.click();
+            } else if (card.classList.contains("activity_left_down")) {
+                messageList = messageEducativo.slice();
+                actividad = "apoyo";
+                btnOpen.click();
+            } else if (card.classList.contains("activity_right_down")) {
+                messageList = messageListActivi.slice();
+                actividad = "actividades";
+                btnOpen.click();
+            }
+        });
+    });
 
     //un listener del boton, cuando se clickea se abre el chat
     btnOpen.addEventListener('click', (async(e) => {
@@ -36,16 +67,34 @@
         chat.style.display = "none";
         btnOpen.style.display = "inline-block";
         btnClose.style.display = "none";
+        loadConversation();
     }));
     const btnCloseMini = document.getElementById("modal-button-chat-off-1");
     btnCloseMini.addEventListener('click', ((e) => {
         e.preventDefault()
+        clearChatMessages();
         chat.style.display = "none";
         btnOpen.style.display = "inline-block";
         btnClose.style.display = "none";
+        loadConversation();
     }));
 
+    async function loadConversation() {
+        if (actividad === "hockey") {
+            messageListHockey = messageList;
+            messageList = [];
+        } else if (actividad === "generico") {
+            messageListTaller = messageList;
+            messageList = [];
+        } else if (actividad === "apoyo") {
+            messageEducativo = messageList;
+            messageList = [];
+        } else if (actividad === "actividades") {
+            messageListActivi = messageList;
+            messageList = [];
+        }
 
+    }
     btnForm.addEventListener('submit', ((e) => {
         e.preventDefault();
         sendMessage(messageInput.value)
