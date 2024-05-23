@@ -32,7 +32,7 @@
 .footer_list_item{
     list-style: none;
     align-self: center;
-    padding: 0px 40px 0px 0px;
+    padding: 0px 15px 0px 0px;
 }
 
 .footer_list_anchor{
@@ -44,7 +44,7 @@
 }
 
 .footer_list_text{
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 17px;
     letter-spacing: 0.08em;
