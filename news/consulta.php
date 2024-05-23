@@ -1,12 +1,16 @@
 <?php
-// Datos de conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "reinvent_reinventar";
 
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$dbhost= "localhost";
+$dbuser= "root";
+$dbpass= "";
+$dbname= "reinvent_reinventar";
+// $dbhost= "149.56.87.21:3306";
+// $dbuser= "reinvent_admin";
+// $dbpass= "xu@xDR_;9kpO";
+// $dbname= "reinvent_reinventar";
+
+// Crear la conexión
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 // Verificar conexión
 if ($conn->connect_error) {

@@ -3,7 +3,11 @@
 $dbhost= "localhost";
 $dbuser= "root";
 $dbpass= "";
-$dbname= "reinventar";
+$dbname= "reinvent_reinventar";
+// $dbhost= "149.56.87.21:3306";
+// $dbuser= "reinvent_admin";
+// $dbpass= "xu@xDR_;9kpO";
+// $dbname= "reinvent_reinventar";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) 
