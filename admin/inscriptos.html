@@ -108,103 +108,32 @@
     </section>
 
     <script>
-        var inscriptos = [
-            {
-                "Nombre": "Sol Agostina",
-                "Apellido": "Spinelli",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "solagostinaspinelli@gmail.com",
-                "Fecha de inscripción": "07/05/2024",
-                "Caminante/Corredor": "Caminante"
-            },
-            {
-                "Nombre": "Maria Pia",
-                "Apellido": "Bedini Crocci",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "piabedinicrocci@gmail.com",
-                "Fecha de inscripción": "07/05/2024",
-                "Caminante/Corredor": "Corredor"
-            },
-            {
-                "Nombre": "Luisina",
-                "Apellido": "Echarri",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "luisina_echarri@hotmail.com",
-                "Fecha de inscripción": "08/05/2024",
-                "Caminante/Corredor": "Corredor"
-            },
-            {
-                "Nombre": "Agustin",
-                "Apellido": "Zucchi",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "agustinzucchi@gmail.com",
-                "Fecha de inscripción": "01/05/2024",
-                "Caminante/Corredor": "Caminante"
-            },
-            {
-                "Nombre": "Ramiro",
-                "Apellido": "Romero",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "ramarome@gmail.com",
-                "Fecha de inscripción": "08/04/2024",
-                "Caminante/Corredor": "Caminante"
-            },
-            {
-                "Nombre": "David",
-                "Apellido": "Dambrosio",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "ddambrosio@gmail.com",
-                "Fecha de inscripción": "15/04/2024",
-                "Caminante/Corredor": "Corredor"
-            },
-            {
-                "Nombre": "Paloma",
-                "Apellido": "Isern",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "paloisern@gmail.com",
-                "Fecha de inscripción": "15/03/2024",
-                "Caminante/Corredor": "Corredor"
-            },
-            {
-                "Nombre": "Sol Agostina",
-                "Apellido": "Spinelli",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "solagostinaspinelli@gmail.com",
-                "Fecha de inscripción": "07/05/2024",
-                "Caminante/Corredor": "Caminante"
-            },
-            {
-                "Nombre": "Sol Agostina",
-                "Apellido": "Spinelli",
-                "Teléfono": "2262652554",
-                "Correo electrónico": "solagostinaspinelli@gmail.com",
-                "Fecha de inscripción": "07/05/2024",
-                "Caminante/Corredor": "Caminante"
-            },
-        ];
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('inscriptos.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    var table = document.querySelector('.table tbody');
 
-        var table = document.querySelector('.table tbody');
+                    data.forEach(function (inscripto) {
+                        var row = document.createElement('tr');
 
-        // Recorrer el array de datos de usuarios
-        inscriptos.forEach(function (inscripto) {
-            // Crear una fila de tabla (tr)
-            var row = document.createElement('tr');
-
-            // Iterar sobre las propiedades del objeto usuario
-            for (var key in inscripto) {
-                if (inscripto.hasOwnProperty(key)) {
-                    // Crear una celda de tabla (td)
-                    var cell = document.createElement('td');
-                    // Asignar el valor de la propiedad como texto de la celda
-                    cell.textContent = inscripto[key];
-                    // Agregar una clase a la celda
-                    cell.classList.add('table_content');
-                    // Agregar la celda a la fila
-                    row.appendChild(cell);
-                }
-            }
-            // Agregar la fila a la tabla
-            table.appendChild(row);
+                        for (var key in inscripto) {
+                            if (inscripto.hasOwnProperty(key)) {
+                                var cell = document.createElement('td');
+                                cell.textContent = inscripto[key];
+                                cell.classList.add('table_content');
+                                row.appendChild(cell);
+                            }
+                        }
+                        table.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Fetch error:', error));
         });
     </script>
 
