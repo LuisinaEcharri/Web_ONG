@@ -61,6 +61,9 @@
     //un listener del boton, cuando se clickea se abre el chat
     btnOpen.addEventListener('click', (async(e) => {
         e.preventDefault() //  Esto es una práctica común para asegurarse de que el comportamiento deseado se ejecute sin interferencias.
+        if (messageList.length > 0) {
+            silenceMessage = silenceMessage + "again"
+        }
         sendMessageSilence(silenceMessage)
         refreshMessageList() //realmente lo carga en el chat (vista final para el usuario)
         chat.style.display = "flex";
