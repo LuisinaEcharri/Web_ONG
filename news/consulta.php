@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "test";
+$dbname = "reinvent_reinventar";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -58,21 +58,6 @@ $data = json_decode($json_data, true);
     
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <nav class="navbar" itemprop="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <ul class="navbar_menu">
-          <li class="navbar_logo" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="../index.html#" itemprop="item"><img src="../img/logo.png" alt="logo" id="navbar_logo"/></a></li>
-          <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="../index.html#us" itemprop="item">QUIÉNES SOMOS</a></li>
-          <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="../index.html#activities" itemprop="item">ACTIVIDADES</a></li>
-          <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="./news.html#news" itemprop="item">NOTICIAS</a></li>
-          <!--TODO Ver que hacer con hace un donativo!!-->
-          <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">HACÉ UN DONATIVO AHORA</a></li>
-          
-          <li class="navbar_item navbar_button" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_contact_button" href="../index.html#contactUS" itemprop="item">CONTACTANOS</a></li>
-          <li class="navbar_toggle" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><i class="fas fa-bars"></i></a></li>
-        </ul>
-      </nav>
-
     <!-- CAROUSEL NEWS-->
 
     <section id="news" class="news">
