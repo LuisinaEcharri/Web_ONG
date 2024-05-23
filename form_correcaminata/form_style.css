@@ -1,0 +1,124 @@
+body {
+    background: url("../img/fondo.jpeg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+
+
+.container {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    height: 100vh;
+}
+
+#registro-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+#registro-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#registro-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+}
+
+#registro-form input[type="text"],
+#registro-form input[type="tel"],
+#registro-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #ee003094;
+    border-radius: 1000px;
+    border: none;
+}
+
+.opciones {
+    display: flex;
+    justify-content:center;
+    margin-bottom: 15px;
+}
+
+.opciones label {
+    margin: 0 10px;
+}
+
+/*OPCION 1*/
+/*
+.opciones input[type="radio"] {
+    display: none;
+}
+.opciones label {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 2px solid #ee003094;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.opciones input[type="radio"]:checked + label {
+    background-color: #ee0030;
+    color: white;
+}
+.opciones label:hover {
+    background-color: #ee0030;
+    color: white;
+}*/
+
+
+/* OPCION 2 */
+.opciones input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ee0030;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.opciones input[type="radio"]:checked {
+    background-color: #ee0030;
+}
+
+.opciones input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+#registro-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ee0030;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#registro-form button:hover {
+    background-color: #218838;
+}

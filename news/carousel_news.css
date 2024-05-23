@@ -15,6 +15,11 @@
     max-width: 1050px;
 }
 
+.epigrafe{
+    font-size: 10px;
+    font-weight: 100;
+    padding-bottom: 20px;
+}
 .news_underline{
     padding-bottom: 10px;
     border-bottom: 4px solid var(--red-primary-solid);
@@ -115,6 +120,7 @@
 
 .bottom_sub_main_news_text_container{
     padding: 30px;
+    padding-top: 10px;
     height:max-content;
     display: flex;
     flex-direction: column;
@@ -162,6 +168,8 @@
     background-color: var(--red-primary-solid);
     border-radius: 58px 0 58px 0; 
 }
+
+
 
 @media only screen and (max-width: 600px) {
     .news{
