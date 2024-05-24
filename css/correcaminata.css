@@ -1,0 +1,5 @@
+.corr_container{
+    background-color: aqua;
+    background: url("./img/fondo.jpeg") no-repeat center center fixed;
+    width: max-content;
+}

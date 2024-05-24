@@ -52,30 +52,6 @@ body {
     margin: 0 10px;
 }
 
-/*OPCION 1*/
-/*
-.opciones input[type="radio"] {
-    display: none;
-}
-.opciones label {
-    margin: 0 10px;
-    padding: 10px 20px;
-    border: 2px solid #ee003094;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, color 0.3s;
-}
-.opciones input[type="radio"]:checked + label {
-    background-color: #ee0030;
-    color: white;
-}
-.opciones label:hover {
-    background-color: #ee0030;
-    color: white;
-}*/
-
-
 /* OPCION 2 */
 .opciones input[type="radio"] {
     appearance: none;
@@ -120,5 +96,5 @@ body {
 }
 
 #registro-form button:hover {
-    background-color: #218838;
+    background-color: #81001a;
 }
