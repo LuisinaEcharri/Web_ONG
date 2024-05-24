@@ -58,16 +58,16 @@ class ActionHorarios(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             actividad = tracker.get_slot("actividad")
             
-            if str(actividad) == "hockey":
+            if str(actividad) == "hockey" or str(actividad) == "hockeyagain":
                 print("hora hockey")
                 dispatcher.utter_message("Cuantos años tenes")
-            elif str(actividad) == "apoyo":
+            elif str(actividad) == "apoyo" or str(actividad) == "apoyoagain":
                 print("hora apoyo")
                 dispatcher.utter_message("Martes 17:15")
             elif str(actividad) == "arte":
                 print("hora arte")
                 dispatcher.utter_message("Martes 18:30")
-            elif str(actividad) == "actividades":
+            elif str(actividad) == "actividades" or str(actividad) == "actividadesagain":
                 print("hora actividades")
                 dispatcher.utter_message("no hay actividades por el momento")
             elif str(actividad) == "musica":
@@ -86,13 +86,13 @@ class ActionLlevarCosas(Action):
    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             actividad = tracker.get_slot("actividad")
-            if str(actividad) == "hockey":
+            if str(actividad) == "hockey" or str(actividad) == "hockeyagain":
                 dispatcher.utter_message("No hay que llevar nada")
-            elif str(actividad) == "apoyo":
+            elif str(actividad) == "apoyo" or str(actividad) == "apoyoagain":
                 dispatcher.utter_message("La mochila del colegio")
             elif str(actividad) == "arte":
                 dispatcher.utter_message("No hay que llevar nada")
-            elif str(actividad) == "actividades":
+            elif str(actividad) == "actividades" or str(actividad) == "actividadesagain":
                 dispatcher.utter_message("no hay actividades por el momento")
             elif str(actividad) == "musica":
                 dispatcher.utter_message("No hay que llevar nada")
@@ -109,26 +109,21 @@ class ActionDuracionTodos(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             actividad = tracker.get_slot("actividad")
        
-            if str(actividad) == "hockey":
+            if str(actividad) == "hockey" or str(actividad) == "hockeyagain":
                 dispatcher.utter_message("Una hora y media, ya que es conjunto con el taller de valores")
-            elif str(actividad) == "apoyo":
+            elif str(actividad) == "apoyo" or str(actividad) == "apoyoagain":
                 dispatcher.utter_message("Una hora")
             elif str(actividad) == "arte":
                 dispatcher.utter_message("Una hora")
             elif str(actividad) == "musica":
                 dispatcher.utter_message("Una hora")
-            elif str(actividad) == "actividades":
+            elif str(actividad) == "actividades" or str(actividad) == "actividadesagain":
                 dispatcher.utter_message("no hay actividades por el momento")
             elif str(actividad) == "valores":
                 dispatcher.utter_message("Una hora y media, ya que es conjunto con hockey")
             return []
         
 class ActionInicio(Action):
-
-    hock = False 
-    apoy= False
-    gen = False
-    act = False
     
     def name(self) -> Text:        
        return "action_inicio"   
@@ -138,41 +133,35 @@ class ActionInicio(Action):
             actividad = tracker.get_slot("actividad")
 
             if str(actividad) == "hockey":
-                print("entro hockey")
-                ## revise si el slot hockey esta activo
-                ## cuando va de hockey a apoyo y vuelve a hockey el slot hockey se active de nuevo
-                if (self.hock):
-                    dispatcher.utter_message("Hola, volviste, que necesitas saber")
-                else:
-                    dispatcher.utter_message("Hola,¿Que te gustaria saber sobre hockey?")
-                self.hock = True
+                dispatcher.utter_message("Hola,¿Que te gustaria saber sobre hockey?")
                 return []
 
             elif str(actividad) == "apoyo":
-                print("entro apoyo")
-                if (self.apoy):
-                    dispatcher.utter_message("Hola, volviste, que necesitas saber")
-                else:
-                    dispatcher.utter_message("Hola,¿Que te gustaria saber sobre el taller de apoyo escolar?")
-                self.apoy= True
+                dispatcher.utter_message("Hola,¿Que te gustaria saber sobre el taller de apoyo escolar?")
                 return []
 
             elif str(actividad) == "generico":
-                print("entro generico")
-                if(self.gen):
-                    dispatcher.utter_message("Hola, volviste, ¿ sobre cual necesitas saber: musica, arte o valores?")
-                else:
-                    dispatcher.utter_message("Hola, brindamos talleres de valores, arte y musica ¿sobre cual te gustaria saber?")
-                self.gen = True
+                dispatcher.utter_message("Hola, brindamos talleres de valores, arte y musica ¿sobre cual te gustaria saber?")
                 return []
-            
+                
             elif str(actividad) == "actividades":
-                print("entro actividades")
-                if (self.act):
-                    dispatcher.utter_message("Hola, volviste, que necesitas saber")
-                else:
-                    dispatcher.utter_message("Hola, por el momento no hay actividades")
-                self.act = True
+                dispatcher.utter_message("Hola, no hay actividades por el momento")
+                return []
+
+            elif str(actividad) == "hockeyagain":
+                dispatcher.utter_message("Hola volviste, ¿Que mas gustaria saber sobre hockey?")
+                return []
+                
+            elif str(actividad) == "apoyoagain":
+                dispatcher.utter_message("Hola volviste, ¿Que mas gustaria saber sobre el taller de apoyo escolar?")
+                return []
+
+            elif str(actividad) == "genericoagain":
+                dispatcher.utter_message("Hola volviste, ¿sobre que te gustaria saber mas: musica, arte o valores?")
+                return []
+                
+            elif str(actividad) == "actividadesagain":
+                dispatcher.utter_message("Hola volviste, sigue sin haber actividades")
                 return []
             return []
         
@@ -198,5 +187,4 @@ class ActionInformacion(Action):
                 dispatcher.utter_message("¿Que te gustaria saber sobre el taller de valores?")
                 return []
             return []
-    
     

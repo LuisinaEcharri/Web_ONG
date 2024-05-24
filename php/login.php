@@ -3,7 +3,11 @@
 $dbhost= "localhost";
 $dbuser= "root";
 $dbpass= "";
-$dbname= "reinventar";
+$dbname= "reinvent_reinventar";
+// $dbhost= "149.56.87.21:3306";
+// $dbuser= "reinvent_admin";
+// $dbpass= "xu@xDR_;9kpO";
+// $dbname= "reinvent_reinventar";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) 
@@ -19,12 +23,13 @@ $nr = mysqli_num_rows($query);
 
 if($nr == 1)
 {
-	header("Location: menu.html");
+	header("Location: /Web_ONG/menu.html");
 	//echo "Bienvenido:" .$nombre;
+	exit();
 }
 else if ($nr == 0) 
 {
-	echo "<script> alert('Datos incorrectos');window.location= 'login.html' </script>";
+	echo "<script> alert('Datos incorrectos');window.location= '/Web_ONG/menu.html' </script>";
     //header("Location: login.html");
 	//echo "No ingreso"; 
 }
