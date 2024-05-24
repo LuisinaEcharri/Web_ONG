@@ -3,11 +3,14 @@
 
 header('Content-Type: application/json');
 
-
 $dbhost= "localhost";
 $dbuser= "root";
 $dbpass= "";
-$dbname= "reinvent__reinventar";
+$dbname= "reinvent_reinventar";
+// $dbhost= "149.56.87.21:3306";
+// $dbuser= "reinvent_admin";
+// $dbpass= "xu@xDR_;9kpO";
+// $dbname= "reinvent_reinventar";
 
 // Crear la conexión
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);

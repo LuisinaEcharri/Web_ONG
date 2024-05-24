@@ -23,8 +23,8 @@ window.WebChat = {
         chatContainer.style.backgroundColor = '#f1f1f1';
         chatContainer.innerHTML = `
             <div style="background-color: #f1f1f1; color: white; padding-top: 15px; padding-bottom: 10px; padding-left: 30px; border-radius: 55px 55px 0px 0px; border-bottom: 1.5px solid #EE002F">
-                <img src="../img/backIconRed.svg" style=" height: 20px; width: 20px; padding-right: 15px; cursor: pointer" id="backButton">
-                <img src="../img/botIcon.png" style="height: 25px; width: 30px">
+                <img src="./img/backIconRed.svg" style=" height: 20px; width: 20px; padding-right: 15px; cursor: pointer" id="backButton">
+                <img src="./img/botIcon.png" style="height: 25px; width: 30px">
             </div>
             <div id="messages" style="height: 250px; overflow-y: auto; padding: 10px;"></div>
             <input id="user-input" type="text" style="width: 95%; margin-left: 2.5%; padding-left: 15px; box-sizing: border-box; border-radius: 23px; height: 35px; border: none; font-family: 'Montserrat', sans-serif;" placeholder="Escribe un mensaje...">
