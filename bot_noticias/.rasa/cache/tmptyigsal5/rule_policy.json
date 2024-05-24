@@ -1,0 +1,22 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"noticia\"}}]": "generate_new",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"noticia\"}}, {\"prev_action\": {\"action_name\": \"generate_new\"}, \"user\": {\"intent\": \"noticia\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"eliminar_noticia\"}}]": "utter_eliminar_noticia",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"eliminar_noticia\"}}, {\"prev_action\": {\"action_name\": \"utter_eliminar_noticia\"}, \"user\": {\"intent\": \"eliminar_noticia\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"cargar_noticia\"}}]": "utter_cargar_noticia",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"cargar_noticia\"}}, {\"prev_action\": {\"action_name\": \"utter_cargar_noticia\"}, \"user\": {\"intent\": \"cargar_noticia\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"titulo\"}}]": "delete_new",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"titulo\"}}, {\"prev_action\": {\"action_name\": \"delete_new\"}, \"user\": {\"intent\": \"titulo\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "predicting default action with intent restart"
+    ]
+  }
+}

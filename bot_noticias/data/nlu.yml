@@ -1,0 +1,75 @@
+version: "3.1"
+
+nlu:
+
+- intent: saludar
+  examples: |
+    - hola
+    - holis
+    - holu
+    - holaa
+    - buenas
+    - como va
+    - hi
+    - quien sos
+    - con quien hablo
+    - que podes hacer
+
+- intent: cargar_noticia
+  examples: |
+    - quiero crear una noticia
+    - quiero cargar una noticia
+    - cargame una noticia
+    - crear noticia
+    - cargar
+    - crear
+    - publicar
+    - noticia nueva
+    - cargar una nueva noticia
+    - publicar noticia nueva
+    - podrias publicar una noticia?
+
+- intent: eliminar_noticia
+  examples: |
+    - quiero borrar una noticia
+    - quiero eliminar una noticia
+    - sacar una noticia
+    - quitar noticia
+    - quitar
+    - eliminar
+    - borrar
+    - sacar
+    - eliminame una noticia
+    - podrias borrar una noticia?
+    - me quitas esta noticia?
+
+
+- intent: noticia
+  examples: |
+    - [que diga .........](noticia)
+    - [bla bla bla bla bla bla bla](noticia)
+    - [paso esto y esto y esto](noticia)
+    - [se creo una nueva cancha de hocket](noticia)
+    - [ponele que paso tanto](noticia)
+    - [texto muy muy muy muy muy muy muy largo](noticia)
+    - [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.](noticia)
+
+- intent: titulo
+  examples: |
+    - [cancha nueva](titulo)
+    - [vuelve correcaminata](titulo)
+    - [esto y esto](titulo)
+    - [rifa solidaria](titulo)
+    - [titulo tanto](titulo)
+    - [prueba de titulo](titulo)
+
+
+- regex: noticia
+  examples: |
+    - (.*)
+
+- regex: titulo
+  examples: |
+    - (.*)
+
+

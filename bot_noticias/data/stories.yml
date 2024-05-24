@@ -1,0 +1,22 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: saludar
+  - action: talk
+
+# - story: cargar noticia
+#   steps:
+#   - intent: cargar_noticia
+#   - action: utter_cargar_noticia
+#   - intent: noticia
+#   - action: generate_new
+
+# - story: eliminar noticia
+#   steps:
+#   - intent: eliminar_noticia
+#   - action: utter_eliminar_noticia
+#   - intent: titulo
+#   - action: delete_new

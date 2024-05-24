@@ -1,0 +1,62 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - cargar_noticia
+  - noticia
+  - eliminar_noticia
+  - titulo
+
+entities: 
+  - noticia
+  - titulo
+
+slots:
+  noticia:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: noticia
+
+  titulo:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: titulo
+  
+forms:
+  cargar_noticia_form:
+    ignored_intents: 
+    - saludar
+    required_slots:
+        - noticia
+
+  eliminar_noticia_form:
+    ignored_intents: 
+    - saludar
+    required_slots:
+        - titulo
+
+responses:
+  utter_ask_noticia:
+  - text: "Dale. Qué noticia querías publicar?"
+
+  utter_ask_titulo:
+  - text: "Ok. Decime el titulo de la noticia que querés eliminar"
+  # utter_cargar_noticia:
+  # - text: "Dale. Qué noticia querías publicar?"
+
+  # utter_eliminar_titulo:
+  # - text: "Ok. Decime el titulo de la noticia que querés eliminar"
+
+actions:
+  - talk
+  - generate_new
+  - update_new
+  - delete_new
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

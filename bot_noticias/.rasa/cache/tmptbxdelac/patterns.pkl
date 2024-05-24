@@ -1,0 +1,10 @@
+[
+  {
+    "name": "noticia",
+    "pattern": "(.*)"
+  },
+  {
+    "name": "titulo",
+    "pattern": "(.*)"
+  }
+]
