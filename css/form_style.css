@@ -1,10 +1,11 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
     background: url("../img/fondo.jpeg") no-repeat center center fixed;
     background-size: cover;
 }
-
-
-
 
 .container {
     display: flex;
@@ -28,7 +29,7 @@ body {
 #registro-form label {
     display: block;
     margin-bottom: 5px;
-    font-family: Arial, sans-serif;
+    color: #8d8989;
 }
 
 #registro-form input[type="text"],
@@ -49,7 +50,7 @@ body {
 }
 
 .opciones label {
-    margin: 0 10px;
+    margin: 3px 10px;
 }
 
 /* OPCION 2 */

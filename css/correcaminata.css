@@ -1,5 +1,92 @@
-.corr_container{
-    background-color: aqua;
-    background: url("./img/fondo.jpeg") no-repeat center center fixed;
-    width: max-content;
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.corr_flex_container {
+    display: flex;
+    max-height: 550px;
+}
+
+.corr_img_container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+figure.corr_img_container > img {
+    width: 100%;
+    height: 100%;
+}
+
+.corr_descripcion {
+    background-color: transparent;
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 5%;
+    border-radius: 0px 44px;
+    padding: 25px 45px;
+    width: 500px;
+}
+
+.corr_title {
+    font-size: 30px;
+    color: var(--red-primary-solid);
+    font-weight: bold;
+}
+/*
+.corr_underline {
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--white-primary-solid);
+}*/
+
+.corr_text1, .corr_text2 {
+    line-height: 28px;
+    color: var(--red-primary-solid);
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+.corr_text1 {
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.corr_text2 {
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+#corr_inscribirse_btn {
+    color: var(--red-primary-solid);
+    border-color: var(--red-primary-solid);
+    border-radius: 100px;
+    margin-top: 10px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .corr_flex_container{
+        flex-direction: column;
+        max-height: 800px;
+    }
+    .corr_img_container{
+        width: 100%;
+    }
+    .corr_img{
+        display: block;
+    }
+    .corr_descripcion{
+        width: 100%;
+        padding: 0px;
+    }
+    .corr_title, .corr_text1, .corr_text2{
+        padding: 0px 25px;
+        width:85%;
+    }
+    .corr_colaborar_button{
+        padding: 0px 25px;
+    }
+
 }
