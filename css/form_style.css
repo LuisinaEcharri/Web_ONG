@@ -29,6 +29,7 @@ body {
 #registro-form label {
     display: block;
     margin-bottom: 5px;
+    color: #8d8989;
 }
 
 #registro-form input[type="text"],
