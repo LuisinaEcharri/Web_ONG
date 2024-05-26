@@ -11,6 +11,10 @@ import os
 import google.generativeai as genai
 import json
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # Initialize Gemini-Pro 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -81,7 +85,7 @@ class GenerateNewAction(Action):
         headers = {'Content-Type': 'application/json'}
         response = requests.post(url, headers=headers, data=json.dumps(news_data))
         if response.status_code == 200:
-            dispatcher.utter_message(text="Noticia guardada correctamente.")
+            dispatcher.utter_message(text="Noticia guardada correctamente. \nLa noticia que se publicó es:\n" + str(news_data))
         else:
             dispatcher.utter_message(text="Hubo un error al guardar la noticia.")
         #dispatcher.utter_message(text=str("Genial. Se guardó la siguiente noticia: ") + str(news_data))
