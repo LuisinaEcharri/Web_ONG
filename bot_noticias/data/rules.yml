@@ -1,6 +1,27 @@
 version: "3.1"
 
 rules:
+
+- rule: respuesta por defecto
+  steps:
+  - intent: nlu_fallback
+  - action: utter_desconocido
+
+# - rule: saludar
+#   steps:
+#   - intent: saludar
+#   - action: utter_saludar
+
+- rule: agradecer
+  steps:
+  - intent: agradecer
+  - action: utter_de_nada
+
+- rule: inscriptos
+  steps:
+  - intent: ver_inscriptos
+  - action: utter_ver_inscriptos
+
 - rule: Activate form cargar noticia
   steps:
   - intent: cargar_noticia

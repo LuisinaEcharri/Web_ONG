@@ -5,18 +5,16 @@ stories:
 - story: happy path
   steps:
   - intent: saludar
-  - action: talk
+  - action: utter_saludar
 
-# - story: cargar noticia
-#   steps:
-#   - intent: cargar_noticia
-#   - action: utter_cargar_noticia
-#   - intent: noticia
-#   - action: generate_new
+- story: ver inscriptos
+  steps:
+  - intent: ver_inscriptos
+  - action: utter_ver_inscriptos
 
-# - story: eliminar noticia
-#   steps:
-#   - intent: eliminar_noticia
-#   - action: utter_eliminar_noticia
-#   - intent: titulo
-#   - action: delete_new
+- story: agradecer
+  steps:
+  - intent: agradecer
+  - action: utter_de_nada
+
+

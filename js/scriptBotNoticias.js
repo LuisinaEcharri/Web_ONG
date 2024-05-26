@@ -63,6 +63,7 @@ window.WebChat = {
             messageDiv.style.overflowWrap = 'break-word';
             messageDiv.style.fontSize = '12px';
             messageDiv.style.fontWeight = 'bold';
+            messageDiv.style.marginBottom = "10px";
             userMessageContainer.appendChild(messageDiv);
             userMessageContainer.scrollTop = userMessageContainer.scrollHeight;
         }
@@ -96,21 +97,6 @@ window.WebChat = {
                 console.log("No hay mensajes")
                 messageList.push(messages)
             }
-        }
-
-        async function sendMessageSilence(message) {
-            console.log("Enviando mensaje de silencio", message)
-            const response = await backend.sendMessageToAgent(message, userId) //envia el mensaje al agente
-            console.log(response)
-            let messageResponse = {
-                sender: "ReInventar",
-                receiver: response[0].receiver,
-                text: response[0].text,
-                image: response[0].image,
-                timestamp: Date.now() / 1000
-            };
-            messageList.push(messageResponse)
-            return response;
         }
 
         async function sendMessage(message) {

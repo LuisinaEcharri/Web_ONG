@@ -1,61 +1,54 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - saludar
-  - cargar_noticia
-  - noticia
-  - eliminar_noticia
-  - titulo
+- cargar_noticia
+- eliminar_noticia
+- texto
+- saludar
+- ver_inscriptos
+- agradecer
 
-entities: 
-  - noticia
-  - titulo
+entities:
+- texto
 
 slots:
-  noticia:
+  texto:
     type: text
     influence_conversation: false
     mappings:
     - type: from_entity
-      entity: noticia
+      entity: texto
 
-  titulo:
-    type: text
-    influence_conversation: false
-    mappings:
-    - type: from_entity
-      entity: titulo
-  
 forms:
   cargar_noticia_form:
-    ignored_intents: 
+    ignored_intents:
     - saludar
     required_slots:
-        - noticia
-
+    - texto
   eliminar_noticia_form:
-    ignored_intents: 
+    ignored_intents:
     - saludar
     required_slots:
-        - titulo
+    - texto
 
 responses:
-  utter_ask_noticia:
-  - text: "Dale. Qué noticia querías publicar?"
-
-  utter_ask_titulo:
-  - text: "Ok. Decime el titulo de la noticia que querés eliminar"
-  # utter_cargar_noticia:
-  # - text: "Dale. Qué noticia querías publicar?"
-
-  # utter_eliminar_titulo:
-  # - text: "Ok. Decime el titulo de la noticia que querés eliminar"
+  utter_saludar:
+  - text: Hola! En qué te ayudo?
+  utter_ver_inscriptos:
+  - text: Tenés que hacer click en el botón 'Ver inscriptos'
+  utter_ask_cargar_noticia_form_texto:
+  - text: Dale. Qué noticia querías publicar?
+  utter_ask_eliminar_noticia_form_texto:
+  - text: Ok. Decime el titulo de la noticia que querés eliminar
+  utter_desconocido:
+  - text: No entiendo lo que me decís. ¿Lo dirías de otra forma?
+  utter_de_nada:
+  - text: De nada! Estoy para ayudarte. 
 
 actions:
-  - talk
-  - generate_new
-  - update_new
-  - delete_new
+- talk
+- generate_new
+- update_new
+- delete_new
 
 session_config:
   session_expiration_time: 60

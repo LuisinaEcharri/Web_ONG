@@ -1,7 +1,5 @@
 version: "3.1"
-
 nlu:
-
 - intent: saludar
   examples: |
     - hola
@@ -10,10 +8,27 @@ nlu:
     - holaa
     - buenas
     - como va
-    - hi
-    - quien sos
-    - con quien hablo
-    - que podes hacer
+    - que tal
+    - buen dia
+    - buenas tardes
+
+- intent: agradecer
+  examples: |
+    - gracias
+    - grachiss
+    - muchas gracias
+    - graciassss
+    - te agradezco
+    - te agradezco mucho
+
+- intent: ver_inscriptos
+  examples: |
+    - como veo los inscriptos para la correcaminata?
+    - ver inscriptos
+    - inscriptos correcaminata
+    - quiero ver los inscriptos
+    - como veo los inscriptos
+    - como veo los inscriptos?
 
 - intent: cargar_noticia
   examples: |
@@ -24,9 +39,8 @@ nlu:
     - cargar
     - crear
     - publicar
-    - noticia nueva
-    - cargar una nueva noticia
-    - publicar noticia nueva
+    - cargar una noticia
+    - publicar noticia
     - podrias publicar una noticia?
 
 - intent: eliminar_noticia
@@ -43,33 +57,27 @@ nlu:
     - podrias borrar una noticia?
     - me quitas esta noticia?
 
-
-- intent: noticia
+- intent: texto
   examples: |
-    - [que diga .........](noticia)
-    - [bla bla bla bla bla bla bla](noticia)
-    - [paso esto y esto y esto](noticia)
-    - [se creo una nueva cancha de hocket](noticia)
-    - [ponele que paso tanto](noticia)
-    - [texto muy muy muy muy muy muy muy largo](noticia)
-    - [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.](noticia)
+    - [que diga .........](texto)
+    - [cancha nueva](texto)
+    - [cancha nueva](texto)
+    - [vuelve correcaminata](texto)
+    - [esto y esto](texto)
+    - [rifa solidaria](texto)
+    - [titulo tanto](texto)
+    - [prueba de titulo](texto)
+    - [se agregaron nuevas actividades](texto)
+    - [aaa eeeeeeee bbbbbbbbbb ee a](texto)
+    - [bla bla bla bla bla bla bla](texto)
+    - [paso esto y esto y esto](texto)
+    - [se creo una nueva cancha de hocket](texto)
+    - [ponele que paso tanto](texto)
+    - [texto muy muy muy muy muy muy muy largo](texto)
+    - [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.](texto)
 
-- intent: titulo
-  examples: |
-    - [cancha nueva](titulo)
-    - [vuelve correcaminata](titulo)
-    - [esto y esto](titulo)
-    - [rifa solidaria](titulo)
-    - [titulo tanto](titulo)
-    - [prueba de titulo](titulo)
 
-
-- regex: noticia
-  examples: |
-    - (.*)
-
-- regex: titulo
+- regex: texto
   examples: |
     - (.*)
-
 

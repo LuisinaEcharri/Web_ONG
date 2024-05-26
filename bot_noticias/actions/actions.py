@@ -62,7 +62,7 @@ class GenerateNewAction(Action):
         # Obtener el texto de la noticia del usuario
         news_text = tracker.latest_message.get("text")
 
-        text = "Quisiera que me formatees el siguiente texto que te voy a pasar. Es una noticia y necesito que quede para ponerlo directamente en un archivo con la siguiente estructura {\"Titulo\": \"....\", \"Epigrafe\": \"...\", \"Cuerpo\": \"...\"}, donde las claves sean Titulo, Epigrafe y Cuerpo con sus correspondientes valores. Si te especifican un titulo necesito que lo dejes como esta, pero sino inventale uno. Si te especifican un epigrafe dejalo como esta, sino creale uno simple. Siempre incluí un cuerpo por favor"
+        text = "Quisiera que me formatees el siguiente texto que te voy a pasar. Es una noticia y necesito que quede para ponerlo directamente en un archivo con la siguiente estructura {\"Titulo\": \"....\", \"Epigrafe\": \"...\", \"Cuerpo\": \"...\", \"Imagen\": \"...\"}, donde las claves sean Titulo, Epigrafe y Cuerpo con sus correspondientes valores. Si te especifican un titulo necesito que lo dejes como esta, pero sino inventale uno. Si te especifican un epigrafe dejalo como esta, sino creale uno simple. Siempre incluí un cuerpo por favor. Para la imagen ponele el link/enlace que te pasen."
         text = str(text + news_text)
         # Utilizar Gemini para generar la noticia
         response = model.generate_content(text).candidates[0].content.parts[0].text
@@ -77,68 +77,46 @@ class GenerateNewAction(Action):
         
         
         # Enviar la información a través de una petición POST
-        url = "http://localhost/bot/actions/save_new.php"
+        url = "http://localhost/Web_ONG/bot_noticias/actions/save_new.php"
         headers = {'Content-Type': 'application/json'}
-        # response = requests.post(url, headers=headers, data=json.dumps(news_data))
-        # print(response)
-        # if response.status_code == 200:
-        #     dispatcher.utter_message(text="Noticia guardada correctamente.")
-        # else:
-        #     dispatcher.utter_message(text="Hubo un error al guardar la noticia.")
-        dispatcher.utter_message(text=str("Genial. Se guardó la siguiente noticia: ") + str(news_data))
+        response = requests.post(url, headers=headers, data=json.dumps(news_data))
+        if response.status_code == 200:
+            dispatcher.utter_message(text="Noticia guardada correctamente.")
+        else:
+            dispatcher.utter_message(text="Hubo un error al guardar la noticia.")
+        #dispatcher.utter_message(text=str("Genial. Se guardó la siguiente noticia: ") + str(news_data))
 
 
-        return [SlotSet("noticia", None)]
+        return [SlotSet("texto", None)]
     
     def format_response(self, response_text: str) -> Dict[Text, Any]:
         # Expresiones regulares para extraer las partes del texto
         title_pattern = re.compile(r'"?Titulo"?:\s?"(.*?)"[,}]', re.IGNORECASE)
         epigrafe_pattern = re.compile(r'"?Epigrafe"?:\s?"(.*?)"[,}]', re.IGNORECASE)
         cuerpo_pattern = re.compile(r'"?Cuerpo"?:\s?"(.*?)"[,}]', re.IGNORECASE)
+        imagen_pattern = re.compile(r'"?Imagen"?:\s?"(.*?)"[,}]', re.IGNORECASE)
 
         title_match = title_pattern.search(response_text)
         epigrafe_match = epigrafe_pattern.search(response_text)
         cuerpo_match = cuerpo_pattern.search(response_text)
-        print(cuerpo_match)
+        imagen_match = imagen_pattern.search(response_text)
 
         # Extraer y validar las partes
         title = title_match.group(1) if title_match else "Título generado automáticamente"
         epigrafe = epigrafe_match.group(1) if epigrafe_match else "Epígrafe generado automáticamente"
         cuerpo = cuerpo_match.group(1) if cuerpo_match else response_text  # Si no se encuentra, usar todo el texto
+        imagen = imagen_match.group(1) if imagen_match else "https://lh5.googleusercontent.com/proxy/WwKWcrNkZbbAfGNjyNQsZZ2KPLEyo3UiT_OhHY88xrVOxDqPjd8eLLZiMaPzRwte8W7jhossprIQv3c"
 
         # Crear el diccionario con los datos formateados
         news_data = {
             "Titulo": title,
             "Epigrafe": epigrafe,
-            "Cuerpo": cuerpo
+            "Cuerpo": cuerpo,
+            "Imagen": imagen
         }
 
         return news_data
-    
 
-    
-class UpdateNewAction(Action):
-
-    def name(self) -> Text:
-        return "update_new"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        # Obtener el texto de la noticia del usuario
-        #new = tracker.latest_message.get("text")
-        #chequear en la bd el titulo??
-        # podria ser algo tipo
-        # if existe:
-        #   dispatcher.utter_message(text=str("ok, decime como la modifico"))
-        #   habria que setear un slot creo
-        # else: 
-        #       dispatcher.utter_message(text=str("no existe una noticia con ese titulo"))
-
-        dispatcher.utter_message(text=str("listo"))
-
-        return []
     
 class DeleteNewAction(Action):
 
@@ -153,7 +131,7 @@ class DeleteNewAction(Action):
         new_title = tracker.latest_message.get("text")
 
         # Preparar la URL del script PHP
-        url = "http://localhost/bot/actions/delete_new.php"
+        url = "http://localhost/Web_ONG/bot_noticias/actions/delete_new.php"
         headers = {'Content-Type': 'application/json'}
         
         # Crear el payload con el título de la noticia
@@ -168,4 +146,4 @@ class DeleteNewAction(Action):
         # Manejar la respuesta
         dispatcher.utter_message(text=response_data['message'])
 
-        return [SlotSet("titulo", None)]
+        return [SlotSet("texto", None)]

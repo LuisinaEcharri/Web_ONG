@@ -1,7 +1,0 @@
-{
-  "rule_only_slots": [],
-  "rule_only_loops": [
-    "cargar_noticia_form",
-    "eliminar_noticia_form"
-  ]
-}

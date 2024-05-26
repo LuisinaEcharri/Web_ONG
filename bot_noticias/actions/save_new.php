@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 $dbhost= "localhost";
 $dbuser= "root";
 $dbpass= "";
-$dbname= "reinvent__reinventar";
+$dbname= "reinvent_reinventar";
 
 // Crear la conexión
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
@@ -24,7 +24,7 @@ $input = json_decode(file_get_contents('php://input'), true);
 $id = $input['Id'];
 $titulo = $input['Titulo'];
 $epigrafe = $input['Epigrafe'];
-$imagen = 'https://ibb.co/yRTy210';
+$imagen = $input['Imagen'];
 $cuerpo = $input['Cuerpo'];
 
 
