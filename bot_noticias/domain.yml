@@ -1,0 +1,55 @@
+version: '3.1'
+intents:
+- cargar_noticia
+- eliminar_noticia
+- texto
+- saludar
+- ver_inscriptos
+- agradecer
+
+entities:
+- texto
+
+slots:
+  texto:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: texto
+
+forms:
+  cargar_noticia_form:
+    ignored_intents:
+    - saludar
+    required_slots:
+    - texto
+  eliminar_noticia_form:
+    ignored_intents:
+    - saludar
+    required_slots:
+    - texto
+
+responses:
+  utter_saludar:
+  - text: Hola! En qué te ayudo?
+  utter_ver_inscriptos:
+  - text: Tenés que hacer click en el botón 'Ver inscriptos'
+  utter_ask_cargar_noticia_form_texto:
+  - text: Dale. Qué noticia querías publicar?
+  utter_ask_eliminar_noticia_form_texto:
+  - text: Ok. Decime el titulo de la noticia que querés eliminar
+  utter_desconocido:
+  - text: No entiendo lo que me decís. ¿Lo dirías de otra forma?
+  utter_de_nada:
+  - text: De nada! Estoy para ayudarte. 
+
+actions:
+- talk
+- generate_new
+- update_new
+- delete_new
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

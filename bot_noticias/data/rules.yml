@@ -1,0 +1,61 @@
+version: "3.1"
+
+rules:
+
+- rule: respuesta por defecto
+  steps:
+  - intent: nlu_fallback
+  - action: utter_desconocido
+
+# - rule: saludar
+#   steps:
+#   - intent: saludar
+#   - action: utter_saludar
+
+- rule: agradecer
+  steps:
+  - intent: agradecer
+  - action: utter_de_nada
+
+- rule: inscriptos
+  steps:
+  - intent: ver_inscriptos
+  - action: utter_ver_inscriptos
+
+- rule: Activate form cargar noticia
+  steps:
+  - intent: cargar_noticia
+  - action: cargar_noticia_form
+  - active_loop: cargar_noticia_form
+
+- rule: Activate form eliminar noticia
+  steps:
+  - intent: eliminar_noticia
+  - action: eliminar_noticia_form
+  - active_loop: eliminar_noticia_form
+
+- rule: Submit form cargar noticia
+  condition:
+  # Condition that form is active.
+  - active_loop: cargar_noticia_form
+  steps:
+  # Form is deactivated
+  - action: cargar_noticia_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: generate_new
+
+- rule: Submit form eliminar noticia
+  condition:
+  # Condition that form is active.
+  - active_loop: eliminar_noticia_form
+  steps:
+  # Form is deactivated
+  - action: eliminar_noticia_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: delete_new
