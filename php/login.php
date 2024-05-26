@@ -29,7 +29,7 @@ if($nr == 1)
 }
 else if ($nr == 0) 
 {
-	echo "<script> alert('Datos incorrectos');window.location= '/Web_ONG/menu.html' </script>";
+	echo "<script> alert('Datos incorrectos');window.location= '/Web_ONG/login.html' </script>";
     //header("Location: login.html");
 	//echo "No ingreso"; 
 }

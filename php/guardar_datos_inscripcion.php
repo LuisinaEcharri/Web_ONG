@@ -25,7 +25,7 @@ $stmt->bind_param("sssss", $nombre, $apellido, $telefono, $email, $tipo);
 
 // Ejecutar la consulta
 if ($stmt->execute()) {
-    echo "Nuevo registro creado exitosamente";
+    echo "<script> alert('Inscripción realizada correctamente');window.location= '/Web_ONG/index.html' </script>";
 } else {
     echo "Error: " . $stmt->error;
 }
