@@ -81,7 +81,7 @@
             <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#activities" itemprop="item">ACTIVIDADES</a></li>
             <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#news" itemprop="item">NOTICIAS</a></li>
             <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#pumitas" itemprop="item">APADRINÁ UNA PUMITA</a></li>
-            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">HACÉ UN DONATIVO AHORA</a></li>
+            <div id="wallet_container"><li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">HACÉ UN DONATIVO AHORA</a></li></div>
             <li class="navbar_item navbar_button" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_contact_button" href="#contactUS" itemprop="item">CONTACTANOS</a></li>
             <li class="navbar_toggle" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><i class="fas fa-bars"></i></a></li>
         </ul>
@@ -562,6 +562,26 @@
         </div>
     </div>
 
+    <script>
+        const mp = new MercadoPago('TEST-aaba47ba-0341-4d4d-a3c0-4f66fef53bbb', {
+            locale: 'es-AR'
+        });
+        const bricksBuilder = mp.bricks();
+
+
+        mp.bricks().create("wallet", "wallet_container", {
+            initialization: {
+                preferenceId: "<PREFERENCE_ID>",
+            },
+        customization: {
+            texts: {
+                valueProp: 'smart_option',
+            },
+        },
+        });
+
+    </script>
+
     <!-- <script src="./js/activities.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/Chat.js"></script>
@@ -569,7 +589,40 @@
     <script src="js/contact.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>   
+    
+    <!-- <script>
+        import axios from "axios";
 
+        const mp = new MercadoPago('YOUR_PUBLIC_KEY');
+        const bricksBuilder = mp.bricks();
+
+        mp.bricks().create("wallet", "wallet_container", {
+        initialization: {
+            preferenceId: "<PREFERENCE_ID>",
+        },
+        customization: {
+        texts: {
+        valueProp: 'smart_option',
+        },
+        },
+        });
+
+        const createPreference = async () =>  {
+            try {
+                const response = await axios.post("http://localhost:3000/create_preference", {
+                    title: "Bananita contenta",
+                    quantity: 1,
+                    price: 100,
+                });
+
+                const { id } = response.data;
+                return id;
+            } catch (error) {
+                console.log(error);
+            }
+        };
+    </script> -->
 </body>
 
 </html>

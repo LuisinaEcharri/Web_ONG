@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "mercadopago": "^2.0.9",
     "mysql": "^2.18.1",
     "swiper": "^11.1.3"
   }
