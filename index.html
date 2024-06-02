@@ -66,7 +66,8 @@
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <!--manipulación de fechas y horas, mas que anda para el date.now y cosas asi -->
     <script src="js/backRasa.js"></script>
-    <!-- donde mas vamos a sufrir -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
 
 </head>
 
@@ -95,6 +96,7 @@
         </section>
         <a data-toggle="modal" data-target="#exampleModal" itemprop="item">
             <button class="welcome_button">QUIERO DONAR</button>
+            <div id = "wallet_container"></div>
         </a>
     </article>
 
@@ -241,64 +243,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- <style>
-            .rw-widget-container {
-                display: flex;
-                position: absolute;
-                margin: 0 0px -1040px 0;
-            }
-            
-            #rasaWebchatPro {
-                position: relative;
-            }
-            
-            .rw-conversation-container {
-                position: relative;
-                padding: 500px 341px;
-                height: auto;
-            }
-            
-            .rw-header-and-loading {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 999;
-                width: 100%;
-            }
-            
-            .rw-messages-container {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 0;
-                width: 100%;
-                padding-top: 41%;
-            }
-            
-            .rw-sender {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-            }
-            
-            @media only screen and (max-width: 600px) {
-                .rw-widget-container {
-                    padding: 25px;
-                    height: 100%;
-                    width: 100%;
-                }
-                .rw-conversation-container {
-                    height: 100%;
-                    width: 100%;
-                }
-                .rw-messages-container {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-        </style> -->
 
 
     </section>
@@ -562,26 +506,6 @@
         </div>
     </div>
 
-    <script>
-        const mp = new MercadoPago('TEST-aaba47ba-0341-4d4d-a3c0-4f66fef53bbb', {
-            locale: 'es-AR'
-        });
-        const bricksBuilder = mp.bricks();
-
-
-        mp.bricks().create("wallet", "wallet_container", {
-            initialization: {
-                preferenceId: "<PREFERENCE_ID>",
-            },
-        customization: {
-            texts: {
-                valueProp: 'smart_option',
-            },
-        },
-        });
-
-    </script>
-
     <!-- <script src="./js/activities.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/Chat.js"></script>
@@ -590,39 +514,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>   
-    
-    <!-- <script>
-        import axios from "axios";
-
-        const mp = new MercadoPago('YOUR_PUBLIC_KEY');
-        const bricksBuilder = mp.bricks();
-
-        mp.bricks().create("wallet", "wallet_container", {
-        initialization: {
-            preferenceId: "<PREFERENCE_ID>",
-        },
-        customization: {
-        texts: {
-        valueProp: 'smart_option',
-        },
-        },
-        });
-
-        const createPreference = async () =>  {
-            try {
-                const response = await axios.post("http://localhost:3000/create_preference", {
-                    title: "Bananita contenta",
-                    quantity: 1,
-                    price: 100,
-                });
-
-                const { id } = response.data;
-                return id;
-            } catch (error) {
-                console.log(error);
-            }
-        };
-    </script> -->
+    <script src="js/mp.js"></script>
 </body>
 
 </html>
