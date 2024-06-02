@@ -8,7 +8,7 @@
     }
     const backend = new backRasa('http://localhost:5005'); //Cambiar a IP publica
     const title = document.getElementById("titulo-contenedor")
-    const chat = document.querySelector(".chat-conteiner");
+    const chat = document.querySelector(".chat-container");
     const btnOpen = document.getElementById("modal-button-chat");
     //const messageList = [] //guarda los mensajes de la conversacion
     const chatMessages = document.body.querySelector(".chat-column.chat-window-log");
