@@ -3,7 +3,7 @@ import cors from "cors";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import bodyParser from 'body-parser';
 
-const client = new MercadoPagoConfig({ accessToken :"TEST-5847637359045422-060211-379bd7c47361023c7e2c5b1238e4dfea-534720125"});
+const client = new MercadoPagoConfig({ accessToken :"TEST-42162351988826-060218-4f580e20f7df7e07ef6212de1d51bfe8-534720125"});
 const app = express();                                                                                      
 const port = 3000;
 
@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
 
 app.post('/create_preference', async (req, res) => {
     try{
-        console.log("entro al create_preference")
         const body = {
             items: [{
                 title : req.body.title,
@@ -47,14 +46,10 @@ app.post('/create_preference', async (req, res) => {
             },
             auto_return: "approved",
         };
-        console.log("entro al create_preference2")
-        const preference = await Preference(client); 
-        console.log("entro al create_preference3"); 
+        const preference = new Preference(client); 
         const result = await preference.create({body});
-        console.log("entro al create_preference4")
         res.json({id : result.id})
     }catch{
-        console.log("Error al crear la preferencia aca no se que paso");
         res.status(500).send("Error al crear la preferencia aca no se que paso");
     }
 });

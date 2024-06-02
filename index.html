@@ -82,7 +82,8 @@
             <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#activities" itemprop="item">ACTIVIDADES</a></li>
             <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#news" itemprop="item">NOTICIAS</a></li>
             <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#pumitas" itemprop="item">APADRINÁ UNA PUMITA</a></li>
-            <div id="wallet_container"><li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">HACÉ UN DONATIVO AHORA</a></li></div>
+            <!-- <a class="navbar_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item"></a> DATA TOGGLE Y TARGET  -->
+            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_donate_button" href="#donation" itemprop="item">HACÉ UN DONATIVO AHORA</a></li>
             <li class="navbar_item navbar_button" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a class="navbar_contact_button" href="#contactUS" itemprop="item">CONTACTANOS</a></li>
             <li class="navbar_toggle" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><i class="fas fa-bars"></i></a></li>
         </ul>
@@ -94,9 +95,8 @@
             <h1 itemprop="headline">EDUCAMOS A TRAVÉS DEL DEPORTE CON VALORES</h1>
             <p>FORMANDO LIDERES POSITIVOS</p>
         </section>
-        <a data-toggle="modal" data-target="#exampleModal" itemprop="item">
+        <a href="#donation" itemprop="item">
             <button class="welcome_button">QUIERO DONAR</button>
-            <div id = "wallet_container"></div>
         </a>
     </article>
 
@@ -344,23 +344,31 @@
         </article>
     </section>
 
-    <!-- HELP US -->
-    <section id="help_us" class="help_us_flex_container">
-        <figure class="help_us_img_container">
-            <img class="help_us_img" src="img/Corazon.jpg" alt="foto de unas manos sosteniendo un corazon">
-        </figure>
-        <article class="help_us_right_container">
-            <h2 class="help_us_title"><span class="help_us_underline">SUMA</span>TE</h2>
-            <div class="help_us_text1">
-                Con tu donación podemos sostener a los niños y adolescentes que participan en Reinventar, y ofrecerles oportunidades de superación.
-            </div>
-            <div class="help_us_text2">
-                ¡GRACIAS A APORTES COMO EL TUYO PODEMOS MEJORAR LA REALIDAD DE MUCHOS NIÑOS!
-            </div>
-            <a class="help_us_donate_button" data-toggle="modal" data-target="#exampleModal" itemprop="item">
-                <button class="welcome_button" id="donate_btn">QUIERO DONAR</button>
-            </a>
-        </article>
+    <!-- HELP US DONATION -->
+    <section id="donation" class="donation">
+        <section id="help_us" class="help_us_flex_container">
+            <figure class="help_us_img_container">
+                <img class="help_us_img" src="img/Corazon.jpg" alt="foto de unas manos sosteniendo un corazon">
+            </figure>
+            <article class="help_us_right_container">
+                <h2 class="help_us_title"><span class="help_us_underline">SUMA</span>TE</h2>
+                <div class="help_us_text1">
+                    Con tu donación podemos sostener a los niños y adolescentes que participan en Reinventar, y ofrecerles oportunidades de superación.
+                </div>
+                <div class="help_us_text2">
+                    ¡GRACIAS A APORTES COMO EL TUYO PODEMOS MEJORAR LA REALIDAD DE MUCHOS NIÑOS!
+                </div>
+                <div class="amount">
+                    Valor a donar:
+                    <input type="number" class="input_price" id="input_price">
+                </div>
+                <div id="wallet_container">
+                    <a class="help_us_donate_button" itemprop="item">
+                        <button class="welcome_button" id="donate_btn">QUIERO DONAR</button>
+                    </a>
+                </div> 
+            </article>
+        </section>
     </section>
 
     <!-- APADRINA UNA PUMITA -->

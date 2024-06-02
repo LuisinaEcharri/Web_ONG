@@ -1,4 +1,4 @@
-const mp = new MercadoPago ("TEST-aaba47ba-0341-4d4d-a3c0-4f66fef53bbb", {
+const mp = new MercadoPago ("TEST-69101bcf-662c-4852-b4e5-eb391316272a", {
     locale: 'es-AR'
 });
 
@@ -7,13 +7,16 @@ const buttons = document.getElementsByClassName("welcome_button");
 for (let button of buttons) {
     button.addEventListener("click", async () => {
         try {
+            const priceInput = document.getElementById("input_price").value;
+            // Si el valor del input está presente lo usa, sino usa 1000
+            const price = priceInput ? Number(priceInput) : 1000;
+
             const orderData = {
-                title: "Donación", // esto decis?
+                title: "Donación",
                 quantity: 1,
-                price: 200, // Captura el monto desde el HTML si es necesario
+                price: price, 
             };
             console.log(orderData);
-            //aca esta el error cuando hace el post a la api creo yo
             const response = await fetch("http://localhost:3000/create_preference", {
                 method: "POST",
                 headers: {
@@ -24,7 +27,7 @@ for (let button of buttons) {
             const preference = await response.json();
             createCheckoutButton(preference.id);
         } catch {
-            alert("Error al crear la preferencia aca sucio");
+            alert("Error al crear la preferencia aca");
         }
     });
 }
@@ -33,7 +36,7 @@ const createCheckoutButton = (preferenceId) => {
   const renderComponent = async () => {
     await mp.bricks().create("wallet", "wallet_container", {
       initialization: {
-          preferenceId: "<PREFERENCE_ID>",
+          preferenceId: preferenceId,
           redirectMode: "blank"
       },
    });

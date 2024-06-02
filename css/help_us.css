@@ -59,6 +59,13 @@ figure.help_us_img_container > img {
     margin-bottom: 20px;
 }
 
+.input_price {
+    margin-bottom: 10px;
+    height: 30px;
+    width: 125px;
+    border-radius: 10px;
+}
+
 @media only screen and (max-width: 600px) {
     .help_us_flex_container{
         flex-direction: column;
