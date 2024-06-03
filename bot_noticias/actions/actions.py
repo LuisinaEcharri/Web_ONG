@@ -66,7 +66,7 @@ class GenerateNewAction(Action):
         # Obtener el texto de la noticia del usuario
         news_text = tracker.latest_message.get("text")
 
-        text = "Quisiera que me formatees el siguiente texto que te voy a pasar. Es una noticia y necesito que quede para ponerlo directamente en un archivo con la siguiente estructura {\"Titulo\": \"....\", \"Epigrafe\": \"...\", \"Cuerpo\": \"...\", \"Imagen\": \"...\"}, donde las claves sean Titulo, Epigrafe y Cuerpo con sus correspondientes valores. Si te especifican un titulo necesito que lo dejes como esta, pero sino inventale uno. Si te especifican un epigrafe dejalo como esta, sino creale uno simple. Siempre incluí un cuerpo por favor. Para la imagen ponele el link/enlace que te pasen."
+        text = "Quisiera que me formatees el siguiente texto que te voy a pasar. Es una noticia y necesito que quede para ponerlo directamente en un archivo con la siguiente estructura {\"Titulo\": \"....\", \"Epigrafe\": \"...\", \"Cuerpo\": \"...\", \"Imagen\": \"...\"}, donde las claves sean Titulo, Epigrafe y Cuerpo con sus correspondientes valores. Si te especifican un titulo necesito que lo dejes como esta, pero sino inventale uno. Si te especifican un epigrafe dejalo como esta, sino creale uno simple. Siempre incluí un cuerpo por favor. Para la imagen ponele el link/enlace que te pasen, sin importar si es un link de internet o una ruta de un archivo, dejalo como esta. Si no te pasan nada no le agregues nada, ni siquiera le agregues la parte de \"Imagen:\", no agregues nada."
         text = str(text + news_text)
         # Utilizar Gemini para generar la noticia
         response = model.generate_content(text).candidates[0].content.parts[0].text
@@ -78,14 +78,12 @@ class GenerateNewAction(Action):
             dispatcher.utter_message(text="Hubo un error al procesar la noticia generada.")
             return []
         
-        
-        
         # Enviar la información a través de una petición POST
         url = "http://localhost/Web_ONG/bot_noticias/actions/save_new.php"
         headers = {'Content-Type': 'application/json'}
         response = requests.post(url, headers=headers, data=json.dumps(news_data))
         if response.status_code == 200:
-            dispatcher.utter_message(text="Noticia guardada correctamente. \nLa noticia que se publicó es:\n" + str(news_data))
+            dispatcher.utter_message(text="Noticia guardada correctamente. \n La noticia que se publicó es:\n" + str(news_data))
         else:
             dispatcher.utter_message(text="Hubo un error al guardar la noticia.")
         #dispatcher.utter_message(text=str("Genial. Se guardó la siguiente noticia: ") + str(news_data))
@@ -109,7 +107,7 @@ class GenerateNewAction(Action):
         title = title_match.group(1) if title_match else "Título generado automáticamente"
         epigrafe = epigrafe_match.group(1) if epigrafe_match else "Epígrafe generado automáticamente"
         cuerpo = cuerpo_match.group(1) if cuerpo_match else response_text  # Si no se encuentra, usar todo el texto
-        imagen = imagen_match.group(1) if imagen_match else "https://lh5.googleusercontent.com/proxy/WwKWcrNkZbbAfGNjyNQsZZ2KPLEyo3UiT_OhHY88xrVOxDqPjd8eLLZiMaPzRwte8W7jhossprIQv3c"
+        imagen = imagen_match.group(1) if imagen_match else "../welcome.jpeg"
 
         # Crear el diccionario con los datos formateados
         news_data = {

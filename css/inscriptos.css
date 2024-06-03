@@ -63,6 +63,7 @@
 .download_button {
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
 .no_results_message {
@@ -85,7 +86,7 @@
 
 .table_container {
     display: inline-block;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 230px);
     overflow-y: auto;
     padding-right: 10px;
     margin-bottom: 15px;
