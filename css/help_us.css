@@ -8,7 +8,7 @@
 }
 
 .help_us_img_container {
-    width: 50%;
+    width: 40%;
     margin: 0;
     padding: 0;
 }
@@ -20,7 +20,7 @@ figure.help_us_img_container > img {
 }
 
 .help_us_right_container {
-    width: 40%;
+    width: 60%;
     background-color: var(--red-primary-solid);
     color: var(--white-primary-solid);
     padding-left: 10%;
@@ -54,16 +54,32 @@ figure.help_us_img_container > img {
 }
 
 #donate_btn {
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 20px;
+    display: block;
+    width: 75px;
+    height: 50px;	
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 5px;
 }
 
-.input_price {
+#amount {
     margin-bottom: 10px;
-    height: 30px;
-    width: 125px;
-    border-radius: 10px;
+    height: 50px;
+    width: 75px;
+    background-color: var(--red-primary-solid);
+    border: 3px solid white;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.botonesPagar {
+    display: flex;
+}
+
+.enviar {
+    border-radius: 60px;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 600px) {
