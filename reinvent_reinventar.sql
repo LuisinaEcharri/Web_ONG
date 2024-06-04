@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD
 -- Tiempo de generación: 04-06-2024 a las 19:59:43
+=======
+-- Tiempo de generación: 04-06-2024 a las 21:18:15
+>>>>>>> c2295e13f3a570c7e236e3d50854977091037f23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -71,6 +75,16 @@ CREATE TABLE `necesidad` (
   `necesidad` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+<<<<<<< HEAD
+=======
+--
+-- Volcado de datos para la tabla `necesidad`
+--
+
+INSERT INTO `necesidad` (`id_necesidad`, `nombre`, `telefono`, `necesidad`) VALUES
+(1, 'sol', 2262658554, 'necesito un par de zapatillas y un palo de hockey');
+
+>>>>>>> c2295e13f3a570c7e236e3d50854977091037f23
 -- --------------------------------------------------------
 
 --
@@ -166,7 +180,11 @@ ALTER TABLE `inscripto`
 -- AUTO_INCREMENT de la tabla `necesidad`
 --
 ALTER TABLE `necesidad`
+<<<<<<< HEAD
   MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT;
+=======
+  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+>>>>>>> c2295e13f3a570c7e236e3d50854977091037f23
 
 --
 -- AUTO_INCREMENT de la tabla `noticia`
