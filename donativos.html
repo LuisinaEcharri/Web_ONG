@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    <title>Ver donativos</title>
+    <link rel="icon" href="./favicon.ico">
+    <!-- general meta data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=robots content="index,follow">
+    <meta name="description" content="Reinventar Tandil es una Asociación Civil sin fines de lucro, no gubernamental.">
+    <meta name="keywords" content="Reinventar Tandil, Reinventar, Tandil, ONG, Asociación Civil, Hockey">
+    <meta name="author" content="Reinventar Tandil">
+    <link rel="canonical" href="http://www.reinventartandil.com/">
+    <meta name="subject" content="Reinventar Tandil">
+    <meta name='Classification' content='ONG'>
+    <meta name='url' content='http://www.reinventartandil.com/ '>
+    <meta http-equiv='Expires' content='0'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Cache-Control' content='no-cache'>
+    <meta http-equiv='imagetoolbar' content='no'>
+    <meta http-equiv='x-dns-prefetch-control' content='off'>
+    <!-- Open Graph data http://ogp.me/ -->
+    <meta property="og:title" content="Reinventar Tandil" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.reinventartandil.com/" />
+    <meta property="og:image" content="http://reinventartandil.com/Welcome2.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:description"
+        content="Reinventar Tandil es una Asociación Civil sin fines de lucro, no gubernamental.">
+    <meta property="og:site_name" content="Reinventar Tandil" />
+
+    <!-- JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- FONTS FAMILY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@700&family=Red+Hat+Display&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@700&family=Red+Hat+Display&display=swap');
+    </style>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/inscriptos.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/c5d8d8beeb.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.24/jspdf.plugin.autotable.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" itemprop="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <ul class="navbar_menu">
+            <li class="navbar_logo" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a href="#" itemprop="item">
+                    <img src="img/Logo.png" alt="logo" id="navbar_logo" />
+                </a>
+            </li>
+            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a href="#" itemprop="item" class="navbar_user">
+                    <img alt="user" src="img/user.svg" class="navbar_icon"></img>
+                    <p class="navbar_username">Admin</p>
+                </a>
+            </li> <!-- hay que agregar la logica para ponerle el nombre correspondiente al login-->
+            <li class="navbar_item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a href="login.html" itemprop="item" class="navbar_logout">
+                    <img alt="logout" src="img/logout.svg" class="navbar_icon"></img>
+                    <!-- <p class="navbar_username">Logout</p> -->
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="ver_inscriptos">
+        <div class="header">
+            <div class="container">
+                <button class="button back_button" onclick="location.href='menu.html'"> Volver </button>
+            </div>
+            <div class="container">
+                <h1 class="titulo"> Donativos </h1>
+            </div>
+        </div>
+        <div class="container_flex">
+            <div class="table_container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="table_header">Nombre</th>
+                            <th class="table_header">Teléfono</th>
+                            <th class="table_header">Donativo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+
+                </table>
+            </div>
+            <div id="no_results_message" class="no_results_message" style="display: none;">No hay donativos</div>
+        </div>
+        <div class="download_button">
+            <button class="button" id="download_pdf"> Descargar PDF </button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('php/donativos.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    var table = document.querySelector('.table tbody');
+                    var noResultsMessage = document.getElementById('no_results_message');
+                    var downloadButton = document.getElementById('download_pdf');
+
+                    if (data.length === 0) {
+                        noResultsMessage.style.display = 'grid';
+                        document.querySelector('.table thead').style.display = 'none';
+                        downloadButton.style.display = 'none';
+                    } else {
+                        data.forEach(function (inscripto) {
+                            var row = document.createElement('tr');
+
+                            for (var key in inscripto) {
+                                if (inscripto.hasOwnProperty(key)) {
+                                    var cell = document.createElement('td');
+                                    cell.textContent = inscripto[key];
+                                    cell.classList.add('table_content');
+                                    row.appendChild(cell);
+                                }
+                            }
+                            table.appendChild(row);
+                        });
+
+                        document.getElementById('download_pdf').addEventListener('click', function () {
+                            var { jsPDF } = window.jspdf;
+                            var doc = new jsPDF();
+
+                            var headers = [["Nombre", "Teléfono", "Donativo"]];
+                            var rows = [];
+
+                            data.forEach(function (inscripto) {
+                                var row = [];
+                                for (var key in inscripto) {
+                                    if (inscripto.hasOwnProperty(key)) {
+                                        row.push(inscripto[key]);
+                                    }
+                                }
+                                rows.push(row);
+                            });
+
+                            doc.autoTable({
+                                head: headers,
+                                body: rows,
+                            });
+
+                            doc.save('donativo.pdf');
+                        });
+
+                    }
+
+                })
+                .catch(error => console.error('Fetch error:', error));
+        });
+    </script>
+
+</body>
+
+</html>
