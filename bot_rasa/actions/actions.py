@@ -188,3 +188,49 @@ class ActionInformacion(Action):
                 return []
             return []
     
+
+class Actionfalta(Action):
+
+    def name(self) -> str:
+        return "action_falta"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+
+        nombre = tracker.get_slot("nombre")
+        numero = tracker.get_slot("numero")
+        faltante = tracker.get_slot("item")
+        print(nombre)
+        print(numero)
+        print(faltante)
+        
+        if nombre and faltante:
+            file_path = "necesidades.txt"
+            with open(file_path, "a") as file:
+                file.write(f"Nombre: {nombre}, Telefono: {numero}, Necesita: {faltante}\n")
+            dispatcher.utter_message(text="Gracias. He guardado tu información, pronto nos comunicaremos contigo")
+        else:
+            dispatcher.utter_message(text="Lo siento, no he podido obtener tu información correctamente.")
+
+        return []
+    
+class ActionGetLastUserMessage(Action):
+
+    def name(self) -> Text:
+        return "action_ultimo_mensaje"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        last_user_message = tracker.latest_message.get('text')
+        print(last_user_message)
+        
+        dispatcher.utter_message(text="Por favor dame tu nombre, apellido y numero de telefono")
+
+        last_intent = tracker.latest_message["intent"]["name"]
+
+        if last_intent == "negacion":
+            return [SlotSet("item", last_user_message)]
+        return[]

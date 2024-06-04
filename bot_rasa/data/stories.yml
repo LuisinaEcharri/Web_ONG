@@ -31,8 +31,13 @@ stories:
   steps:
   - intent: costo
   - action: utter_costo
+
+- story: falta
+  steps:
   - intent: negacion
-  - action: utter_becas
+  - action: action_ultimo_mensaje
+  - intent: datos
+  - action: action_falta
 
 - story: obligatorio
   steps:

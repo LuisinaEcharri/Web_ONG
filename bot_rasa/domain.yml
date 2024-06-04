@@ -16,6 +16,7 @@ intents:
   - animo_bien
   - obligatorio
   - animo_mal
+  - datos
 
 actions:
   - action_inicio
@@ -24,6 +25,8 @@ actions:
   - action_informacion
   - llevar_cosas
   - duracion_todos
+  - action_falta
+  - action_ultimo_mensaje
 
 slots: 
   actividad:
@@ -32,6 +35,22 @@ slots:
       - type: from_entity
         entity: actividad
   
+  nombre:
+    type: text
+    mappings: 
+      - type: from_entity
+        entity: nombre
+  numero:
+    type: text
+    mappings: 
+      - type: from_entity
+        entity: numero
+  item:
+    type: text
+    mappings:
+      - type: custom
+        action: action_ultimo_mensaje
+
   anios:
     type: text
     mappings: 
@@ -41,6 +60,8 @@ slots:
 entities:
   - actividad
   - anios
+  - nombre
+  - numero
 
 responses:
   utter_costo:
@@ -51,9 +72,6 @@ responses:
 
   utter_obligatorio:
   - text: "Si, ya que nos interesa el desarrollo humano de cada alumno"
-
-  utter_becas:
-  - text: "Tenemos becas, llamanos al 2494-489835"
 
   utter_desconocido:
   - text: "no entiendo lo que me decis, ¿podrias repetirlo?"

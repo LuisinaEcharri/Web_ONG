@@ -42,6 +42,14 @@ nlu:
     - nos vemos mas tarde
     - adiossssssssssss
 
+- intent: datos
+  examples: |
+    - [2262612851](numero) y [luisina](nombre)
+    - mi numero es [2262593779](numero) y mi nombre [marta](nombre)
+    - mi nombre [juan](nombre), mi num [2494223344](numero) 
+    - [julia](nombre) [2281223356](numero)
+    - soy [jesus](nombre) y mi numero es [2255435678](numero) 
+
 
 - intent: afirmacion
   examples: |
@@ -91,16 +99,20 @@ nlu:
 
 - intent: negacion
   examples: |
-    - no
-    - n
-    - nunca
-    - no creo
-    - no me gusta eso
-    - no va
-    - no realmente
-    - no me alcanza
-    - no puedo pagarlo
-    - es demasiado costoso
+    - no tengo zapatillas
+    - tengo pocas medias
+    - estaria necesitando un pantalon
+    - quiero una remera    
+    - tengo necesidad de una guitarra
+    - me falta el palo de hockey
+    - necesito una regla
+    - no me alcanza para comprame un sacapuntas
+    - no puedo pagarlo 
+    - es demasiada plata
+    - ¿Pueden ayudarme con transporte para llegar a las clases?
+    - necesito transporte
+    - pueden prestarme lapices de colores
+
 
 - intent: costo
   examples: |
@@ -170,3 +182,15 @@ nlu:
     - actividades
     - valores
     - generico
+
+- regex: nro_telefono
+  examples: |
+    - \d{10}
+
+- regex: anios
+  examples: |
+    - ^(?:[1-9]|[1-9][0-9]|100)$
+
+- regex: nombre
+  examples: |
+    - ^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]+$
