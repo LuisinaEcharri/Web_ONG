@@ -11,13 +11,109 @@ nlu:
     - activacion de [hockey](actividad)
     - boton [apoyo](actividad)
 
+- intent: donacion
+  examples: |
+    - Quiero donar zapatillas para niños.
+    - Me gustaría regalar ropa deportiva.
+    - Quiero enviarles alimentos no perecederos.
+    - Quiero donar instrumentos musicales.
+    - Me gustaría ofrecer material artístico.
+    - Quiero hacer una donación de útiles escolares.
+    - Quiero donar libros sobre valores.
+    - tengo pelotas de futbol para darles
+    - me sobran pelotas de hockey.
+    - Me gustaría ser voluntaria de arte
+    - puedo ayudar con pinturas y pinceles.
+    - quiero ofrecerme como voluntaria
+    - soy profe de educacion fisica y quiero ayudar
+    - puedo ayudar enviandoles botines de fútbol para niños?
+    - Me gustaría ayudar
+    - me ofrezco como voluntario para cuando me necesiten
+    - si necesitan mi ayuda llamenme al 2262593779
+    - Me gustaría regalar materiales para talleres de manualidades y arte como arcilla, papel, tijeras, y crayones de colores.
+    - quiero darle un palo de hockey
+    - quiero darles zapatillas
+    - Tengo pelotas de fútbol para darles.
+    - puedo ayudar con clases de musica
+    - quiero ayudar
+    - tengo ropa para ustedes
+
+
+- intent: ubicacion
+  examples: |
+    - donde estan ubicados?
+    - donde es?
+    - lugar?
+    - ubicacion?
+    - ¿Dónde se encuentran?
+    - ¿Cuál es su dirección?
+    - ¿Dónde puedo encontrarlos?
+    - ¿En qué lugar están?
+    - ¿Dónde están?
+    - ¿Cuál es su ubicación?
+    - ¿Dónde están situados?
+    - ¿Dónde queda su ONG?
+    - ¿Dónde los puedo encontrar?
+    - ¿Cuál es el lugar?
+    - ¿Dónde están localizados?
+    - ¿Dónde se ubican?
+    - ¿Dónde tienen sede?
+    - ¿Cuál es su localización?
+    - ¿Dónde queda?
+    - ¿Dónde puedo visitarlos?
+    - ¿En qué lugar se encuentran?
+    - ¿Dónde se hallan?
+    - ¿Dónde están establecidos?
+    - ¿Dónde tienen su oficina?
+    - ¿Dónde tienen su centro?
+    - ¿Dónde están sus instalaciones?
+    - ¿En qué parte están?
+    - ¿Dónde se sitúan?
+    - ¿Dónde están sus oficinas?
+    - ¿En qué zona están?
+    - ¿Cuál es su ubicación exacta?
+    - ¿Dónde están ubicados exactamente?
+    - ¿Dónde está la sede de la ONG?
+
+- intent: contacto
+  examples: |
+    - como me comunico con ustedes?
+    - tienen un mail?
+    - me dicen su numero de telefono por favor
+    -  ¿Cómo los contacto?
+    - ¿Tienen algún número de teléfono?
+    - ¿Me pueden dar su número de teléfono?
+    - ¿Cómo puedo comunicarme con ustedes?
+    - ¿Cómo puedo ponerme en contacto?
+    - ¿Cómo puedo hablar con alguien de la ONG?
+    - ¿Me pasan su número de contacto?
+    - ¿Cómo puedo llamarlos?
+    - ¿Me podrían proporcionar su número de teléfono?
+    - ¿Cómo puedo enviarles un correo?
+    - ¿Cuál es su número?
+    - ¿Dónde los puedo llamar?
+    - ¿Tienen algún teléfono de contacto?
+    - ¿Cómo puedo comunicarme por teléfono?
+    - ¿Cuál es el teléfono para comunicarme con ustedes?
+    - ¿Me pueden dar su número de celular?
+    - ¿Me proporcionan su contacto?
+    - ¿Tienen algún contacto telefónico?
+    - ¿Cuál es el mejor número para contactarlos?
+    - ¿Me pueden dar un número para llamarlos?
+    - ¿Puedo tener su teléfono?
+    - ¿Tienen un número de WhatsApp?
+    - ¿Cómo puedo comunicarme con ustedes por teléfono?
+
 - intent: edad
   examples: |
     - [16](anios)
     - tiene [10](anios) años
     - son de [15] (anios) 
-    - tiene [7]
+    - tiene [3](anios)
     - [8](anios) años
+    - Son [17](anios)
+    - Tengo [4](anios) años
+    - Tengo [22](anios)
 
 - intent: saludo
   examples: |
@@ -46,11 +142,34 @@ nlu:
   examples: |
     - [2262612851](numero) y [luisina](nombre)
     - mi numero es [2262593779](numero) y mi nombre [marta](nombre)
-    - mi nombre [juan](nombre), mi num [2494223344](numero) 
+    - mi nombre [juan](nombre) , mi num [2494223344](numero) 
     - [julia](nombre) [2281223356](numero)
     - soy [jesus](nombre) y mi numero es [2255435678](numero) 
-
-
+    - Me llamo [José](nombre) y mi número es [2211223344](numero) 
+    - [Carlos](nombre) y [2274332211](numero)
+    - soy [pia](nombre) y mi numero es [2281590130](numero) 
+    - Me llamo [edelweiss](nombre) y mi número es [2211223344](numero) 
+    - [sol](nombre) y [2214322911](numero)
+    - [agustin](nombre) y [2494556672](numero)
+    - [pia](nombre) [1112234598](numero)
+    - [jona](nombre) [2233198778](numero)
+    - [mia](nombre) [2214562709](numero)
+    - [nelson](nombre) [2256178929](numero)
+    - [matias](nombre) [2262120987](numero)
+    - [2343566312](numero) y [Camila](nombre)
+    - Mi número es [1101234567](numero) y me llamo [Lucas](nombre)
+    - Me llamo [Sofía](nombre) y mi número es [0112345678](numero)
+    - [Mateo](nombre) tiene el número [02262435434](numero)
+    - Soy [Valentina](nombre) y mi número es [2494657891](numero)
+    - Me llamo [Sebastián](nombre) y tengo el número [2281234567](numero)
+    - [Isabella](nombre) y su número es [2223678923](numero)
+    - Soy [Benjamín](nombre) y tengo el número [2231457828](numero)
+    - Me llamo [Delfina](nombre) y tengo el número [2245098761](numero)
+    - [Thiago](nombre) tiene el número [2256090102](numero)
+    - [Catalina](nombre) tiene el número [092345678]
+    - [Juan](nombre) tiene el número [2256189223]
+    - [Renata](nombre) tiene el número [2218923849]
+    
 - intent: afirmacion
   examples: |
     - si
@@ -78,6 +197,27 @@ nlu:
     - que se necesita?
     - que debe llevar?
     - tengo que asistir con algo?
+    - ¿Tengo que llevar algún material?
+    - ¿Qué necesito traer?
+    - ¿Hay algún material que deba llevar?
+    - ¿Qué materiales necesito?
+    - ¿Qué debería llevar?
+    - ¿Qué cosas necesito?
+    - ¿Hay algo que deba llevar?
+    - ¿Tengo que llevar algo en particular?
+    - ¿Qué se debe llevar?
+    - ¿Necesito llevar algún equipo?
+    - ¿Qué equipo debo llevar?
+    - ¿Hay que llevar algún material específico?
+    - ¿Cuáles son los requisitos para llevar?
+    - ¿Es necesario traer materiales?
+    - ¿Qué cosas debo traer?
+    - ¿Debo llevar algo para las actividades?
+    - ¿Qué se requiere llevar?
+    - ¿Tengo que llevar algo en especial?
+    - ¿Qué tengo que traer conmigo?
+    - ¿Hay que traer algún equipo?
+    - ¿Qué necesito llevar conmigo?
 
 - intent: duracion
   examples: |
@@ -87,6 +227,28 @@ nlu:
     - cuantas horas son?
     - cuanto tardan?
     - tiempo?
+    - ¿Cuántas horas tarda?
+    - ¿Cuánto dura la actividad?
+    - ¿Cuánto tiempo están?
+    - ¿Cuánto tiempo de duración?
+    - ¿Cuánto tiempo toma?
+    - ¿Cuánto se tarda?
+    - ¿Cuánto dura la clase?
+    - ¿Cuánto tiempo se necesita?
+    - ¿Por cuánto tiempo es?
+    - ¿Cuánto dura cada clase?
+    - ¿Cuánto tarda cada sesión?
+    - ¿Cuánto tiempo debo dedicar?
+    - ¿Cuánto duran las actividades?
+    - ¿Cuánto dura cada actividad?
+    - ¿Cuánto tiempo lleva cada clase?
+    - ¿Cuánto tiempo toma cada sesión?
+    - ¿Cuánto tiempo dura cada taller?
+    - ¿Cuánto dura el curso?
+    - ¿Cuánto tiempo lleva cada actividad?
+    - ¿Cuántas horas lleva?
+    - ¿Cuánto tarda cada clase?
+    - ¿Cuál es el tiempo de duración?
 
 - intent: dia_hora
   examples: |
@@ -96,6 +258,23 @@ nlu:
     - horario?
     - dia?
     - hora?
+    - ¿Cuándo son las clases?
+    - ¿Cuándo se realizan las actividades?
+    - ¿Qué días están disponibles?
+    - ¿En qué días puedo asistir?
+    - ¿Cuáles son los horarios?
+    - ¿A qué horas son las actividades?
+    - ¿Qué día se realizan?
+    - ¿Cuál es el horario?
+    - ¿Cuándo es la clase?
+    - ¿En qué horarios se llevan a cabo?
+    - ¿Qué días y a qué horas son las actividades?
+    - ¿Cuándo se hacen las actividades?
+    - ¿A qué horas puedo asistir?
+    - ¿Qué días y a qué horas?
+    - ¿Cuándo están disponibles las actividades?
+    - ¿Cuáles son los días y horarios?
+    - ¿En qué días hay clases?
 
 - intent: negacion
   examples: |
@@ -112,6 +291,24 @@ nlu:
     - ¿Pueden ayudarme con transporte para llegar a las clases?
     - necesito transporte
     - pueden prestarme lapices de colores
+    - necesito ropa deportiva
+    - no tengo suficiente ropa de invierno
+    - me falta un violín para las clases de música
+    - no puedo comprarme una guitarra
+    - necesito ayuda con los materiales de música
+    - ¿tienen ropa que me puedan dar?
+    - ¿pueden ayudarme a conseguir una bicicleta?
+    - no tengo un lugar para estudiar en casa
+    - necesito una lámpara para estudiar
+    - no tengo acceso a internet en casa
+    - necesito una camiseta para las clases de deporte
+    - me faltan hojas para la impresora
+    - necesito ayuda para comprar útiles escolares
+    - ¿pueden prestarme un libro de matemáticas?
+    - no tengo suficiente comida en casa
+    - necesito ayuda para conseguir alimentos
+    - me faltan cosas básicas para el colegio
+    - ¿pueden ayudarme con la compra de ropa?
 
 
 - intent: costo
@@ -123,6 +320,21 @@ nlu:
     - son pagas?
     - ¿cuanto debo pagar?
     - cuanto sale?
+    - ¿Hay que pagar algo?
+    - ¿Cuánto es el pago mensual?
+    - ¿Cuánto cuesta la mensualidad?
+    - ¿Qué precio tienen las actividades?
+    - ¿Cuánto cuesta participar?
+    - ¿Cuál es el costo para inscribirse?
+    - ¿Qué tarifa tienen?
+    - ¿Hay algún costo mensual?
+    - ¿Cuál es el precio para los talleres?
+    - ¿Cuánto debo abonar mensualmente?
+    - ¿Cuánto es la cuota mensual?
+    - ¿Hay que pagar cuota?
+    - ¿Cuál es el costo de las clases al mes?
+    - ¿Cuál es el valor mensual de las actividades?
+    - ¿Cuál es la tarifa mensual?
 
 - intent: mixto
   examples: |
@@ -132,6 +344,26 @@ nlu:
     - es solo para nenas?
     - van nenes?
     - son solo chicas?
+    - ¿Aceptan tanto a niños como a niñas?
+    - ¿Es una actividad mixta?
+    - ¿Está abierto a chicos y chicas?
+    - ¿Las niñas pueden participar?
+    - ¿Solo pueden asistir varones?
+    - ¿Las actividades son mixtas?
+    - ¿Es exclusivo para chicos?
+    - ¿Pueden inscribirse niños y niñas?
+    - ¿Hay restricciones de género?
+    - ¿Cualquiera puede asistir?
+    - ¿Las clases están abiertas a todos los géneros?
+    - ¿Es un programa mixto?
+    - ¿Pueden ir tanto chicos como chicas?
+    - ¿Pueden participar tanto niños como niñas?
+    - ¿Las clases son inclusivas?
+    - ¿Es para chicos y chicas?
+    - ¿Admiten a niños y niñas?
+    - ¿Es solo para chicos?
+    - ¿Los chicos pueden ir?
+    - ¿Las nenas pueden ir?
 
 - intent: animo_bien
   examples: |

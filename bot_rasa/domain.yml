@@ -17,6 +17,9 @@ intents:
   - obligatorio
   - animo_mal
   - datos
+  - ubicacion
+  - contacto
+  - donacion
 
 actions:
   - action_inicio
@@ -27,6 +30,8 @@ actions:
   - duracion_todos
   - action_falta
   - action_ultimo_mensaje
+  - action_donar
+  - action_ultimo_mensaje_donacion
 
 slots: 
   actividad:
@@ -51,6 +56,12 @@ slots:
       - type: custom
         action: action_ultimo_mensaje
 
+  item2:
+    type: text
+    mappings:
+      - type: custom
+        action: action_ultimo_mensaje_donacion
+
   anios:
     type: text
     mappings: 
@@ -69,6 +80,12 @@ responses:
 
   utter_mixto:
   - text: "Si, son mixtas"
+
+  utter_contacto:
+  - text: "Nuestro numero de contacto es 2494489835"
+
+  utter_ubicacion:
+  - text: "Nos encontramos en Velez S 491, Tandil, Buenos Aires, Argentina"
 
   utter_obligatorio:
   - text: "Si, ya que nos interesa el desarrollo humano de cada alumno"

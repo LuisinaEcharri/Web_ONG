@@ -7,7 +7,9 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
+from aifc import Error
 from typing import Any, Text, Dict, List
+import mysql.connector
 #
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -209,6 +211,21 @@ class Actionfalta(Action):
             file_path = "necesidades.txt"
             with open(file_path, "a") as file:
                 file.write(f"Nombre: {nombre}, Telefono: {numero}, Necesita: {faltante}\n")
+            try:
+                connection = mysql.connector.connect(
+                    host="localhost",  # Cambia esto por tu host
+                    user="root",  # Cambia esto por tu usuario
+                    password="",  # Cambia esto por tu contraseña
+                    database="reinvent_reinventar"  # Cambia esto por tu base de datos
+                )
+                cursor = connection.cursor()
+                sql_insert_query = "INSERT INTO necesidad (necesidad, nombre, telefono) VALUES (%s, %s, %s)"
+                cursor.execute(sql_insert_query, (faltante, nombre, numero))
+                connection.commit()
+                cursor.close()
+                connection.close()
+            except Error as error:
+                dispatcher.utter_message(text=f"Error al guardar en la base de datos: {error}")
             dispatcher.utter_message(text="Gracias. He guardado tu información, pronto nos comunicaremos contigo")
         else:
             dispatcher.utter_message(text="Lo siento, no he podido obtener tu información correctamente.")
@@ -227,10 +244,71 @@ class ActionGetLastUserMessage(Action):
         last_user_message = tracker.latest_message.get('text')
         print(last_user_message)
         
-        dispatcher.utter_message(text="Por favor dame tu nombre, apellido y numero de telefono")
+        dispatcher.utter_message(text="Por favor dame tu nombre y numero de telefono")
 
         last_intent = tracker.latest_message["intent"]["name"]
 
         if last_intent == "negacion":
             return [SlotSet("item", last_user_message)]
+        return[]
+
+class Actionfalta(Action):
+
+    def name(self) -> str:
+        return "action_donar"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+
+        nombre = tracker.get_slot("nombre")
+        numero = tracker.get_slot("numero")
+        donacion = tracker.get_slot("item2")
+        print(nombre)
+        print(numero)
+        print(donacion)
+        
+        if nombre and donacion:
+            file_path = "donaciones.txt"
+            with open(file_path, "a") as file:
+                file.write(f"Nombre: {nombre}, Telefono: {numero}, Dona: {donacion}\n")
+            try:
+                connection = mysql.connector.connect(
+                    host="localhost",  # Cambia esto por tu host
+                    user="root",  # Cambia esto por tu usuario
+                    password="",  # Cambia esto por tu contraseña
+                    database="reinvent_reinventar"  # Cambia esto por tu base de datos
+                )
+                cursor = connection.cursor()
+                sql_insert_query = "INSERT INTO donacion (donacion, nombre, telefono) VALUES (%s, %s, %s)"
+                cursor.execute(sql_insert_query, (donacion, nombre, numero))
+                connection.commit()
+                cursor.close()
+                connection.close()
+            except Error as error:
+                dispatcher.utter_message(text=f"Error al guardar en la base de datos: {error}")
+            dispatcher.utter_message(text="Gracias. He guardado tu información, pronto nos comunicaremos contigo")
+        else:
+            dispatcher.utter_message(text="Lo siento, no he podido obtener tu información correctamente.")
+
+        return []
+    
+class ActionGetLastUserMessage(Action):
+
+    def name(self) -> Text:
+        return "action_ultimo_mensaje_donacion"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        last_user_message = tracker.latest_message.get('text')
+        print(last_user_message)
+        
+        dispatcher.utter_message(text="Por favor dame tu nombre y numero de telefono")
+
+        last_intent = tracker.latest_message["intent"]["name"]
+
+        if last_intent == "donacion":
+            return [SlotSet("item2", last_user_message)]
         return[]

@@ -7,12 +7,12 @@ stories:
   - intent: inicio
   - action: action_inicio
 
-- story: inicio_todos
+- story: chau
   steps:
   - intent: despedida
   - action: utter_despedida
 
-- story: inicio_todos
+- story: saludar
   steps:
   - intent: saludo
   - action: utter_saludo
@@ -39,6 +39,13 @@ stories:
   - intent: datos
   - action: action_falta
 
+- story: dona
+  steps:
+  - intent: donacion
+  - action: action_ultimo_mensaje_donacion
+  - intent: datos
+  - action: action_donar
+
 - story: obligatorio
   steps:
   - intent: obligatorio
@@ -53,6 +60,22 @@ stories:
   steps:
   - intent: edad
   - action: horarios_hockey
+
+- story: ubicacion
+  steps:
+  - intent: ubicacion
+  - action: utter_ubicacion
+
+- story: contacto
+  steps:
+  - intent: contacto
+  - action: utter_contacto
+
+- story: edad
+  steps:
+  - intent: edad
+  - action: horarios_hockey
+
 
 - story: horario todos
   steps:

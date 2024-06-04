@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2024 a las 19:45:17
+-- Tiempo de generación: 04-06-2024 a las 19:59:43
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `reinvent_reinventar`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `donacion`
+--
+
+CREATE TABLE `donacion` (
+  `id_donacion` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `telefono` bigint(20) NOT NULL,
+  `donacion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -44,6 +57,19 @@ CREATE TABLE `inscripto` (
 INSERT INTO `inscripto` (`id_inscripto`, `nombre`, `apellido`, `telefono`, `email`, `fecha_inscripcion`, `estado`) VALUES
 (1, 'Sol Agostina', 'Spinelli', 2262652554, 'solagostinaspinelli@gmail.com	', '2024-05-09', 'caminante'),
 (2, 'Pia Maria', 'Bedini Crocci', 2262652554, 'piabedinicrocci@gmail.com	', '2024-05-09', 'Corredor');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `necesidad`
+--
+
+CREATE TABLE `necesidad` (
+  `id_necesidad` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `telefono` bigint(20) NOT NULL,
+  `necesidad` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -91,10 +117,22 @@ INSERT INTO `usuario` (`id_usuario`, `user`, `password`) VALUES
 --
 
 --
+-- Indices de la tabla `donacion`
+--
+ALTER TABLE `donacion`
+  ADD PRIMARY KEY (`id_donacion`);
+
+--
 -- Indices de la tabla `inscripto`
 --
 ALTER TABLE `inscripto`
   ADD PRIMARY KEY (`id_inscripto`);
+
+--
+-- Indices de la tabla `necesidad`
+--
+ALTER TABLE `necesidad`
+  ADD PRIMARY KEY (`id_necesidad`);
 
 --
 -- Indices de la tabla `noticia`
@@ -113,10 +151,22 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `donacion`
+--
+ALTER TABLE `donacion`
+  MODIFY `id_donacion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `inscripto`
 --
 ALTER TABLE `inscripto`
   MODIFY `id_inscripto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `necesidad`
+--
+ALTER TABLE `necesidad`
+  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `noticia`
