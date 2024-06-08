@@ -133,7 +133,7 @@
     <!-- ACTIVITIES -->
     <section id="activities" class="activities" itemscope itemtype=http://schema.org/Article>
         <h2 class="activities_title"><span class="activities_underline">Act</span>ividades</h2>
-        <div class="activities_cards">
+        <div class="visible", id="activities_cards">
             <div id="Interfaz.chat-widget">
                 <!-- Contenedor principal del widget del chat -->
     
@@ -145,7 +145,7 @@
                                                 
                         <img class="modal-button-chat-off-mini" src="./img/backIconBlue.svg" id="modal-button-chat-off-1" type="button" onclick="">
                             <!-- Botón para cerrar el chat en formato mini -->
-
+    
                         <p id="titulo-contenedor" class="chat-window-header">
                             <!-- Título del contenedor del chat -->
                             Chat con Agente n
@@ -205,8 +205,9 @@
                 <button class="btn btn-primary modal-button-chat-off" id="modal-button-chat-off" type="button"></button>
                 <!-- Botón para cerrar el chat en formato modal -->
             </div>
+            
             <div id="rasaWebchatPro"></div>
-            <div class="activities_card_section_up" id="cards">
+            <div class="visible" id="cards">
                 <div class="activity_left_up">
                     <h2 class="activity_card_title">HOCKEY</h2>
                     <div class="activity_card_image"><img class="activity_image" src="img/hockey.png" itemscope itemtype=https://schema.org/ImageObject alt="Hockey"></div>
@@ -222,7 +223,7 @@
                     </div>
                 </div>
             </div>
-            <div class="activities_card_section_down">
+            <div class="visible" id="cards">
                 <div class="activity_left_down">
                     <h2 class="activity_card_title">TALLER DE DESARROLLO <br>HUMANO</h2>
                     <div class="activity_card_image"><img class="activity_image" src="img\valores.png" itemscope itemtype=https://schema.org/ImageObject alt="Taller de desarrollo humano"></div>
@@ -535,6 +536,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>   
     <script src="js/mp.js"></script>
+    <script src="js/toggle_hide_cards.js"></script>
+    <script src="js/toggle_show_cards.js"></script>
 </body>
 
 </html>
