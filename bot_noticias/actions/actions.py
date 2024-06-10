@@ -2,9 +2,10 @@
 import re
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+from rasa_sdk.types import DomainDict
 from rasa_sdk.executor import ActionExecutor
 import streamlit as st
 import os
@@ -12,6 +13,7 @@ import google.generativeai as genai
 import json
 import requests
 from dotenv import load_dotenv
+
 
 load_dotenv()
 
@@ -118,22 +120,26 @@ class GenerateNewAction(Action):
         }
 
         return news_data
-
     
-class DeleteNewAction(Action):
 
+# ------------------------flujo eliminar noticia
+class ValidateEliminarNoticiaForm(FormValidationAction):
     def name(self) -> Text:
-        return "delete_new"
+        return "validate_eliminar_noticia_form"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def validate_texto(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+
         
-        # Obtener el texto de la noticia del usuario
         new_title = tracker.latest_message.get("text")
-
+        print(new_title)
         # Preparar la URL del script PHP
-        url = "http://localhost/Web_ONG/bot_noticias/actions/delete_new.php"
+        url = "http://localhost/Web_ONG/bot_noticias/actions/get_new.php"
         headers = {'Content-Type': 'application/json'}
         
         # Crear el payload con el título de la noticia
@@ -146,6 +152,92 @@ class DeleteNewAction(Action):
         response_data = response.json()
 
         # Manejar la respuesta
-        dispatcher.utter_message(text=response_data['message'])
+        if response_data['status'] == 'success':
+            news = response_data['data']
+            message = ("\n\n"
+                       f"Título: {news['titulo']}\n"
+                       f"Epígrafe: {news['epigrafe']}\n"
+                       f"Cuerpo: {news['cuerpo']}")
+            dispatcher.utter_message(text=message)
+            return {"texto": new_title}
+        else:
+            dispatcher.utter_message(text=response_data['message'])
+            return {"texto": None}
 
-        return [SlotSet("texto", None)]
+    def validate_confirm_delete(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        confirm_delete = tracker.get_slot("confirm_delete")
+        new_title = tracker.get_slot("texto")
+
+        if confirm_delete:
+            # Preparar la URL del script PHP
+            url = "http://localhost/Web_ONG/bot_noticias/actions/delete_new.php"
+            headers = {'Content-Type': 'application/json'}
+            
+            # Crear el payload con el título de la noticia
+            payload = {
+                "Titulo": new_title
+            }
+
+            # Enviar la solicitud POST al script PHP
+            response = requests.post(url, headers=headers, data=json.dumps(payload))
+            response_data = response.json()
+
+            # Manejar la respuesta
+            dispatcher.utter_message(text=response_data['message'])
+        else:
+            dispatcher.utter_message(text="Operación cancelada. La noticia no ha sido eliminada.")
+
+
+# class GetNewAction(Action):
+
+#     def name(self) -> Text:
+#         return "get_new"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+#         # Obtener el texto de la noticia del usuario
+#         new_title = tracker.latest_message.get("text")
+#         print(new_title)
+#         # Preparar la URL del script PHP
+#         url = "http://localhost/Web_ONG/bot_noticias/actions/get_new.php"
+#         headers = {'Content-Type': 'application/json'}
+        
+#         # Crear el payload con el título de la noticia
+#         payload = {
+#             "Titulo": new_title
+#         }
+
+#         # Enviar la solicitud POST al script PHP
+#         response = requests.post(url, headers=headers, data=json.dumps(payload))
+#         response_data = response.json()
+
+#         # Manejar la respuesta
+#         if response_data['status'] == 'success':
+#             news = response_data['data']
+#             message = (f"¿Estás seguro de que deseas eliminar la siguiente noticia?\n\n"
+#                        f"**Título**: {news['titulo']}\n"
+#                        f"**Epígrafe**: {news['epigrafe']}\n"
+#                        f"**Cuerpo**: {news['cuerpo']}")
+#             dispatcher.utter_message(text=message)
+#         else:
+#             dispatcher.utter_message(text=response_data['message'])
+#             return []
+        
+class DeleteNewForm(Action):
+
+    def name(self) -> Text:
+        return "delete_new"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        return [SlotSet("confirm_delete", None), SlotSet("texto", None)]

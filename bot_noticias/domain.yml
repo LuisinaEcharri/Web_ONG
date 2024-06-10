@@ -6,6 +6,8 @@ intents:
 - saludar
 - ver_inscriptos
 - agradecer
+- deny
+- affirm
 
 entities:
 - texto
@@ -17,6 +19,18 @@ slots:
     mappings:
     - type: from_entity
       entity: texto
+  
+  confirm_delete:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: True
+    - type: from_intent
+      intent: deny
+      value: False
+
 
 forms:
   cargar_noticia_form:
@@ -29,6 +43,7 @@ forms:
     - saludar
     required_slots:
     - texto
+    - confirm_delete
 
 responses:
   utter_saludar:
@@ -39,6 +54,8 @@ responses:
   - text: Dale. Qué noticia querías publicar?
   utter_ask_eliminar_noticia_form_texto:
   - text: Ok. Decime el titulo de la noticia que querés eliminar
+  utter_ask_eliminar_noticia_form_confirm_delete:
+  - text: Estás seguro que deseas eliminar esta noticia?
   utter_desconocido:
   - text: No entiendo lo que me decís. ¿Lo dirías de otra forma?
   utter_de_nada:
@@ -47,8 +64,9 @@ responses:
 actions:
 - talk
 - generate_new
-- update_new
+# - get_new
 - delete_new
+- validate_eliminar_noticia_form
 
 session_config:
   session_expiration_time: 60

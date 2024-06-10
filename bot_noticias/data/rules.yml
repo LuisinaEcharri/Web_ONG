@@ -22,17 +22,13 @@ rules:
   - intent: ver_inscriptos
   - action: utter_ver_inscriptos
 
+# flujo cargar noticia
+
 - rule: Activate form cargar noticia
   steps:
   - intent: cargar_noticia
   - action: cargar_noticia_form
   - active_loop: cargar_noticia_form
-
-- rule: Activate form eliminar noticia
-  steps:
-  - intent: eliminar_noticia
-  - action: eliminar_noticia_form
-  - active_loop: eliminar_noticia_form
 
 - rule: Submit form cargar noticia
   condition:
@@ -46,6 +42,44 @@ rules:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
   - action: generate_new
+
+# flujo eliminar noticia
+
+- rule: Activate form eliminar noticia
+  steps:
+  - intent: eliminar_noticia
+  - action: eliminar_noticia_form
+  - active_loop: eliminar_noticia_form
+
+# - rule: Obtener noticia para confirmar eliminación
+#   condition:
+#   - active_loop: eliminar_noticia_form
+#   steps:
+#   - slot_was_set:
+#     - texto
+#   - action: get_new
+#   - slot_was_set:
+#     - confirm_delete: null
+
+# - rule: Confirmar eliminación de la noticia
+#   condition:
+#   - active_loop: eliminar_noticia_form
+#   steps:
+#   - intent: affirm
+#   - slot_was_set:
+#     - confirm_delete: True
+#   - action: delete_new
+#   - active_loop: null
+
+# - rule: Cancelar eliminación de la noticia
+#   condition:
+#   - active_loop: eliminar_noticia_form
+#   steps:
+#   - intent: deny
+#   - slot_was_set:
+#     - confirm_delete: False
+#   - action: delete_new
+#   - active_loop: null
 
 - rule: Submit form eliminar noticia
   condition:
