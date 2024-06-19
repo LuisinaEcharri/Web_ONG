@@ -25,7 +25,7 @@ correr el proyecto en Xampp:
 - http://localhost/Web_ONG/initial.php
 
 ## Utilizar ejecutable o levantar todos los puertos desde una unica consola
-### Ejecutalbe
+### Ejecutable
 
 En el caso del ejecutable, simplemente si tenes python 3.10 y node en tu computadora, con apretar el archivo deploy.exe ya podriamos levantar todos los puertos en una unica consola ya que se instalan las dependencias.
 
