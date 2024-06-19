@@ -24,6 +24,10 @@ correr el proyecto en Xampp:
 ### Importar/Sobrescribir BDD local
 - http://localhost/Web_ONG/initial.php
 
-## Ejecutable/ Abrir todos los puertos sobre una consola
+## Utilizar ejecutable o levantar todos los puertos desde una unica consola
+### Ejecutalbe
+
 En el caso del ejecutable, simplemente si tenes python 3.10 y node en tu computadora, con apretar el archivo deploy.exe ya podriamos levantar todos los puertos en una unica consola ya que se instalan las dependencias.
+
+### Entorno virtual
 En el caso de usar entorno virtual (lo cual es lo mas recomando debido a posibles problemas con dependencias), con descargar node en tu computadora y a la hora de crear el entorno virtual seteamos el python como 3.10, ya con esto unicamente es necesario descargar el repositorio y con correr el comando "python deploy.py" ya podrias levantar todos los puertos desde una unica consola.
