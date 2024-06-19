@@ -11,16 +11,207 @@ nlu:
     - activacion de [hockey](actividad)
     - boton [apoyo](actividad)
 
+- intent: consejos_orientacion
+  examples: |
+    - Pueden darme consejos sobre cómo apoyar a mis hijos en casa?
+    - Tienen algún programa de orientación para padres?
+    - ¿Brindan asesoramiento a los padres?
+    - ¿Pueden orientarme sobre cómo ayudar a mis hijos?
+    - ¿Ofrecen consejos para padres?
+    - ¿Tienen talleres de orientación para padres?
+    - ¿Pueden darme orientación para apoyar a mis hijos?
+    - ¿Tienen algún programa de apoyo para padres?
+    - ¿Ofrecen orientación sobre la crianza de los hijos?
+    - ¿Pueden ayudarme con consejos para educar a mis hijos?
+    - ¿Tienen sesiones de orientación para padres?
+    - ¿Brindan ayuda para padres sobre cómo apoyar a sus hijos?
+    - ¿Pueden ofrecerme guía sobre cómo ayudar a mis hijos en sus estudios?
+    - ¿Ofrecen programas de formación para padres?
+    - ¿Tienen recursos para padres sobre apoyo en el hogar?
+    - ¿Pueden darme recomendaciones para apoyar a mis hijos?
+    - ¿Ofrecen orientación familiar?
+    - ¿Tienen alguna guía para padres?
+
+- intent: documentacion
+  examples: |
+    - ¿Qué documentos necesito para inscribirme?
+    - que necesito para incribirme 
+    - debo llevar documentacion
+    - que documentos tengo que llevar
+    - ¿Qué documentos tengo que llevar?
+    - ¿Qué papeles necesito para registrarme?
+    - ¿Cuáles son los requisitos para la inscripción?
+    - ¿Qué documentación se requiere para inscribirse?
+    - ¿Qué debo presentar para inscribirme?
+    - ¿Qué debo llevar para la inscripción?
+    - ¿Necesito llevar algún documento?
+    - ¿Qué documentos son necesarios para la inscripción?
+    - ¿Qué documentos se necesitan para registrarse?
+    - ¿Tengo que llevar algún papel?
+    - ¿Qué requisitos necesito cumplir para inscribirme?
+    - ¿Qué debo tener para registrarme?
+    - ¿Cuáles son los documentos necesarios para inscribirse?
+    - ¿Qué documentos hay que llevar para la inscripción?
+    - ¿Qué debo traer para inscribirme?
+
+- intent: discapacidad
+  examples: |
+    - aceptan niños con dicapacidad?
+    - mi hijo posee tal enfermedad se puede inscribir?
+    - ¿Su programa es inclusivo para niños con discapacidad?
+    - ¿Tienen programas adaptados para niños con discapacidades?
+    - ¿Mi hija con autismo puede participar en sus actividades?
+    - ¿Ofrecen apoyo para niños con discapacidades?
+    - ¿Cómo manejan la inclusión de niños con discapacidades?
+    - ¿Aceptan estudiantes con discapacidades físicas?
+    - ¿Hay personal especializado para niños con discapacidades?
+    - ¿Cuál es el procedimiento para inscribir a un niño con discapacidad?
+    - ¿Su institución cuenta con infraestructura adecuada para niños con discapacidades?
+    - ¿Ofrecen servicios de educación especial?
+    - ¿Hay algún tipo de evaluación previa para niños con discapacidades?
+    - ¿Qué tipo de discapacidades aceptan en su programa?
+    - ¿Cómo aseguran la inclusión de niños con discapacidades en sus actividades?
+    - ¿Mi hijo con síndrome de Down puede asistir a su escuela?
+    - ¿Tienen algún programa específico para niños con discapacidades intelectuales?
+    - ¿Ofrecen transporte adaptado para niños con discapacidades?
+    - ¿Cuál es su política de inclusión para niños con discapacidades?
+
+- intent: que_hacemos
+  examples: |
+    - ¿Qué hace esta ONG?
+    - a que se dedican?
+    - cual es su objetivo?
+    - ¿Qué hace esta ONG?
+    - ¿A qué se dedican?
+    - ¿Cuál es su objetivo?
+    - ¿Qué actividades realizan?
+    - ¿Qué servicios ofrecen?
+    - ¿Qué programas tienen?
+    - ¿Qué tipo de ayuda brindan?
+    - ¿En qué áreas trabajan?
+    - ¿Qué proyectos llevan a cabo?
+    - ¿Cuáles son sus principales actividades?
+    - ¿Qué iniciativas tienen?
+    - ¿Qué tipo de trabajo realizan?
+    - ¿Qué acciones llevan a cabo?
+    - ¿Qué labores realizan?
+    - ¿Cuál es su misión?
+    - ¿Qué hacen en esta organización?
+    - ¿Qué tareas realizan?
+    - ¿Qué funciones cumplen?
+    - ¿Qué tipo de asistencia ofrecen?
+    - ¿Qué apoyo brindan?
+    - ¿Qué tipo de actividades organizan?
+    - ¿En qué consisten sus programas?
+    - ¿Qué metas tienen?
+    - ¿Qué fines persiguen?
+    - ¿Qué hacen para ayudar?
+    - ¿Qué hacen por la comunidad?
+    - ¿Qué trabajo realizan en la ONG?
+    - ¿Qué servicios prestan?
+    - ¿Qué ofrecen a la comunidad?
+    - ¿Qué labores desarrollan?
+    - ¿Qué hacen los voluntarios aquí?
+
+
+- intent: apoyo_alimenticio
+  examples: |
+    - ¿Tienen programas de alimentación o meriendas para los niños?
+    - dan meriandas?
+    - les dan comida a los niños?
+    - ¿Proveen alimentos a los niños?
+    - ¿Ofrecen soporte alimentario a las familias?
+    - ¿Dan refrigerios a los niños?
+    - ¿Tienen algún programa de alimentos para los niños?
+    - ¿Ayudan a las familias con comida?
+    - ¿Tienen servicios de comida para los niños?
+    - ¿Ofrecen apoyo alimentario a las familias?
+    - ¿Brindan algún tipo de ayuda con alimentos?
+    - ¿Proporcionan almuerzo a los niños?
+    - ¿Ofrecen apoyo con alimentos a las familias?
+    - ¿Tienen programas de ayuda alimentaria?
+    - ¿Proveen apoyo alimenticio a las familias?
+    - ¿Ofrecen algún tipo de asistencia a las familias con alimentos?
+    - ¿Dan refrigerios a los niños después de las actividades?
+    - ¿Tienen programas de desayuno o almuerzo para los niños?
+    - ¿Ofrecen comida a los niños durante las actividades?  
+
+- intent: requisitos
+  examples: |
+    - Hay algún requisito para participar en los programas?
+    - Necesito demostrar mi situación económica para inscribir a mis hijos?
+    - ¿Hay algún requisito para participar en los programas?
+    - ¿Necesito demostrar mi situación económica para inscribir a mis hijos?
+    - ¿Cuáles son los requisitos para inscribirse?
+    - ¿Qué requisitos necesito cumplir para participar?
+    - ¿Qué condiciones hay para inscribirse en los programas?
+    - ¿Debo presentar algún documento para inscribirme?
+    - ¿Necesito cumplir algún requisito para participar?
+    - ¿Qué requisitos se necesitan para la inscripción?
+    - ¿Hay requisitos específicos para inscribirse?
+    - ¿Qué condiciones debo cumplir para inscribir a mis hijos?
+    - ¿Necesito alguna documentación especial para inscribirme?
+    - ¿Hay algún criterio para poder participar?
+    - ¿Debo cumplir con algún requisito para inscribirme?
+    - ¿Qué requisitos debo presentar para la inscripción?
+    - ¿Cuáles son las condiciones para participar en los programas?
+    - ¿Hay algún requisito de elegibilidad para inscribirse?
+    - ¿Qué se necesita para poder inscribirse?
+    - ¿Hay alguna condición para participar en las actividades?
+
+- intent: asistencia_psicologica
+  examples: |
+    - Ofrecen apoyo psicológico o emocional para los niños?
+    - Hay consejeros disponibles para hablar con los niños
+    - hay psicopedagogos en la ong?
+    - ¿Tienen servicios de apoyo emocional?
+    - ¿Ofrecen terapia para los niños?
+    - ¿Hay psicólogos disponibles?
+    - ¿Tienen algún programa de apoyo emocional?
+    - ¿Proveen consejería psicológica?
+    - ¿Tienen psicólogos para los niños?
+    - ¿Ofrecen apoyo emocional a los niños?
+    - ¿Tienen programas de consejería emocional?
+    - ¿Hay psicopedagogos disponibles?
+    - ¿Ofrecen sesiones de terapia para los niños?
+    - ¿Proveen apoyo emocional y psicológico?
+    - ¿Tienen programas de apoyo psicológico?
+
+- intent: profesoras
+  examples: |
+    - quienes son las profes?
+    - cuales son las profesoras
+    - quien es la responsable de dar
+    - quien da las clases de 
+    - quien es la encargada de 
+    - ¿Me puedes decir quién da las clases de apoyo escolar?
+    - ¿Quiénes son las maestras de arte?
+    - ¿Quién imparte las clases de hockey?
+    - ¿Quién se encarga de las clases de música?
+    - ¿Quién está a cargo de las clases de educación física?
+    - ¿Quién enseña arte a los niños?
+    - ¿Quién es la profesora de apoyo escolar?
+    - ¿Quién da las lecciones de música?
+    - ¿Quién es la maestra de hockey?
+    - ¿Quiénes son las encargadas de las clases de arte?
+    - ¿Quién está a cargo de enseñar música?
+    - ¿Me puedes decir quién enseña apoyo escolar?
+    - ¿Quiénes son las maestras de música?
+
 - intent: donacion
   examples: |
-    - Quiero donar zapatillas para niños.
+    - Quiero donar [zapatillas](ropa) para niños.
     - Me gustaría regalar ropa deportiva.
+    - Me gustaría regalar [short](ropa) deportivo.
     - Quiero enviarles alimentos no perecederos.
     - Quiero donar instrumentos musicales.
     - Me gustaría ofrecer material artístico.
+    - puedo darles un [cinturon](ropa)
+    - Me gustaría ofrecer un [pantalon](ropa)
     - Quiero hacer una donación de útiles escolares.
     - Quiero donar libros sobre valores.
     - tengo pelotas de futbol para darles
+    - tengo [remera](ropa) de futbol para darles
     - me sobran pelotas de hockey.
     - Me gustaría ser voluntaria de arte
     - puedo ayudar con pinturas y pinceles.
@@ -28,11 +219,14 @@ nlu:
     - soy profe de educacion fisica y quiero ayudar
     - puedo ayudar enviandoles botines de fútbol para niños?
     - Me gustaría ayudar
+    - quiero donarles un [sweater](ropa)
+    - tengo una [campera](ropa) para darles
+    - quiero enviarles unos [zapatos](ropa) que ya no uso
     - me ofrezco como voluntario para cuando me necesiten
     - si necesitan mi ayuda llamenme al 2262593779
     - Me gustaría regalar materiales para talleres de manualidades y arte como arcilla, papel, tijeras, y crayones de colores.
     - quiero darle un palo de hockey
-    - quiero darles zapatillas
+    - quiero darles [zapatillas](ropa)
     - Tengo pelotas de fútbol para darles.
     - puedo ayudar con clases de musica
     - quiero ayudar
@@ -114,6 +308,30 @@ nlu:
     - Son [17](anios)
     - Tengo [4](anios) años
     - Tengo [22](anios)
+    - tiene [10](anios) años
+    - son de [7] (anios) 
+    - tiene [3](anios)
+    - [5](anios) años
+    - [10](anios)
+    - Son [11](anios)
+    - Tengo [14](anios) años
+    - Tengo [20](anios)
+    
+- intent: talle_ropa
+  examples: |
+    - talle [S](talle)
+    - soy [14](talle)
+    - calzo [34](talle)
+    - necesito [23](talle)
+    - soy [l](talle)
+    - [M](talle)
+    - [1](talle)
+    - mi talle es [L](talle)
+    - uso talla [38](talle)
+    - soy [32](talle)
+    - tengo talla [XL](talle)
+    - mi talle es [6](talle)
+    - uso talla [XS](talle)
 
 - intent: saludo
   examples: |
@@ -218,6 +436,9 @@ nlu:
     - ¿Qué tengo que traer conmigo?
     - ¿Hay que traer algún equipo?
     - ¿Qué necesito llevar conmigo?
+    - debo comprar algo para asistir a clase?
+    - debo comprar materiales?
+    - necesito comprar algun equipo para hockey?
 
 - intent: duracion
   examples: |
@@ -278,10 +499,12 @@ nlu:
 
 - intent: negacion
   examples: |
-    - no tengo zapatillas
-    - tengo pocas medias
-    - estaria necesitando un pantalon
-    - quiero una remera    
+    - no tengo [zapatillas](ropa)
+    - tengo pocas [medias](ropa)
+    - estaria necesitando un [pantalon](ropa)
+    - quiero una [remera](ropa)   
+    - necesito un [sweater](ropa) para el invierno
+    - no tengo [short](ropa) para ir a hockey 
     - tengo necesidad de una guitarra
     - me falta el palo de hockey
     - necesito una regla
@@ -301,8 +524,9 @@ nlu:
     - no tengo un lugar para estudiar en casa
     - necesito una lámpara para estudiar
     - no tengo acceso a internet en casa
-    - necesito una camiseta para las clases de deporte
+    - necesito una [camiseta](ropa) para las clases de deporte
     - me faltan hojas para la impresora
+    - no tengo [cinturon](ropa)
     - necesito ayuda para comprar útiles escolares
     - ¿pueden prestarme un libro de matemáticas?
     - no tengo suficiente comida en casa
@@ -414,6 +638,70 @@ nlu:
     - actividades
     - valores
     - generico
+
+- lookup: talle
+  examples: |
+    - 1
+    - 2
+    - 3 
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 14
+    - 16
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - xs
+    - s
+    - M 
+    - L
+    - xxs
+
+- lookup: ropa
+  examples: |
+    - Remera 
+    - Pantalón
+    - Sweater 
+    - sueter
+    - Camisa
+    - musculosa
+    - pollera
+    - Vestido
+    - short
+    - Abrigo
+    - calza
+    - Bermuda
+    - Bufanda
+    - gorra
+    - Sombrero
+    - Gorra
+    - Guantes
+    - Zapatos
+    - Botas
+    - Sandalias
 
 - regex: nro_telefono
   examples: |

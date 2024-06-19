@@ -12,6 +12,46 @@ stories:
   - intent: despedida
   - action: utter_despedida
 
+- story: consejos
+  steps:
+  - intent: consejos_orientacion
+  - action: utter_consejos_orientacion
+
+- story: documentacion
+  steps:
+  - intent: documentacion
+  - action: action_documentacion
+
+- story: discapacidad
+  steps:
+  - intent: discapacidad
+  - action: utter_discapacidad
+
+- story: objetivo
+  steps:
+  - intent: que_hacemos
+  - action: utter_que_hacemos
+
+- story: alimentacion
+  steps:
+  - intent: apoyo_alimenticio
+  - action: utter_apoyo_alimenticio
+
+- story: requisitos
+  steps:
+  - intent: requisitos
+  - action: utter_requisitos
+
+- story: asistencia_psicologica
+  steps:
+  - intent: asistencia_psicologica
+  - action: utter_asistencia_psicologica
+
+- story: profesoras
+  steps:
+  - intent: profesoras
+  - action: action_profesoras
+  
 - story: saludar
   steps:
   - intent: saludo
@@ -38,6 +78,8 @@ stories:
   - action: action_ultimo_mensaje
   - intent: datos
   - action: action_falta
+  - intent: talle_ropa
+  - action: action_talle_falta
 
 - story: dona
   steps:
@@ -45,6 +87,8 @@ stories:
   - action: action_ultimo_mensaje_donacion
   - intent: datos
   - action: action_donar
+  - intent: talle_ropa
+  - action: action_talle_dona
 
 - story: obligatorio
   steps:

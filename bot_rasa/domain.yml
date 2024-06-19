@@ -20,6 +20,16 @@ intents:
   - ubicacion
   - contacto
   - donacion
+  - talle_ropa
+  - consejos_orientacion
+  - documentacion
+  - discapacidad
+  - que_hacemos
+  - apoyo_alimenticio
+  - requisitos
+  - asistencia_psicologica
+  - profesoras
+  
 
 actions:
   - action_inicio
@@ -32,6 +42,11 @@ actions:
   - action_ultimo_mensaje
   - action_donar
   - action_ultimo_mensaje_donacion
+  - action_talle_falta
+  - action_talle_dona
+  - action_documentacion
+  - action_profesoras
+
 
 slots: 
   actividad:
@@ -45,6 +60,18 @@ slots:
     mappings: 
       - type: from_entity
         entity: nombre
+  ropa:   
+    type: text
+    mappings: 
+      - type: from_entity
+        entity: ropa
+
+  talle:   
+    type: text
+    mappings: 
+      - type: from_entity
+        entity: talle
+
   numero:
     type: text
     mappings: 
@@ -73,8 +100,13 @@ entities:
   - anios
   - nombre
   - numero
-
+  - talle
+  - ropa
 responses:
+
+  utter_documentacion:
+  - text: debes descargar esta planilla [ ] {link}
+
   utter_costo:
   - text: "Por familia, 1000 pesos al mes"
 
@@ -91,13 +123,33 @@ responses:
   - text: "Si, ya que nos interesa el desarrollo humano de cada alumno"
 
   utter_desconocido:
-  - text: "no entiendo lo que me decis, ¿podrias repetirlo?"
+  - text: "no entiendo lo que me decis, si queres comunicate al 2494489835 o visitanos en en Velez S 491, Tandil, Buenos Aires, Argentina"
 
   utter_despedida:
   - text: "adios!"
   
   utter_saludo:
   - text: "Hola"
+
+  utter_consejos_orientacion:
+  - text: "Llamanos al 2494489835 o visitanos en en Velez S 491, Tandil, Buenos Aires"
+  
+  utter_discapacidad:
+  - text: "Si aceptamos a todos los niños, escribinos al 249448983 para tener mas informacion"
+  
+  utter_que_hacemos:
+  - text: "Somos una Asociación Civil sin fines de lucro no gubernamental. Tenemos como propósito promover el desarrollo y superación intelectual, cultural, deportivo y educativo, orientados hacia la inclusión social."
+  
+  utter_apoyo_alimenticio:
+  - text: "No tenemos un comedor, pero escribinos para charlar la situacion al 2494489835 o visitanos en en Velez S 491, Tandil, Buenos Aires"
+  
+  utter_requisitos:
+  - text: "No hay requisitos"
+  
+  utter_asistencia_psicologica:
+  - text: "No tenemos un gabinete como tal, pero  si queres comunicate al 2494489835 o visitanos en en Velez S 491, Tandil, Buenos Aires, Argentina para charlarlo"
+  
+
 
 session_config:
   session_expiration_time: 60

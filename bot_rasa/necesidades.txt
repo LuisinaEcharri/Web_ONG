@@ -2,3 +2,12 @@ Nombre: luisina, Telefono: 2345655543, Necesita: no tengo zapatillas
 Nombre: sol, Telefono: 2281590130, Necesita: no tengo palo de hockey
 Nombre: luisina, Telefono: 2262593779, Necesita: quiero darle un palo de hockey
 Nombre: luisina, Telefono: 2262593777, Necesita: no tengo zapatillas
+Nombre: sol, Telefono: 2262652554, Necesita: no tengo zapatillas para poder ir
+Nombre: luisina, Telefono: 2262593779, Necesita: no tengo zapatillas
+Nombre: luisina, Telefono: 2262593779, Necesita: no tengo zapatillas, Talle: 39
+Nombre: luciana, Telefono: 2243625678, Necesita: quiero donar una remera, Talle: 3
+Nombre: luisina, Telefono: 2262345432, Necesita: no tengo un buzo, Talle: 31
+Nombre: luisina, Telefono: 2262593779, Necesita: no tengo zapatillas, Talle: 39
+Nombre: pia, Telefono: 2281564536, Necesita: no tengo palo de hockey, Talle: 9
+Nombre: juan, Telefono: 2494256789, Necesita: no tengo palo de hockey
+Nombre: sol, Telefono: 2281345678, Necesita: no tengo remera para ir, Talle: 16

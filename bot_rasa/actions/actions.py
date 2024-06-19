@@ -5,8 +5,6 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 
-# This is a simple example for a custom action which utters "Hello World!"
-
 from aifc import Error
 from typing import Any, Text, Dict, List
 import mysql.connector
@@ -14,20 +12,6 @@ import mysql.connector
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
 
 class ActionHorarioHockey(Action):
 
@@ -102,6 +86,28 @@ class ActionLlevarCosas(Action):
                 dispatcher.utter_message("No hay que llevar nada")
             return []
 
+class ActionProfesoras(Action):
+
+   def name(self) -> Text:
+       return "action_profesoras"
+
+   def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            actividad = tracker.get_slot("actividad")
+            if str(actividad) == "hockey" or str(actividad) == "hockeyagain":
+                dispatcher.utter_message("Agustina Ferreira, Melany Krimer, Sofia Ferreira")
+            elif str(actividad) == "apoyo" or str(actividad) == "apoyoagain":
+                dispatcher.utter_message("Melany Hernandez con un voluntario llamado Daniel")
+            elif str(actividad) == "arte":
+                dispatcher.utter_message("Melany Hernandez junto con Melany krimer")
+            elif str(actividad) == "actividades" or str(actividad) == "actividadesagain":
+                dispatcher.utter_message("no hay actividades por el momento")
+            elif str(actividad) == "musica":
+                dispatcher.utter_message("Melany hernandez taller de arte junto con Melany krimer")
+            elif str(actividad) == "valores":
+                dispatcher.utter_message("Agustina Ferreira, Melany Krimer, Sofia Ferreira")
+            return []
+        
 class ActionDuracionTodos(Action):
 
    def name(self) -> Text:
@@ -199,18 +205,60 @@ class Actionfalta(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: dict) -> list:
+        
+        ropaTalle = ["pantalon", "remera", "pantalón", "musculosa", "camiseta", "campera", "buzo", "jean", "short", "zapatillas", "medias", "sweater", "sueter", "zapatos", "sandalias", "ojotas", "malla", "cinto", "cinturon"]
 
         nombre = tracker.get_slot("nombre")
         numero = tracker.get_slot("numero")
         faltante = tracker.get_slot("item")
-        print(nombre)
-        print(numero)
-        print(faltante)
+        ropa = tracker.get_slot("ropa")
+        print (ropa)
+        if ropa in ropaTalle:
+             dispatcher.utter_message(text="Me decis el talle por favor")
+        else: 
+            if nombre and faltante:
+                file_path = "necesidades.txt"
+                with open(file_path, "a") as file:
+                    file.write(f"Nombre: {nombre}, Telefono: {numero}, Necesita: {faltante}\n")
+                try:
+                    connection = mysql.connector.connect(
+                        host="localhost",  # Cambia esto por tu host
+                        user="root",  # Cambia esto por tu usuario
+                        password="",  # Cambia esto por tu contraseña
+                        database="reinvent_reinventar"  # Cambia esto por tu base de datos
+                    )
+                    cursor = connection.cursor()
+                    sql_insert_query = "INSERT INTO necesidad (necesidad, nombre, telefono) VALUES (%s, %s, %s)"
+                    cursor.execute(sql_insert_query, (faltante, nombre, numero))
+                    connection.commit()
+                    cursor.close()
+                    connection.close()
+                except Error as error:
+                    dispatcher.utter_message(text=f"Error al guardar en la base de datos: {error}")
+                dispatcher.utter_message(text="Gracias. He guardado tu información, pronto nos comunicaremos contigo")
+            else:
+                dispatcher.utter_message(text="Lo siento, no he podido obtener tu información correctamente.")
+
+        return []
+    
+class ActionTallefalta(Action):
+
+    def name(self) -> str:
+        return "action_talle_falta"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        nombre = tracker.get_slot("nombre")
+        numero = tracker.get_slot("numero")
+        faltante = tracker.get_slot("item")
+        talle = tracker.get_slot("talle")
         
         if nombre and faltante:
             file_path = "necesidades.txt"
             with open(file_path, "a") as file:
-                file.write(f"Nombre: {nombre}, Telefono: {numero}, Necesita: {faltante}\n")
+                file.write(f"Nombre: {nombre}, Telefono: {numero}, Necesita: {faltante}, Talle: {talle}\n")
             try:
                 connection = mysql.connector.connect(
                     host="localhost",  # Cambia esto por tu host
@@ -219,18 +267,19 @@ class Actionfalta(Action):
                     database="reinvent_reinventar"  # Cambia esto por tu base de datos
                 )
                 cursor = connection.cursor()
-                sql_insert_query = "INSERT INTO necesidad (necesidad, nombre, telefono) VALUES (%s, %s, %s)"
-                cursor.execute(sql_insert_query, (faltante, nombre, numero))
+                sql_insert_query = "INSERT INTO necesidad (necesidad, nombre, telefono, talle) VALUES (%s, %s, %s, %s)"
+                cursor.execute(sql_insert_query, (faltante, nombre, numero, talle))
                 connection.commit()
                 cursor.close()
                 connection.close()
+                SlotSet("ropa", "")
             except Error as error:
                 dispatcher.utter_message(text=f"Error al guardar en la base de datos: {error}")
             dispatcher.utter_message(text="Gracias. He guardado tu información, pronto nos comunicaremos contigo")
         else:
             dispatcher.utter_message(text="Lo siento, no he podido obtener tu información correctamente.")
-
-        return []
+        return [SlotSet("ropa", "")]
+    
     
 class ActionGetLastUserMessage(Action):
 
@@ -241,18 +290,16 @@ class ActionGetLastUserMessage(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        last_user_message = tracker.latest_message.get('text')
-        print(last_user_message)
-        
-        dispatcher.utter_message(text="Por favor dame tu nombre y numero de telefono")
-
         last_intent = tracker.latest_message["intent"]["name"]
 
-        if last_intent == "negacion":
+        if last_intent == "negacion":    
+            last_user_message = tracker.latest_message.get('text')
+            dispatcher.utter_message(text="Por favor dame tu nombre y numero de telefono")
             return [SlotSet("item", last_user_message)]
+        
         return[]
 
-class Actionfalta(Action):
+class ActionDonar(Action):
 
     def name(self) -> str:
         return "action_donar"
@@ -260,18 +307,76 @@ class Actionfalta(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: dict) -> list:
-
+        ropaTalle =  ["pantalon", "remera", "pantalón", "musculosa", "camiseta", "campera", "buzo", "jean", "short", "zapatillas", "medias", "sweater", "sueter", "zapatos", "sandalias", "ojotas", "malla", "cinto", "cinturon"]
         nombre = tracker.get_slot("nombre")
         numero = tracker.get_slot("numero")
         donacion = tracker.get_slot("item2")
-        print(nombre)
-        print(numero)
-        print(donacion)
+        ropa = tracker.get_slot("ropa")
+        print (ropa)
+        if ropa in ropaTalle:
+             dispatcher.utter_message(text="Me decis el talle por favor")
+        else: 
+            if nombre and donacion:
+                file_path = "donaciones.txt"
+                with open(file_path, "a") as file:
+                    file.write(f"Nombre: {nombre}, Telefono: {numero}, Dona: {donacion}\n")
+                try:
+                    connection = mysql.connector.connect(
+                        host="localhost",  # Cambia esto por tu host
+                        user="root",  # Cambia esto por tu usuario
+                        password="",  # Cambia esto por tu contraseña
+                        database="reinvent_reinventar"  # Cambia esto por tu base de datos
+                    )
+                    cursor = connection.cursor()
+                    sql_insert_query = "INSERT INTO donacion (donacion, nombre, telefono) VALUES (%s, %s, %s)"
+                    cursor.execute(sql_insert_query, (donacion, nombre, numero))
+                    connection.commit()
+                    cursor.close()
+                    connection.close()
+                except Error as error:
+                    dispatcher.utter_message(text=f"Error al guardar en la base de datos: {error}")
+                dispatcher.utter_message(text="Gracias. He guardado tu información, pronto nos comunicaremos contigo")
+            else:
+                dispatcher.utter_message(text="Lo siento, no he podido obtener tu información correctamente.")
+
+        return []
+
+class ActionGetLastUserMessage(Action):
+
+    def name(self) -> Text:
+        return "action_ultimo_mensaje"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        last_intent = tracker.latest_message["intent"]["name"]
+
+        if last_intent == "negacion":    
+            last_user_message = tracker.latest_message.get('text')
+            dispatcher.utter_message(text="Por favor dame tu nombre y numero de telefono")
+            return [SlotSet("item", last_user_message)]
+        
+        return[]
+
+class ActionTalleDonar(Action):
+
+    def name(self) -> str:
+        return "action_talle_dona"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+        
+        nombre = tracker.get_slot("nombre")
+        numero = tracker.get_slot("numero")
+        donacion = tracker.get_slot("item2")
+        talle = tracker.get_slot("talle")
+     
         if nombre and donacion:
             file_path = "donaciones.txt"
             with open(file_path, "a") as file:
-                file.write(f"Nombre: {nombre}, Telefono: {numero}, Dona: {donacion}\n")
+                file.write(f"Nombre: {nombre}, Telefono: {numero}, Dona: {donacion}, Talle: {talle}\n")
             try:
                 connection = mysql.connector.connect(
                     host="localhost",  # Cambia esto por tu host
@@ -280,18 +385,18 @@ class Actionfalta(Action):
                     database="reinvent_reinventar"  # Cambia esto por tu base de datos
                 )
                 cursor = connection.cursor()
-                sql_insert_query = "INSERT INTO donacion (donacion, nombre, telefono) VALUES (%s, %s, %s)"
-                cursor.execute(sql_insert_query, (donacion, nombre, numero))
+                sql_insert_query = "INSERT INTO donacion (donacion, nombre, telefono, talle) VALUES (%s, %s, %s, %s)"
+                cursor.execute(sql_insert_query, (donacion, nombre, numero, talle))
                 connection.commit()
                 cursor.close()
                 connection.close()
+                SlotSet("ropa", "")
             except Error as error:
                 dispatcher.utter_message(text=f"Error al guardar en la base de datos: {error}")
             dispatcher.utter_message(text="Gracias. He guardado tu información, pronto nos comunicaremos contigo")
         else:
             dispatcher.utter_message(text="Lo siento, no he podido obtener tu información correctamente.")
-
-        return []
+        return [SlotSet("ropa", "")]
     
 class ActionGetLastUserMessage(Action):
 
@@ -302,13 +407,25 @@ class ActionGetLastUserMessage(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        last_user_message = tracker.latest_message.get('text')
-        print(last_user_message)
-        
-        dispatcher.utter_message(text="Por favor dame tu nombre y numero de telefono")
-
         last_intent = tracker.latest_message["intent"]["name"]
-
+        
         if last_intent == "donacion":
+            last_user_message = tracker.latest_message.get('text')
+            dispatcher.utter_message(text="Por favor dame tu nombre y numero de telefono")
             return [SlotSet("item2", last_user_message)]
+        
         return[]
+
+class ActionSendPDF(Action):
+     def name(self):
+         return "action_documentacion"
+
+     def run(self, dispatcher, tracker: Tracker, domain):
+        actividad = tracker.get_slot("actividad")
+         # URL local del PDF
+        print(actividad)
+        if actividad == "hockey":
+            dispatcher.utter_message(text="veni a retirar tu planilla de inscripcion a Velez S 491, Tandil, Buenos Aires")
+        else:
+            dispatcher.utter_message(text="no hay que presentar nada")
+        return []
