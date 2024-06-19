@@ -1,0 +1,6 @@
+rasa
+mysql.connector
+streamlit
+google-generativeai
+python-dotenv
+pyinstaller
