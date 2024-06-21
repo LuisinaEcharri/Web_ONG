@@ -3,13 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
--- Tiempo de generación: 04-06-2024 a las 19:59:43
-=======
--- Tiempo de generación: 04-06-2024 a las 21:18:15
->>>>>>> c2295e13f3a570c7e236e3d50854977091037f23
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 22-06-2024 a las 00:55:23
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,8 +31,17 @@ CREATE TABLE `donacion` (
   `id_donacion` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `telefono` bigint(20) NOT NULL,
-  `donacion` text NOT NULL
+  `donacion` text NOT NULL,
+  `talle` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `donacion`
+--
+
+INSERT INTO `donacion` (`id_donacion`, `nombre`, `telefono`, `donacion`, `talle`) VALUES
+(5, 'luisina', 2262593779, 'quiero donar un par de zapatillas', 's'),
+(6, 'pia', 2281456782, 'quiero donar pelotas de futbol', NULL);
 
 -- --------------------------------------------------------
 
@@ -72,19 +77,18 @@ CREATE TABLE `necesidad` (
   `id_necesidad` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `telefono` bigint(20) NOT NULL,
-  `necesidad` text NOT NULL
+  `necesidad` text NOT NULL,
+  `talle` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-<<<<<<< HEAD
-=======
 --
 -- Volcado de datos para la tabla `necesidad`
 --
 
-INSERT INTO `necesidad` (`id_necesidad`, `nombre`, `telefono`, `necesidad`) VALUES
-(1, 'sol', 2262658554, 'necesito un par de zapatillas y un palo de hockey');
+INSERT INTO `necesidad` (`id_necesidad`, `nombre`, `telefono`, `necesidad`, `talle`) VALUES
+(12, 'juan', 2494256789, 'no tengo palo de hockey', NULL),
+(13, 'sol', 2281345678, 'no tengo remera para ir', '16');
 
->>>>>>> c2295e13f3a570c7e236e3d50854977091037f23
 -- --------------------------------------------------------
 
 --
@@ -168,7 +172,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `donacion`
 --
 ALTER TABLE `donacion`
-  MODIFY `id_donacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_donacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `inscripto`
@@ -180,11 +184,7 @@ ALTER TABLE `inscripto`
 -- AUTO_INCREMENT de la tabla `necesidad`
 --
 ALTER TABLE `necesidad`
-<<<<<<< HEAD
-  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT;
-=======
-  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> c2295e13f3a570c7e236e3d50854977091037f23
+  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `noticia`
