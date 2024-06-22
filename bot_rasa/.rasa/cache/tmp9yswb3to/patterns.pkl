@@ -1,0 +1,26 @@
+[
+  {
+    "name": "anios",
+    "pattern": "^(?:[1-9]|[1-9][0-9]|100)$"
+  },
+  {
+    "name": "nombre",
+    "pattern": "^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\\s]+$"
+  },
+  {
+    "name": "nro_telefono",
+    "pattern": "\\d{10}"
+  },
+  {
+    "name": "actividad",
+    "pattern": "(\\bmusica\\b|\\barte\\b|\\bapoyo\\b|\\bhockey\\b|\\bactividades\\b|\\bvalores\\b|\\bgenerico\\b|\\bhockeyagain\\b|\\bapoyoagain\\b|\\bactividadesagain\\b)"
+  },
+  {
+    "name": "talle",
+    "pattern": "(\\b1\\b|\\b2\\b|\\b3\\b|\\b4\\b|\\b5\\b|\\b6\\b|\\b7\\b|\\b8\\b|\\b9\\b|\\b10\\b|\\b11\\b|\\b12\\b|\\b14\\b|\\b16\\b|\\b24\\b|\\b25\\b|\\b26\\b|\\b27\\b|\\b28\\b|\\b29\\b|\\b30\\b|\\b31\\b|\\b32\\b|\\b33\\b|\\b34\\b|\\b35\\b|\\b36\\b|\\b37\\b|\\b38\\b|\\b39\\b|\\b40\\b|\\b41\\b|\\b42\\b|\\bxs\\b|\\bXS\\b|\\bs\\b|\\bS\\b|\\bM\\b|\\bm\\b|\\bL\\b|\\bl\\b|\\bXXL\\b|\\bxxl\\b|\\bxxs\\b)"
+  },
+  {
+    "name": "ropa",
+    "pattern": "(\\bRemera\\b|\\bPantalón\\b|\\bSweater\\b|\\bsueter\\b|\\bCamisa\\b|\\bmusculosa\\b|\\bpollera\\b|\\bVestido\\b|\\bshort\\b|\\bAbrigo\\b|\\bcalza\\b|\\bBermuda\\b|\\bBufanda\\b|\\bgorra\\b|\\bSombrero\\b|\\bGorra\\b|\\bGuantes\\b|\\bZapatos\\b|\\bBotas\\b|\\bSandalias\\b)"
+  }
+]

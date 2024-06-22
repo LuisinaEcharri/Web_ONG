@@ -659,6 +659,9 @@ nlu:
     - actividades
     - valores
     - generico
+    - hockeyagain
+    - apoyoagain
+    - actividadesagain
 
 - lookup: talle
   examples: |
