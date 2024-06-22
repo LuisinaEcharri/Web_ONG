@@ -1,0 +1,231 @@
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES 
+('tengo necesidad de una guitarra', 'Paula', '2274765432'),
+('me falta el palo de hockey', 'Nicolás', '2281976543'),
+
+INSERT INTO necesidad (necesidad, nombre, numero, talle) VALUES 
+('no tengo zapatillas', 'María', '2262111234', '38'),
+('tengo pocas medias', 'Carlos', '2262545678', '35'),
+('estaria necesitando un pantalon', 'Ana', '2494765432', '40'),
+
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES 
+('¿Pueden ayudarme con transporte para llegar a las clases?', 'Gabriela', '2233567890'),
+('necesito transporte', 'Ignacio', '2214567890'),
+('pueden prestarme lapices de colores', 'Natalia', '2256789012'),
+('necesito ropa deportiva', 'Julio', '2262987654'),
+
+INSERT INTO necesidad (necesidad, nombre, numero, talle) VALUES 
+('no tengo una remera que no este rota', 'Jorge', '2281345678', 'XXL'),
+('necesito un sweater para el invierno', 'Lucía', '2255987654', 'S'),
+('no tengo short para ir a hockey', 'Rafael', '2211786543', 'M'),
+('necesito una camiseta para las clases de deporte', 'Ricardo', '2256543210', '16'),
+
+
+
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES 
+('no tengo suficiente ropa de invierno', 'Raquel', '2343987654'),
+('me falta un violín para las clases de música', 'Pablo', '1101987654'),
+('no puedo comprarme una guitarra', 'Silvia', '0112234567'),
+('necesito ayuda con los materiales de música', 'Manuel', '0226234567'),
+('¿tienen ropa que me puedan dar?', 'Beatriz', '2494456789'),
+('necesito una regla', 'Verónica', '2211987654'),
+('no me alcanza para comprame un sacapuntas', 'Roberto', '2214987654'),
+('no puedo pagarlo', 'Elena', '2494234567'),
+('es demasiada plata', 'Fernando', '1112546789'),
+
+INSERT INTO necesidad (necesidad, nombre, numero, talle) VALUES 
+('no tengo cinturon', 'Miguel', '2256789013', '2'),
+('no tengo zapatillas, para ir a la escuela', 'Mariana', '2462118934'),
+('necesito medias', 'Carlos', '2456889952'),
+('estaria necesitando una campera o buzo', 'Ana', '2281235689', 'M'),
+('quiero una remera', 'Jorge', '2264748893', '14'),
+('necesito un campera que me abrigue para el invierno', 'Lucia', '2981235678', 'L'),
+('no tengo short para ir a futbol', 'Rafael', '2262666666', '38'),
+
+
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES
+('¿pueden ayudarme a conseguir una bicicleta?', 'Oscar', '2281987654'),
+('no tengo un lugar para estudiar en casa', 'Claudia', '2223987654'),
+('necesito una lámpara para estudiar', 'Héctor', '2234567890')
+('no tengo acceso a internet en casa', 'Marta', '2245987654'),
+('me faltan hojas para la impresora', 'Sofía', '0923456798'),
+('necesito ayuda para comprar útiles escolares', 'Alejandra', '2218786543'),
+('¿pueden prestarme un libro de matemáticas?', 'Tomás', '2262112345'),
+('no tengo suficiente comida en casa', 'Esteban', '2262594321'),
+('necesito ayuda para conseguir alimentos', 'Lorena', '2494765321'),
+('me faltan cosas básicas para el colegio', 'Victor', '2281345321'),
+('¿pueden ayudarme con la compra de ropa?', 'Rosa', '2255435678');
+
+
+
+
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES 
+('tengo necesidad de una guitarra', 'Paula', '2262777777'),
+('me falta el palo de hockey', 'Nicolas', '2262888888'),
+('necesito una regla', 'Veronica', '2262999999'),
+('no me alcanza para comprame un sacapuntas', 'Roberto', '2262000000'),
+('no puedo pagarlo', 'Elena', '2262111112'),
+('es demasiada plata', 'Fernando', '2262222223'),
+('¿Pueden ayudarme con transporte para llegar a las clases?', 'Gabriela', '2262333334'),
+('necesito transporte', 'Ignacio', '2262444445'),
+
+
+INSERT INTO necesidad (necesidad, nombre, numero, talle) VALUES 
+('necesito una camiseta para las clases de deporte', 'Ricardo', '2281657669', 'S'),,
+('no tengo cinturon', 'Claudia', '2262198754', '1'),
+('no tengo un par de zapatillas, ya que las mias se rompieron hoy', 'Emiliano', '2264231789', '40'),
+('no tengo remeras', 'Martina', '226219236784', 'XL'),
+('estaria necesitando un pantalon', 'Andrea', '2281193321', '24'),
+
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES 
+('pueden prestarme lapices de colores', 'Natalia', '2262555556'),
+('necesito ropa deportiva', 'Julio', '2262666667'),
+('no tengo suficiente ropa de invierno', 'Raquel', '2262777778'),
+('me falta un violín para las clases de música', 'Pablo', '2262888889'),
+('no puedo comprarme una guitarra', 'Silvia', '2262999990'),
+('necesito ayuda con los materiales de música', 'Manuel', '2262000001'),
+('¿tienen ropa que me puedan dar?', 'Beatriz', '2262111113'),
+('¿pueden ayudarme a conseguir una bicicleta?', 'Oscar', '2262222224'),
+('no tengo un lugar para estudiar en casa', 'Claudia', '2262333335'),
+('necesito una lámpara para estudiar', 'Hector', '2262444446'),
+('no tengo acceso a internet en casa', 'Marta', '2262555557'),
+('me faltan hojas para la impresora', 'Sofia', '2262777779')
+('¿pueden prestarme un libro de matemáticas?', 'Tomás', '2262000002'),
+('no tengo suficiente comida en casa', 'Esteban', '2262111114'),
+('necesito ayuda para conseguir alimentos', 'Lorena', '2262222225'),
+('me faltan cosas básicas para el colegio', 'Victor', '2262333336'),
+('¿pueden ayudarme con la compra de ropa?', 'Rosa', '2262444447'),
+('necesito ayuda para comprar útiles escolares', 'Alejandra', '2262999991'),
+('tengo necesidad de una guitarra', 'Rita', '2262111115'),
+('me falta el palo de hockey', 'Federico', '2262222226'),
+
+
+INSERT INTO necesidad (necesidad, nombre, numero, talle) VALUES 
+('necesito ayuda para comprar un buzo', 'Daniela', '2262333339', '2'),
+('¿pueden prestarme un par de zapatillas ?', 'Felipe', '2262444450', '26'),
+('no tengo ningun pantalon', 'Carmen', '2494555361', '30'),
+('necesito ayuda para conseguir una campera', 'Antonio', '2291646672', 'M'),
+('no tengo buzo', 'Dolores', '2273277783', 'S'),
+('no tengo zapatillas', 'Ramiro', '2282982894', '28');
+
+
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES 
+('necesito una regla', 'Ines', '2262333337'),
+('no me alcanza para comprame un sacapuntas', 'Sergio', '2262444448'),
+('no puedo pagarlo', 'Gloria', '2262555559'),
+('es demasiada plata', 'Francisco', '2262666670'),
+('¿Pueden ayudarme con transporte para llegar a las clases?', 'Alicia', '2262777781'),
+('necesito transporte', 'Diego', '2262888892'),
+('pueden prestarme lapices de colores', 'Patricia', '2262999993'),
+('necesito ropa deportiva', 'Alberto', '2262000004'),
+('no tengo suficiente ropa de invierno', 'Eva', '2262111116'),
+
+INSERT INTO necesidad (necesidad, nombre, numero, talle) VALUES 
+('quiero una remera', 'Luis', '2292881222', 'L'),
+('necesito un sueter para el invierno', 'Clara', '2294986545' , '3'),
+('no tengo short para ir a hockey', 'Pedro', '2123760902', '5'),
+('necesito una camiseta para las clases de deporte', 'Sebastian', '2494102938', 'XS'),
+('me faltan medias', 'Laura', '2281909123', '33'),
+('no tengo cinturon', 'Raul', '2264090876', '4'),
+
+INSERT INTO necesidad (necesidad, nombre, numero) VALUES 
+('me falta un violín para las clases de música', 'Cristian', '2262222227'),
+('no puedo comprarme una guitarra', 'Elisa', '2262333338'),
+('necesito ayuda con los materiales de música', 'Hugo', '2262444449'),
+('¿tienen ropa que me puedan dar?', 'Graciela', '2262555560'),
+('¿pueden ayudarme a conseguir una bicicleta?', 'Juan', '2262666671'),
+('no tengo un lugar para estudiar en casa', 'Ariadna', '2262777782'),
+('necesito una lámpara para estudiar', 'Adrian', '2262888893'),
+('no tengo acceso a internet en casa', 'Monica', '2262999994'),
+
+
+
+
+INSERT INTO donacion (donacion, nombre, numero, talle) VALUES 
+('puedo darles un cinturon', 'Paula', '2274765432', '1'),
+('Me gustaría ofrecer un pantalon', 'Nicolás', '2281976543', '24'),
+('tengo remera de futbol para darles', 'Fernando', '1112546789', 'S'),
+
+INSERT INTO donacion (donacion, nombre, numero) VALUES 
+('Quiero donar zapatillas para niños.', 'María', '2262111234'),
+('Me gustaría regalar ropa deportiva.', 'Carlos', '2262545678'),
+('Me gustaría regalar short deportivo.', 'Ana', '2494765432'),
+
+INSERT INTO donacion (donacion, nombre, numero, talle) VALUES 
+('puedo ayudar enviandoles botines de fútbol para niños?', 'Pablo', '1101987654', '38'),
+
+
+INSERT INTO donacion (donacion, nombre, numero) VALUES 
+('Quiero enviarles alimentos no perecederos.', 'Jorge', '2281345678'),
+('Quiero donar instrumentos musicales.', 'Lucía', '2255987654'),
+('Me gustaría ofrecer material artístico.', 'Rafael', '2211786543'),
+('Quiero hacer una donación de útiles escolares.', 'Verónica', '2211987654'),
+('Quiero donar libros sobre valores.', 'Roberto', '2214987654'),
+
+
+INSERT INTO donacion (donacion, nombre, numero, talle) VALUES 
+('quiero donarles un sweater', 'Manuel', '0226234567', 'M'),
+('tengo una campera para darles', 'Beatriz', '2494456789', '3'),
+
+INSERT INTO donacion (donacion, nombre, numero) VALUES 
+('tengo pelotas de futbol para darles', 'Elena', '2494234567'),
+('me sobran pelotas de hockey.', 'Gabriela', '2233567890'),
+('Me gustaría ser voluntaria de arte', 'Ignacio', '2214567890'),
+('puedo ayudar con pinturas y pinceles.', 'Natalia', '2256789012'),
+('quiero ofrecerme como voluntaria', 'Julio', '2262987654'),
+
+INSERT INTO donacion (donacion, nombre, numero, talle) VALUES 
+('quiero enviarles unos zapatos que ya no uso', 'Oscar', '2281987654', '40'),
+('quiero darles zapatillas', 'Lorena', '2494765321', '26'),
+('Quiero donar zapatillas para niños.', 'Liliana', '2231458765', '24'),
+('Me gustaría regalar short deportivo.', 'Noelia', '2281567890', '2'),
+
+
+INSERT INTO donacion (donacion, nombre, numero) VALUES 
+('soy profe de educacion fisica y quiero ayudar', 'Raquel', '2343987654'),
+('Me gustaría ayudar', 'Silvia', '0112234567'),
+('me ofrezco como voluntario para cuando me necesiten', 'Claudia', '2223987654'),
+('si necesitan mi ayuda llamenme al 2262593779', 'Federico', '2262593779'),
+('Me gustaría regalar materiales para talleres de manualidades y arte como arcilla, papel, tijeras, y crayones de colores.', 'Carolina', '2262112345'),
+('quiero darle un palo de hockey', 'Esteban', '2262594321'),
+('Tengo pelotas de fútbol para darles.', 'Victor', '2281345321'),
+('puedo ayudar con clases de musica', 'Rosa', '2255435678'),
+('quiero ayudar', 'Mario', '2214561234'),
+('tengo ropa para ustedes', 'Andrea', '2256784321'),
+('Me gustaría regalar ropa deportiva.', 'Diego', '2264598765'),
+('Quiero enviarles alimentos no perecederos.', 'Miguel', '2211457890'),
+('Quiero donar instrumentos musicales.', 'Patricia', '2494567890'),
+
+INSERT INTO donacion (donacion, nombre, numero, talle) VALUES 
+('puedo darles un cinturon', 'Alejandro', '2254567890', '3'),
+('Me gustaría ofrecer un pantalon', 'Teresa', '2274567890', '42'),
+('quiero donarles un sweater', 'Gloria', '2257894567', 'M'),
+
+INSERT INTO donacion (donacion, nombre, numero) VALUES 
+('Me gustaría ofrecer material artístico.', 'Santiago', '2267891234'),
+('Quiero hacer una donación de útiles escolares.', 'Alfredo', '2264567890'),
+('Quiero donar libros sobre valores.', 'Martina', '2294567890'),
+('tengo pelotas de futbol para darles', 'Fabián', '2237891234'),
+('tengo remera de futbol para darles', 'Ángeles', '2217891234'),
+('me sobran pelotas de hockey.', 'Rodrigo', '2261237890'),
+('Me gustaría ser voluntaria de arte', 'Cecilia', '2281237890'),
+('puedo ayudar con pinturas y pinceles.', 'Marcos', '2257891234'),
+('quiero ofrecerme como voluntaria', 'Soledad', '2237894567'),
+
+
+INSERT INTO donacion (donacion, nombre, numero, talle) VALUES 
+('tengo una campera para darles', 'Raul', '2234567890', 'XL'),
+('quiero enviarles unos zapatos que ya no uso', 'Mónica', '2214567890', '39'),
+('quiero darles zapatillas', 'Viviana', '2211234567', '32'),
+
+
+INSERT INTO donacion (donacion, nombre, numero) VALUES 
+('soy profe de educacion fisica y quiero ayudar', 'Enrique', '2217894567'),
+('puedo ayudar enviandoles botines de fútbol para niños?', 'Graciela', '2267894567'),
+('Me gustaría ayudar', 'Javier', '2287894567'),
+('me ofrezco como voluntario para cuando me necesiten', 'Guillermo', '2264561234'),
+('Me gustaría regalar materiales para talleres de manualidades y arte como arcilla, papel, tijeras, y crayones de colores.', 'Silvina', '2291234567'),
+('quiero darle un palo de hockey', 'Emanuel', '2231234567'),
+('Tengo pelotas de fútbol para darles.', 'Felipe', '2261234567'),
+('puedo ayudar con clases de musica', 'Daniela', '2281234567'),
+('quiero ayudar', 'Luciano', '2251234567'),
+('tengo ropa para ustedes', 'Eugenia', '2234561234');

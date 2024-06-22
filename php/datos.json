@@ -1,5 +1,12 @@
 [
     {
+        "id_noticia": "3",
+        "titulo": "Nueva cancha de hockey en Las Tunitas",
+        "epigrafe": "Gracias a las donaciones y a la correcaminata, el barrio cuenta con un nuevo espacio para la pr\u00e1ctica deportiva",
+        "imagen": "..\/welcome.jpeg",
+        "cuerpo": "Gracias a las donaciones realizadas a la ONG Reiventar y a los fondos recaudados en la correcaminata, se pudo construir una nueva cancha de hockey en el barrio de Las Tunitas. La cancha estar\u00e1 abierta a toda la comunidad de lunes a s\u00e1bados de 11 a 18 horas."
+    },
+    {
         "id_noticia": "2",
         "titulo": "REINVENTAR concreta una gran obra\r\n",
         "epigrafe": "Con la colaboraci\u00f3n de la comunidad tandilense, la cancha de Las Pumas luce transformada.",

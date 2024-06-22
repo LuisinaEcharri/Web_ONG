@@ -3,13 +3,22 @@ import os
 import platform
 import threading
 
+packages = [
+    "rasa",
+    "mysql-connector-python",
+    "streamlit",
+    "google-generativeai",
+    "python-dotenv",
+    "pyinstaller"
+]
+
+
 def run_command_in_new_console(command, cwd=None, listener=None, console=None):
     if platform.system() == 'Windows':
-        process = subprocess.Popen(command, cwd=cwd, creationflags=subprocess.CREATE_NEW_CONSOLE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        process = subprocess.Popen(command, cwd=cwd, creationflags=subprocess.CREATE_NO_WINDOW, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     elif platform.system() == 'Linux':
         command_with_nohup = f'nohup {command} &'
-        process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', command_with_nohup], cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-    
+        process = subprocess.Popen(command, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True, text=True)
     
     def read_output():
         for line in iter(process.stdout.readline, ''):
@@ -21,9 +30,14 @@ def run_command_in_new_console(command, cwd=None, listener=None, console=None):
     
     return process
 
+def install(package):
+    subprocess.check_call(["pip", "install", package])
+
+
 def instalar_dependencias():
     try:
-        os.system('pip install -r ' + os.getcwd() + '/requerimientos.txt')
+        for package in packages:
+            install(package)
         return True
     except Exception as e:
         print(f'Error al instalar dependencias: {e}')

@@ -100,11 +100,6 @@ stories:
   - intent: duracion
   - action: duracion_todos
 
-- story: edad
-  steps:
-  - intent: edad
-  - action: horarios_hockey
-
 - story: ubicacion
   steps:
   - intent: ubicacion
@@ -115,16 +110,12 @@ stories:
   - intent: contacto
   - action: utter_contacto
 
-- story: edad
-  steps:
-  - intent: edad
-  - action: horarios_hockey
-
-
 - story: horario todos
   steps:
   - intent: dia_hora
   - action: horarios_todos
+  - intent: edad
+  - action: horarios_hockey
 
 - story: llevar cosas todos
   steps:

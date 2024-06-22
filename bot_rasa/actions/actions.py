@@ -416,7 +416,7 @@ class ActionGetLastUserMessage(Action):
         
         return[]
 
-class ActionSendPDF(Action):
+class ActionDocumentacion(Action):
      def name(self):
          return "action_documentacion"
 

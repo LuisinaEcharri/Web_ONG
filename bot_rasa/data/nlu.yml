@@ -320,6 +320,8 @@ nlu:
 - intent: talle_ropa
   examples: |
     - talle [S](talle)
+    - talle [39](talle)
+    - talle [26](talle)
     - soy [14](talle)
     - calzo [34](talle)
     - necesito [23](talle)
@@ -332,6 +334,10 @@ nlu:
     - tengo talla [XL](talle)
     - mi talle es [6](talle)
     - uso talla [XS](talle)
+    - [40](talle)
+    - [24](talle)
+    - [38](talle)
+    - [39](talle)
 
 - intent: saludo
   examples: |
@@ -374,6 +380,20 @@ nlu:
     - [mia](nombre) [2214562709](numero)
     - [nelson](nombre) [2256178929](numero)
     - [matias](nombre) [2262120987](numero)
+    - [lourdes](nombre) y [02264322911](numero)
+    - [martina](nombre) y [2494506072](numero)
+    - [paloma](nombre) [0112234598](numero)
+    - [Martín](nombre) [223238798](numero)
+    - [David](nombre) [2495678923](numero)
+    - [Ignacio](nombre) [2215178930](numero)
+    - [Florencia](nombre) [2263298766](numero)
+    - [Mateo](nombre) y [2264342911](numero)
+    - [Delfina](nombre) y [2494406078](numero)
+    - [Ludmila](nombre) [1342234598](numero)
+    - [Sabrina](nombre) [2233162778](numero)
+    - [Ramiro](nombre) [0112145609](numero)
+    - [Analia](nombre) [2281987929](numero)
+    - [Fernando](nombre) [2264425987](numero)
     - [2343566312](numero) y [Camila](nombre)
     - Mi número es [1101234567](numero) y me llamo [Lucas](nombre)
     - Me llamo [Sofía](nombre) y mi número es [0112345678](numero)
@@ -388,14 +408,6 @@ nlu:
     - [Juan](nombre) tiene el número [2256189223]
     - [Renata](nombre) tiene el número [2218923849]
     
-- intent: afirmacion
-  examples: |
-    - si
-    - si
-    - claro
-    - por supesto
-    - correcto
-    - eso suena bien
     
 - intent: informacion
   examples: |
@@ -406,6 +418,15 @@ nlu:
     - quiero saber sobre [apoyo escolar](actividad)
     - sobre [valores](actividad)
     - [arte](actividad)
+    - me gustaria saber de [arte](actividad)
+    - me gustaria saber de [musica] (actividad)
+    - de taller de [musica](actividad)
+    - de  taller de [valores](actividad)
+    - quiero saber sobre [apoyo escolar](actividad)
+    - sobre [valores](actividad)
+    - [musica](actividad)
+    - [valores](actividad)
+    - [apoyo escolar](actividad)
 
 - intent: llevar_algo
   examples: |
@@ -675,9 +696,15 @@ nlu:
     - 41
     - 42
     - xs
+    - XS
     - s
-    - M 
+    - S
+    - M
+    - m 
     - L
+    - l
+    - XXL
+    - xxl
     - xxs
 
 - lookup: ropa

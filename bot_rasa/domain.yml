@@ -5,7 +5,6 @@ intents:
   - edad
   - saludo
   - despedida
-  - afirmacion
   - informacion
   - llevar_algo
   - duracion
@@ -13,9 +12,7 @@ intents:
   - negacion
   - costo
   - mixto
-  - animo_bien
   - obligatorio
-  - animo_mal
   - datos
   - ubicacion
   - contacto
